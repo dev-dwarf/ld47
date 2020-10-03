@@ -3,9 +3,9 @@ event_inherited();
 
 speed = 1;
 
-final_speed = 5;
+final_speed = 4;
 acceleration = 0.05;
-jerk = 0.001;
+jerk = 0.003;
 
 state = enemy_states.attack;
 

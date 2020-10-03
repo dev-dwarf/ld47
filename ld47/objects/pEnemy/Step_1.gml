@@ -1,5 +1,5 @@
 /// @description
-if (i_frames > 0) i_frames -= 2;
+if (i_frames > 0) i_frames -= 1;
 
 var inst = instance_place(x,y,oSword);
 if (inst and ((inst.swing) or (oPlayer.state == player_states.dash or oPlayer.dash_not_ready)) and i_frames <= 0) {
@@ -18,6 +18,7 @@ if (inst and ((inst.swing) or (oPlayer.state == player_states.dash or oPlayer.da
 	knockback_dir = point_direction(oPlayer.x, oPlayer.y, x,y);
 	
 	if (hp <= 0) {
+		i_frames = 10;
 		knockback *= 2;
 		state = enemy_states.dead;
 		// TODO: enemy death sound
