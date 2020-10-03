@@ -24,10 +24,13 @@ switch state {
 	y = ystart - 4 * (1-attack_timer/attack_time);
 	
 	if (attack_timer == 0) {
+		var dir = point_direction(x,y,oPlayer.x,oPlayer.y);
 		for (var i = 0; i < 360; i += 360/projectile_number) {
-			instance_create_layer(x + lengthdir_x(sprite_width/2, i + 90),
-								  y-sprite_height/2 + lengthdir_y(sprite_width/2, i + 90)
-			,layer,oProjectilePaulProjectile);
+			with instance_create_layer(x + lengthdir_x(sprite_width/2, i+dir),
+								  y-sprite_height/2 + lengthdir_y(sprite_width/2, i+dir)
+			,layer,oBurstingBrianProjectile) {
+				direction = i+dir;	
+			}
 		}
 		
 		attack_timer = attack_time;

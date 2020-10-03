@@ -8,7 +8,7 @@ idle_timer = idle_time;
 
 projectile_number = 8;
 
-hp = 2;
+hp = 5;
 
 attack_time = 10;
 attack_timer = attack_time;

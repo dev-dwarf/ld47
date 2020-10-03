@@ -1,5 +1,5 @@
 /// @description
-if (i_frames > 0) i_frames--;
+if (i_frames > 0) i_frames -= 2;
 
 var inst = instance_place(x,y,oSword);
 if (inst and ((inst.swing) or (oPlayer.state == player_states.dash or oPlayer.dash_not_ready)) and i_frames <= 0) {

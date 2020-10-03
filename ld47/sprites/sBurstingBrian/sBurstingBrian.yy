@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f254b6df-1182-4766-9077-2770b518001f","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "ld47",
-    "path": "ld47.yyp",
+    "name": "Sprites",
+    "path": "folders/Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "sBurstingBrian",
