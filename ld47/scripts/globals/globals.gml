@@ -27,6 +27,11 @@ function globals(){
 	
 	global.font_small = font_add_sprite_ext(spr_font_small,
 	" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,!?*()-+", 1, 2);
+	
+	//colors
+	#macro C_black make_color_rgb(17, 1, 27)
+	#macro C_white make_color_rgb(255, 243, 212)
+	#macro C_yellow make_color_rgb(237, 162, 59)
 
 	
 	instance_create_depth(0,0,0,oGamepadManager);
