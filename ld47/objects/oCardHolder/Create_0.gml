@@ -13,6 +13,7 @@ enum good_cards {
 	more_damage, //done
 	thorns, //done
 	size,
+	good_final//this is just for spawning cards. It doesn't do anything, just tells us what the last value is
 }
 
 enum bad_cards  {
@@ -22,6 +23,7 @@ enum bad_cards  {
 	enemy_health, //done
 	enemy_damage, // done
 	size,
+	bad_final//same as good_final above
 }
 
 enum card { 
@@ -30,7 +32,7 @@ enum card {
 }
 #endregion
 
-#region dataa
+#region data
 stacks[card.good][good_cards.more_swords  ]	= true ;
 stacks[card.good][good_cards.bigger_swords]	= true ;
 stacks[card.good][good_cards.laser_sword  ]	= true ;

@@ -73,7 +73,7 @@ mask_index = sPlayerIdle
 
 hp = approach(hp, max_hp, heal_overtime);
 hp = clamp(hp, 0, max_hp)
-log(string(hp));
+//log(string(hp));
 
 
 #region state

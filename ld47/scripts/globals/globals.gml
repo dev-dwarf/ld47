@@ -20,6 +20,10 @@ function globals(){
 	
 	global.gui_scale = 0;
 	global.set_window= false;
+	
+	//fonts
+	global.font_large = font_add_sprite_ext(spr_font_large,
+	" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,!?*()-+", 1, 2);
 
 	
 	instance_create_depth(0,0,0,oGamepadManager);
