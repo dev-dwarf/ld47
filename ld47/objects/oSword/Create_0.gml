@@ -7,7 +7,7 @@ angle = 0;
 offset_angle = 0;
 offset_amount = 20;
 
-offset_close = 15;
+offset_close = 10;
 offset_far	 = 30;
 
 offset_boost = 0;

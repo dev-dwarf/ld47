@@ -1,3 +1,4 @@
+#region input
 var move_x_axis, move_y_axis, input_direction, input_magnitude, attack_button, attack_button_charge, spell_button_released, spell_button_charge, dash_button_released, dash_button_charge;
 var key_pause;
 
@@ -54,6 +55,7 @@ if (dash_button_released and dash_not_ready == 0) {
 	
 	state = player_states.dash;	
 }
+#endregion
 
 #region state
 switch state {

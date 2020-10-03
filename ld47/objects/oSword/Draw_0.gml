@@ -3,7 +3,11 @@
 var y_off = 8;
 
 if (oPlayer.state == player_states.walk) {
-	y_off += 4 * (oPlayer.image_index mod 4 - 2)/2;
+	if (number mod 2) {
+		y_off += round(1 * dcos((oPlayer.image_index) * 90));		
+	} else {
+		y_off += round(1 * dsin((oPlayer.image_index) * 90));
+	}
 }
 
 
