@@ -116,7 +116,7 @@ switch state {
 		case dash_states.mid	 :
 		move_speed = dash_distance/dash_frames;
 		
-		make_dust(x,y,3, move_speed*0.4);
+		make_dust(x,y,2, move_speed*0.3);
 		
 		draw_scale = lerp(draw_scale, 1.5, 0.2);
 

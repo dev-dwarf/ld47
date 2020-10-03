@@ -11,12 +11,15 @@ function globals(){
 	global.set_window = false;
 	global.fullscreen = false;
 	
-	global.master_volume = 0.75;
+	global.master_volume = 0.75; 
 	global.sound_volume = 1.0 * global.master_volume;
 	global.music_volume = 1.0 * global.master_volume;
 	
 	global.sword_count = 1;
 	global.sword_id = 0;
+	
+	global.gui_scale = 0;
+	global.set_window= false;
 
 	
 	instance_create_depth(0,0,0,oGamepadManager);

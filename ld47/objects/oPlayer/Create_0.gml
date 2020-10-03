@@ -39,13 +39,12 @@ dash_distance = 90;
 dash_frame_count = dash_start_frames;
 
 made_footstep = false;
-
 move_direction = 0;
 move_direction_speed = 0.5; 
 
 move_speed = 0;
 move_speed_max = 2.5;
-move_accel = 0.05;
+move_accel = 0.02;
 move_decel = 0.2;
 
 draw_scale = 1.0;
@@ -53,9 +52,9 @@ draw_scale = 1.0;
 dust = part_system_create();
 dust_particles = part_type_create();
 part_type_sprite(dust_particles, sPlayerDust, 1, 1, false);
-part_type_size(dust_particles, 0.8, 1.1, -0.08, 0);
+part_type_size(dust_particles, 0.8, 1.1, -0.06, 0);
 part_type_life(dust_particles, 15, 20);
-part_type_speed(dust_particles, 0.5, 0.75, -0.01, 0.0);
+part_type_speed(dust_particles, 1.5, 1.75, -0.12, 0.0);
 part_type_direction(dust_particles, 80, 100, 0, 5);
 
 make_dust = function(xx, yy, count, range) {
