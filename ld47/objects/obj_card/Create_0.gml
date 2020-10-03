@@ -8,6 +8,7 @@ scale = 1;//general scale
 angle = 0;
 y_off = 0;//offset of drawn y compared to actual y
 frame_arrow = 0;//frame of selection arrow
+tt_draw = 0;//timer for drawing text
 
 //card data
 card_buff = 0;

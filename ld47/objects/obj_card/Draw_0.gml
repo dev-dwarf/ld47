@@ -25,7 +25,7 @@ if card_selected
 }
 
 //draw card description
-if mouse_in_box()
+if mouse_in_box() or tt_draw > 0
 {
 	var _buff_pointer = "buff_" + string(card_buff) + "_",
 		_debuff_pointer = "debuff_" + string(card_debuff) + "_",
@@ -49,7 +49,7 @@ if mouse_in_box()
 	_name = get_card_info(_name_pointer);	
 	_desc = get_card_info(_desc_pointer);	
 	
-	var _tx = room_width / 2;//text x
+	var _tx = round(room_width / 2);//text x
 	
 	//set halign to center
 	draw_set_halign(fa_center);
