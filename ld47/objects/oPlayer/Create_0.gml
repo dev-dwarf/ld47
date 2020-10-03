@@ -4,6 +4,8 @@
 //TODO: enemies
 //TODO: levels
 //TODO: cards
+// TODO: sword slash flash
+// TODO: hit particles
 
 enum player_states {
 	idle,
