@@ -53,7 +53,7 @@ dust = part_system_create();
 dust_particles = part_type_create();
 part_type_sprite(dust_particles, sPlayerDust, 1, 1, false);
 part_type_size(dust_particles, 0.8, 1.1, -0.06, 0);
-part_type_life(dust_particles, 15, 20);
+part_type_life(dust_particles, 30, 50);
 part_type_speed(dust_particles, 1.5, 1.75, -0.12, 0.0);
 part_type_direction(dust_particles, 80, 100, 0, 5);
 
