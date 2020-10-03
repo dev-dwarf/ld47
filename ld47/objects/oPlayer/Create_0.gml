@@ -1,0 +1,66 @@
+/// @description
+
+//TODO: depths sort
+//TODO: enemies
+//TODO: levels
+//TODO: cards
+
+enum player_states {
+	idle,
+	walk,
+	dash,
+	freeze
+}
+
+global.sword_id = 0;
+sword_size = 1;
+
+can_attack = false;
+state = player_states.idle;
+
+
+enum dash_states {
+	start, 
+	mid, 
+	recover
+}
+
+dash_not_ready = 0;
+dash_recharge = 5;
+dash_is_teleport = false;
+
+dash_state = dash_states.start;
+dash_start_frames = 3;
+dash_frames = 5;
+dash_recovery_frames = 2;
+dash_distance = 90;
+dash_frame_count = dash_start_frames;
+
+made_footstep = false;
+
+move_direction = 0;
+move_direction_speed = 0.5; 
+
+move_speed = 0;
+move_speed_max = 2.5;
+move_accel = 0.05;
+move_decel = 0.2;
+
+draw_scale = 1.0;
+
+dust = part_system_create();
+dust_particles = part_type_create();
+part_type_sprite(dust_particles, sPlayerDust, 1, 1, false);
+part_type_size(dust_particles, 0.8, 1.1, -0.08, 0);
+part_type_life(dust_particles, 15, 20);
+part_type_speed(dust_particles, 0.5, 0.75, -0.01, 0.0);
+part_type_direction(dust_particles, 80, 100, 0, 5);
+
+make_dust = function(xx, yy, count, range) {
+	repeat(count) {
+		var _xx = xx + random_range(-range, range);
+		var _yy = yy + random_range(-range, range);	
+	
+		part_particles_create(dust, _xx, _yy, dust_particles, 1)
+	}
+}

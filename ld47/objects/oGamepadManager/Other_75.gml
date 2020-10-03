@@ -4,6 +4,7 @@ switch async_load[? "event_type"] {
 		global.gamepad_connected = true;
 		global.gamepad_slot = async_load[? "pad_index"];
 		global.gamepad_is_xbox = (global.gamepad_slot < 4)
+		gamepad_set_axis_deadzone(global.gamepad_slot, 0.3)
 		//log("gamepad connected: " + string(global.gamepad_slot));
 	break;
 	case "gamepad lost":
