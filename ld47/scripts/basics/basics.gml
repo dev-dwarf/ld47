@@ -135,7 +135,8 @@ function move() {
 	    y = ytarg;
 	} else {
 		if (angle_correction) {
-			spd *= 0.75;
+			if (spd < 6)
+				spd *= 0.75;
 	
 			for (var i = 0; i < 80; i += 10) {
 				xtarg = x+lengthdir_x(spd,dir + i);
@@ -158,7 +159,25 @@ function move() {
 			}
 	
 			return true;
-		} 
+		} else {
+			var xstep = lengthdir_x(1,dir);
+			var ystep = lengthdir_y(1,dir);
+
+		    for (var i = 0; i < floor(spd); i++) {
+				if (!place_meeting(x+xstep, y, pSolid) and !place_meeting(x+xstep, y, pHitbox)) {
+					x += xstep;
+				} else {
+					return true;
+					break;
+				}
+				if (!place_meeting(x, y+ystep, pSolid) and !place_meeting(x, y+ystep, pHitbox)) {
+					y += ystep;
+				} else {
+					return true;
+					break;	
+				}
+			}
+		}
 	}
 	
 	return false;

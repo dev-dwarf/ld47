@@ -1,11 +1,15 @@
 /// @description
 
-//TODO: depths sort
-//TODO: enemies
-//TODO: levels
-//TODO: cards
-// TODO: sword slash flash
-// TODO: hit particles
+
+// TODO basic sound
+// TODO enemy generation
+	// pick from presets?
+	
+// TODO enemy types
+
+
+
+event_inherited();
 
 enum player_states {
 	idle,
@@ -16,7 +20,7 @@ enum player_states {
 
 global.sword_id = 0;
 global.sword_count = oCardHolder.counts[card.good][good_cards.more_swords  ];
-sword_size = 1 + 0.1*oCardHolder.counts[card.good][good_cards.bigger_swords];
+sword_size = 0.75 + 0.075*oCardHolder.counts[card.good][good_cards.bigger_swords];
 
 can_attack = false;
 state = player_states.idle;
@@ -33,15 +37,28 @@ dash_not_ready = 0;
 dash_recharge = 10;
 dash_is_teleport = oCardHolder.counts[card.good][good_cards.teleport_dash];
 
+if (dash_is_teleport) {
+	dash_start_frames = 2;
+	dash_frames = 3;
+	dash_recovery_frames = 2;
+} else {
+	dash_start_frames = 3;
+	dash_frames = 5;
+	dash_recovery_frames = 2;
+}
+
+knockback = 0;
+knockback_dir = 0;
+
+dash_start_x = x;
+dash_start_y = y;
 dash_state = dash_states.start;
-dash_start_frames = 3;
-dash_frames = 5;
-dash_recovery_frames = 2;
 dash_distance = 70;
 dash_frame_count = dash_start_frames;
 
 hit_damage = (1 + 0.2 * oCardHolder.counts[card.good][good_cards.bigger_swords]) * (1 + oCardHolder.counts[card.good][good_cards.more_damage]);
-hp = 3 + oCardHolder.counts[card.good][good_cards.more_health  ];
+max_hp = 3 + oCardHolder.counts[card.good][good_cards.more_health  ];
+hp = max_hp/2;
 
 made_footstep = false;
 move_direction = 0;
@@ -53,6 +70,10 @@ move_accel = 0.07;
 move_decel = 0.2;
 
 draw_scale = 1.0;
+
+leach = 0.2*oCardHolder.counts[card.good][good_cards.life_leach  ];
+thorns = oCardHolder.counts[card.good][good_cards.thorns  ];
+heal_overtime = 0.001*power(oCardHolder.counts[card.good][good_cards.heal_overtime  ],2);
 
 dust = part_system_create();
 dust_particles = part_type_create();
@@ -77,4 +98,22 @@ make_dust = function(xx, yy, count, range) {
 	
 		part_particles_create(dust, _xx, _yy, dust_particles, 1)
 	}
+}
+
+hurt_line = function(x1, y1, x2, y2) {
+	var list = ds_list_create();
+	collision_line_list(x1, y1, x2, y2, pEnemy, true, true, list, true);
+				
+	for (var i = 0; i < ds_list_size(list); i ++) {
+		var inst = list[| i];
+		inst.hp -= hit_damage;
+		inst.i_frames = 10;
+		oCamera.set_shake(0.2);
+		
+		if leach > 0 {
+			hp += leach*hit_damage;	
+		}			
+	}
+				
+	ds_list_destroy(list);
 }

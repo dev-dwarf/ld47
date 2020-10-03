@@ -1,17 +1,17 @@
 /// @description
 #region enumss
 enum good_cards {
-	more_swords,
-	bigger_swords,
+	more_swords, // done
+	bigger_swords, //done 
 	laser_sword,
-	teleport_dash,
-	more_health,
-	heal_overtime,
-	life_leach,
-	bomb_slice,
+	teleport_dash, //done
+	more_health, //done
+	heal_overtime, //done 
+	life_leach, //done
+	bomb_slice, 
 	shield,
-	more_damage,
-	thorns,
+	more_damage, //done
+	thorns, //done
 	size,
 }
 
@@ -19,8 +19,8 @@ enum bad_cards  {
 	buzz_saws,
 	turrets,
 	wall_spikes,
-	enemy_health,
-	enemy_damage,
+	enemy_health, //done
+	enemy_damage, // done
 	size,
 }
 
@@ -49,17 +49,17 @@ stacks[card.bad ][bad_cards.wall_spikes	  ] = true ;
 stacks[card.bad ][bad_cards.enemy_health  ] = true ;
 stacks[card.bad ][bad_cards.enemy_damage  ] = true ;
 
-counts[card.good][good_cards.more_swords  ]	= 5;
-counts[card.good][good_cards.bigger_swords]	= 5;
+counts[card.good][good_cards.more_swords  ]	= 10;
+counts[card.good][good_cards.bigger_swords]	= 0;
 counts[card.good][good_cards.laser_sword  ]	= 0;
 counts[card.good][good_cards.teleport_dash]	= 1;
 counts[card.good][good_cards.more_health  ]	= 0;
 counts[card.good][good_cards.heal_overtime]	= 0;
-counts[card.good][good_cards.life_leach	  ]	= 0;
+counts[card.good][good_cards.life_leach	  ]	= 3;
 counts[card.good][good_cards.bomb_slice	  ]	= 0;
 counts[card.good][good_cards.shield		  ]	= 0;
-counts[card.good][good_cards.more_damage  ]	= 0;
-counts[card.good][good_cards.thorns		  ]	= 0;
+counts[card.good][good_cards.more_damage  ]	= 3;
+counts[card.good][good_cards.thorns		  ]	= 3;
 counts[card.bad ][bad_cards.buzz_saws	  ] = 0;
 counts[card.bad ][bad_cards.turrets		  ] = 0;
 counts[card.bad ][bad_cards.wall_spikes	  ] = 0;
@@ -86,4 +86,5 @@ function generate_card_list(type, number_of_cards) {
 	}
 }
 
-instance_create_layer(room_width/2, room_height/2, layer, oPlayer);
+room_goto(Room1);
+//instance_create_layer(room_width/2, room_height/2, layer, oPlayer);

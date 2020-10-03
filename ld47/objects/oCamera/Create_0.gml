@@ -19,8 +19,14 @@ if (!global.set_window) {
 }
 
 #region screenshake
-screenshake = 0;
+screenshake = 1;
 screenshake_intensity = 6;
-screenshake_decrease = 0.017;
+screenshake_decrease = 0.03;
 
 #endregion
+
+function set_shake(shake) {
+	if (screenshake < shake) {
+		screenshake = shake;	
+	}
+}

@@ -1,5 +1,5 @@
 /// @description
-
+mask_index = sSwordOrange;
 if (swing) {
 	sprite_index = sSwordPurple;
 	swing_amount = lerp(swing_amount, 1.0, 0.9);
@@ -42,7 +42,7 @@ offset_angle = offset_angle mod 360;
 cos_offset_angle = dcos(offset_angle);
 
 x = lerp(x, oPlayer.x + lengthdir_x(offset_amount+offset_boost, offset_angle), 0.8);
-y = lerp(y, oPlayer.y + lengthdir_y(offset_amount+offset_boost, offset_angle), 0.8);
+y = lerp(y, oPlayer.y - 4 + lengthdir_y(offset_amount+offset_boost, offset_angle)*0.5, 0.8);
 
 var target_angle; var targ_offset;
 targ_offset = 360 * number/instance_number(oSword)  + off;

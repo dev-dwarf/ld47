@@ -1,6 +1,6 @@
 /// @description
 
-var y_off = 8;
+var y_off = 0;
 
 if (oPlayer.state == player_states.walk) {
 	if (number mod 2) {

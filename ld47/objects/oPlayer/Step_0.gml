@@ -2,6 +2,7 @@
 var move_x_axis, move_y_axis, input_direction, input_magnitude, attack_button, attack_button_charge, spell_button_released, spell_button_charge, dash_button_released, dash_button_charge;
 var key_pause;
 
+
 if (global.gamepad_connected) {
 	move_x_axis = gamepad_axis_value(global.gamepad_slot, gp_axislh) 
 	move_y_axis = gamepad_axis_value(global.gamepad_slot, gp_axislv) 
@@ -34,7 +35,7 @@ var input_magnitude = clamp(point_distance( 0, 0, move_x_axis, move_y_axis), 0, 
 if (can_attack and attack_button) {
 	if (instance_exists(oSword)) {
 		oSword.swing = true;
-		oSword.swing_amount = 0.0;
+		oSword.swing_amount = 0.2;
 		oSword.swing_flip *= -1;
 	}
 	// TODO: sword swing sound
@@ -43,11 +44,19 @@ if (can_attack and attack_button) {
 if (dash_not_ready) dash_not_ready--;
 if (dash_button_released and dash_not_ready == 0) {	
 	dash_direction = move_direction;
-	//log(dash_direction);
+	dash_start_x = x;
+	dash_start_y = y;
 	
 	state = player_states.dash;	
 }
 #endregion
+
+mask_index = sPlayerIdle
+
+hp = approach(hp, max_hp, heal_overtime);
+hp = clamp(hp, 0, max_hp)
+log(string(hp));
+
 
 #region state
 switch state {
@@ -110,11 +119,16 @@ switch state {
 			draw_scale = 0.8;
 		
 			if (dash_frame_count == 0) {
+				oCamera.set_shake( 0.1);
 				dash_state = dash_states.mid;	
 				dash_frame_count = dash_frames;
 				
-				instance_create_layer(	x + lengthdir_x(dash_distance, dash_direction),
-										y + lengthdir_y(dash_distance, dash_direction), layer, oPlayerTeleportSpot);
+				with instance_create_layer(	x, y, "FX", oPlayerTeleportSpot) {
+					mask_index = other.mask_index;
+					move(other.dash_distance, other.dash_direction, false);	
+				}
+										
+					
 			}
 			break;
 			case dash_states.mid	 :
@@ -123,26 +137,18 @@ switch state {
 			draw_scale = 0;
 			i_frames = 1;
 
-
 			oPlayerTeleportSpot.image_speed = 0;
 			oPlayerTeleportSpot.image_index = 3*(1.0-dash_frame_count/dash_frames);
+			
 			if (dash_frame_count == 0) {
 				dash_state = dash_states.recover;	
 				dash_frame_count = dash_recovery_frames;
 				
-				var list = ds_list_create();
-				collision_line_list(x, y, oPlayerTeleportSpot.x, oPlayerTeleportSpot.y, pEnemy, true, true, list, true);
+				hurt_line(x, y, oPlayerTeleportSpot.x, oPlayerTeleportSpot.y);
 				
-				for (var i = 0; i < ds_list_size(list); i ++) {
-					var inst = list[| i];
-					inst.hp -= hit_damage;
-					inst.i_frames = 10;
-				}
-				
-				ds_list_destroy(list);
-				
-				x = oPlayerTeleportSpot.x;
-				y = oPlayerTeleportSpot.y;
+				image_xscale = 1;
+				image_yscale = 1;
+				move(dash_distance, dash_direction, false);	
 				instance_destroy(oPlayerTeleportSpot);
 			}
 			break;
@@ -181,7 +187,7 @@ switch state {
 			break;
 			case dash_states.mid	 :
 			move_speed = dash_distance/dash_frames;
-		
+			i_frames = 1;
 			make_dust(x,y,2, move_speed*0.3);
 		
 			draw_scale = lerp(draw_scale, 1.5, 0.2);
@@ -189,10 +195,12 @@ switch state {
 			if (dash_frame_count == 0) {
 				dash_state = dash_states.recover;	
 				dash_frame_count = dash_recovery_frames;
+				
+				hurt_line(x,y,dash_start_x,dash_start_y);
 			}
 			break;
 			case dash_states.recover :
-			move_speed = lerp(move_speed, move_speed_max*0.2, 0.7*(move_speed/dash_distance));
+			move_speed = lerp(move_speed, move_speed_max*0.2, 0.85);
 		
 			draw_scale = approach(draw_scale, 1.0, 0.5/dash_recovery_frames);
 		
@@ -220,3 +228,6 @@ if (state != player_states.dash) {
 } else {
 	move(move_speed, dash_direction);
 }
+
+move(knockback,knockback_dir);
+knockback = lerp(knockback, 0, 0.9);

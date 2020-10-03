@@ -9,8 +9,10 @@
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":6,},
     {"id":{"name":"oCardHolder","path":"objects/oCardHolder/oCardHolder.yy",},"order":7,},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},"order":1,},
+    {"id":{"name":"sPlayerShadow","path":"sprites/sPlayerShadow/sPlayerShadow.yy",},"order":14,},
     {"id":{"name":"macros","path":"scripts/macros/macros.yy",},"order":2,},
     {"id":{"name":"sSwordDust","path":"sprites/sSwordDust/sSwordDust.yy",},"order":6,},
+    {"id":{"name":"oDepthManager","path":"objects/oDepthManager/oDepthManager.yy",},"order":10,},
     {"id":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"order":5,},
     {"id":{"name":"oGamepadManager","path":"objects/oGamepadManager/oGamepadManager.yy",},"order":0,},
     {"id":{"name":"oPlayerTeleportSpot","path":"objects/oPlayerTeleportSpot/oPlayerTeleportSpot.yy",},"order":8,},
@@ -24,11 +26,14 @@
     {"id":{"name":"oDashShadow","path":"objects/oDashShadow/oDashShadow.yy",},"order":7,},
     {"id":{"name":"sPlayerWalk","path":"sprites/sPlayerWalk/sPlayerWalk.yy",},"order":3,},
     {"id":{"name":"sPlayerHurt","path":"sprites/sPlayerHurt/sPlayerHurt.yy",},"order":10,},
+    {"id":{"name":"Sprite14","path":"sprites/Sprite14/Sprite14.yy",},"order":13,},
+    {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},"order":1,},
     {"id":{"name":"sPlayerDash","path":"sprites/sPlayerDash/sPlayerDash.yy",},"order":4,},
     {"id":{"name":"stacking","path":"scripts/stacking/stacking.yy",},"order":3,},
     {"id":{"name":"shFlash","path":"shaders/shFlash/shFlash.yy",},"order":0,},
     {"id":{"name":"sTeleport","path":"sprites/sTeleport/sTeleport.yy",},"order":8,},
     {"id":{"name":"sPlayerDust","path":"sprites/sPlayerDust/sPlayerDust.yy",},"order":2,},
+    {"id":{"name":"pDepth","path":"objects/pDepth/pDepth.yy",},"order":11,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
@@ -50,6 +55,7 @@
     "children": [],
   },
   "RoomOrder": [
+    {"name":"Room2","path":"rooms/Room2/Room2.yy",},
     {"name":"Room1","path":"rooms/Room1/Room1.yy",},
   ],
   "Folders": [

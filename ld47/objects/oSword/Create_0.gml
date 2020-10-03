@@ -1,4 +1,5 @@
 /// @description
+event_inherited();
 
 number = global.sword_id++;
 
@@ -16,7 +17,7 @@ alarm[0] = 1;
 
 angle = 0;
 
-swing_angle = 47;
+swing_angle = 37;
 swing_flip = 1;
 swing_amount = 0;
 swing_scale = 0.4;
