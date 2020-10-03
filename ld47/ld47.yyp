@@ -14,6 +14,7 @@
     {"id":{"name":"basics","path":"scripts/basics/basics.yy",},"order":0,},
     {"id":{"name":"pHitbox","path":"objects/pHitbox/pHitbox.yy",},"order":2,},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":3,},
+    {"id":{"name":"oShadow","path":"objects/oShadow/oShadow.yy",},"order":7,},
     {"id":{"name":"sPlayerWalk","path":"sprites/sPlayerWalk/sPlayerWalk.yy",},"order":4,},
     {"id":{"name":"stacking","path":"scripts/stacking/stacking.yy",},"order":3,},
     {"id":{"name":"sPlayerDust","path":"sprites/sPlayerDust/sPlayerDust.yy",},"order":3,},
