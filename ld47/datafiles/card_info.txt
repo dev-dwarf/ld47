@@ -1,69 +1,69 @@
 {
 	"Buffs": "--------------------------------------------------------------------------------------------------------------",
-	"buff_0_name": "More Swords",
-	"buff_0_desc": "get more swords lol",
+	"buff_0_name": "Matter Duplication",
+	"buff_0_desc": "Gain one additional sword to attack with. Any upgrades applied to your previous swords apply to the new sword as well.",
 
-	"buff_1_name": "Titan Sword",
+	"buff_1_name": "Extradimensional Sword",
 	"buff_1_desc": "The space around you distorts and twists, making any swords you are holding grow slightly larger and deal more damage.",
 
-	"buff_2_name": "Laser Sword",
-	"buff_2_desc": "swor d fire a laser",
+	"buff_2_name": "Unstable Atoms",
+	"buff_2_desc": "Your sword becomes imbued with the powers of the comsos, causing it to release a bolt of energy when attacking. If you have already received this boon, your projectile will instead deal additional damage.",
 
-	"buff_3_name": "Tele-Dash",
-	"buff_3_desc": "teleport",
+	"buff_3_name": "Teleport",
+	"buff_3_desc": "Phase your body through another plane, replacing your dash ability with an instantaneous teleportation ability.",
 
-	"buff_4_name": "More Health",
-	"buff_4_desc": "get more heatlh",
+	"buff_4_name": "Health Gland",
+	"buff_4_desc": "Grow a small, mysterious extradimensional gland, which increases your total hit points.",
 
-	"buff_5_name": "Regenerate",
-	"buff_5_desc": "get more ergenerate health",
+	"buff_5_name": "Totipotent Cells",
+	"buff_5_desc": "Your cells gain the ability to rapidly differentiate into any other type, giving you the ability to regenerate over time. Additional upgrades increase the power of your regeneration.",
 
-	"buff_6_name": "Life Leech",
-	"buff_6_desc": "leech that life baby.",
+	"buff_6_name": "Draining Sword",
+	"buff_6_desc": "A dark presence from a strange void surrounds you. Your sword attacks will absorb a precentange of current enemy health. Additional upgrades increase regeneration amount.",
 
-	"buff_7_name": "Bomb Slice",
-	"buff_7_desc": "boooom",
+	"buff_7_name": "Fission Sword",
+	"buff_7_desc": "The atoms of your sword become unstable, causing defeated enemies to create explosions that damage other enemies. Additional upgrades increase the radius of explosions.",
 
-	"buff_8_name": "Shield",
-	"buff_8_desc": "bget a shield",
+	"buff_8_name": "Prism Shield",
+	"buff_8_desc": "Bend the light around you, creating a shield capable of deflecting a single attack. After a period of time, the shield will regenerate. Additional upgrades decrease regeneration time.",
 
-	"buff_9_name": "More Damage",
-	"buff_9_desc": "more dmg",
+	"buff_9_name": "Cosmic Whetstone",
+	"buff_9_desc": "Sharpen your sword with a whetstone made from a fallen star, increasing the damage your attacks deal.",
 
 	"buff_10_name": "Thorns",
-	"buff_10_desc": "ouchie",
+	"buff_10_desc": "A dark presence from a strange void inhabits your body, causing you to damage enemies on contact. Additional upgrades increase the amount of damage you deal on contact.",
 	
 	"Debuffs": "--------------------------------------------------------------------------------------------------------------",
 	"debuff_0_name": "Buzz Saws",
-	"debuff_0_desc": "buzz saws get ur ass",
+	"debuff_0_desc": "Sharp buzz saws will move in from the edges of the screen every now and then.",
 
 	"debuff_1_name": "Turrets",
-	"debuff_1_desc": "turrets get ur ass",
+	"debuff_1_desc": "Spawns a turret that will occasionally fire projectiles at you.",
 
 	"debuff_2_name": "Wall Spikes",
-	"debuff_2_desc": "wall spikes get ur ass",
+	"debuff_2_desc": "Spawns sharp spikes on the wall which damage you on contact.",
 
 	"debuff_3_name": "Enemy HP",
-	"debuff_3_desc": "enemy HP get ur ass",
+	"debuff_3_desc": "Enemies gain additional maximum hit points.",
 
-	"debuff_4_name": "Enemy Dmg",
-	"debuff_4_desc": "enemy damage get ur ass",
+	"debuff_4_name": "Enemy Strength",
+	"debuff_4_desc": "Enemy attacks deal additional damage.",
 
-	"debuff_5_name": "Size",
-	"debuff_5_desc": "size get ur ass",
+	"debuff_5_name": "Room Size",
+	"debuff_5_desc": "The size of the room shrinks, forcing you to duel enemies at close range.",
 
 	"debuff_6_name": "???",
-	"debuff_6_desc": "buzz saws get ur ass",
+	"debuff_6_desc": "???",
 
 	"debuff_7_name": "???",
-	"debuff_7_desc": "buzz saws get ur ass",
+	"debuff_7_desc": "???",
 
 	"debuff_8_name": "???",
-	"debuff_8_desc": "buzz saws get ur ass",
+	"debuff_8_desc": "???",
 
 	"debuff_9_name": "???",
-	"debuff_9_desc": "buzz saws get ur ass",
+	"debuff_9_desc": "???",
 
 	"debuff_10_name": "???",
-	"debuff_10_desc": "buzz saws get ur ass"
+	"debuff_10_desc": "???"
 }

@@ -3,6 +3,16 @@
 //text float timer
 tt_text = (tt_text + 3) mod 360;
 
+//flash timer
+if tt_flash > 0
+	tt_flash --;
+if error_off > 0
+	error_off = lerp(error_off, 0, 0.15);
+
+//particles
+if irandom(1000) <= 10
+	part_particles_create(sys, irandom_range(10, room_width - 10), irandom_range(10, room_height - 10), part_star, 1);
+
 //state machine 
 switch cardSel_state
 {
@@ -203,8 +213,12 @@ switch cardSel_state
 				_selCount += card_selected;
 				
 			if _selCount > 0
-			{
 				cardSel_state = "cards_flip";
+			else
+			{
+				tt_flash = room_speed * 1.5;//***
+				error_off = 5;
+				oCamera.set_shake(0.5);
 			}
 		}
 	}
@@ -263,6 +277,10 @@ switch cardSel_state
 			with obj_card
 				apply_card();
 		}
+		
+		with obj_card
+			if mouse_in_box()
+				y_off = lerp(y_off, 5, 0.15);
 	}
 	break;
 	
@@ -295,5 +313,3 @@ switch cardSel_state
 	}
 	break;
 }
-
-//log(cardSel_state);

@@ -29,7 +29,8 @@ if (con_cardSelection.cardSel_state == "card_select" or con_cardSelection.cardSe
 		_name_pointer = "",
 		_desc_pointer = "",
 		_name = "",
-		_desc = "";
+		_desc = "",
+		_draw_debuff = con_cardSelection.cardSel_state == "cards_view_debuff";
 		
 	//get name/desc
 	if !card_flipped
@@ -46,18 +47,26 @@ if (con_cardSelection.cardSel_state == "card_select" or con_cardSelection.cardSe
 	_name = get_card_info(_name_pointer);	
 	_desc = get_card_info(_desc_pointer);	
 	
-	var _tx = round(room_width / 2);//text x
+	var _tx = round(room_width / 2),//text x
+		_ty = (bbox_top - 25) - clamp(y_off, 0, 10),//text y
+		_w = 350;//text width
+		
+	if _draw_debuff
+		_tx = x;
 	
 	//set halign to center
 	draw_set_halign(fa_center);
 	
 	//draw name
 	draw_set_font(global.font_large);
-	draw_text(_tx, (bbox_top - 25) - clamp(y_off, 0, 10), _name);
+	draw_text(_tx, _ty, _name);
 	
 	//draw description
 	draw_set_font(global.font_small);
-	draw_text_ext(_tx, round(y) + 16, _desc, string_height("Ag") + 3, 350);
+	_ty = y + 16;
+	_tx = room_width / 2;	
+	
+	draw_text_ext(_tx, _ty, _desc, string_height("Ag") + 3, _w);
 	
 	//reset halign
 	draw_set_halign(fa_left);
