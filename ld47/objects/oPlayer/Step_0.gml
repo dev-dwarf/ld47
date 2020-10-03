@@ -38,7 +38,6 @@ if (can_attack and attack_button) {
 		oSword.swing_amount = 0.2;
 		oSword.swing_flip *= -1;
 	}
-	// TODO: sword swing sound
 	
 	if (hits_this_time > 0) {
 		consecutive_sword_hits++;
@@ -189,6 +188,8 @@ switch state {
 			image_yscale = 1.0;
 			draw_scale = 1.0;
 			
+			make_dust(x,y,2, move_speed*0.3);
+			
 			move_speed = lerp(move_speed, move_speed_max*0.2, 0.7*(move_speed/dash_distance));	
 		
 			if (dash_frame_count == 0) {
@@ -223,13 +224,15 @@ switch state {
 				dash_state = dash_states.recover;	
 				dash_frame_count = dash_recovery_frames;
 				
-				hurt_line(x,y,dash_start_x,dash_start_y);
+				//hurt_line(x,y,dash_start_x,dash_start_y);
 			}
 			break;
 			case dash_states.recover :
 			move_speed = lerp(move_speed, move_speed_max*0.2, 0.85);
 		
 			draw_scale = approach(draw_scale, 1.0, 0.5/dash_recovery_frames);
+			
+			make_dust(x,y,2, move_speed*0.3);
 		
 			if (dash_frame_count == 0) {
 				dash_state = dash_states.start;	

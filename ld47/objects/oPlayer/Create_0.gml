@@ -42,11 +42,11 @@ dash_is_teleport = oCardHolder.counts[card.good][good_cards.teleport_dash];
 if (dash_is_teleport) {
 	dash_start_frames = 2;
 	dash_frames = 3;
-	dash_recovery_frames = 2;
+	dash_recovery_frames = 1;
 } else {
 	dash_start_frames = 3;
 	dash_frames = 5;
-	dash_recovery_frames = 2;
+	dash_recovery_frames = 1;
 }
 
 knockback = 0;
