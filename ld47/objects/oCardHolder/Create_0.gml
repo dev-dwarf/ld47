@@ -77,15 +77,18 @@ function generate_card_list(type, number_of_cards) {
 		if (type == card.good) {
 		do {
 			index = irandom(good_cards.size-1);
-		} until !(stacks[card.good][index] and counts[card.good][index] > 0);
+			// this part below is to make sure we dont make duplicates of cards that cant stack
+		} until !(stacks[card.good][index] == false and counts[card.good][index] > 0);
 		} else {
 		do {
 			index = irandom(bad_cards.size-1);
-		} until !(stacks[card.bad][index] and counts[card.bad][index] > 0);
+		} until !(stacks[card.bad][index] == false and counts[card.bad][index] > 0);
 		}
 		
 		ds_list_add(list, index);
 	}
+	
+	return list;
 }
 
 room_goto(Room1);
