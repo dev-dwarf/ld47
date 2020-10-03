@@ -10,7 +10,7 @@
   "bbox_left": 0,
   "bbox_right": 23,
   "bbox_top": 0,
-  "bbox_bottom": 11,
+  "bbox_bottom": 23,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"495e7543-5ee1-4473-ad0b-1307345771d1","path":"sprites/sChasingChuck/sChasingChuck.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"495e7543-5ee1-4473-ad0b-1307345771d1","path":"sprites/sChasingChuck/sChasingChuck.yy",},"LayerId":{"name":"09668bb2-ee4a-4c12-850c-ffc56e75104e","path":"sprites/sChasingChuck/sChasingChuck.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sChasingChuck","path":"sprites/sChasingChuck/sChasingChuck.yy",},"resourceVersion":"1.0","name":"495e7543-5ee1-4473-ad0b-1307345771d1","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"37983f9b-d80a-4d68-9aec-56a6511c02ea","path":"sprites/sBurstingBrian/sBurstingBrian.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"37983f9b-d80a-4d68-9aec-56a6511c02ea","path":"sprites/sBurstingBrian/sBurstingBrian.yy",},"LayerId":{"name":"f254b6df-1182-4766-9077-2770b518001f","path":"sprites/sBurstingBrian/sBurstingBrian.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sBurstingBrian","path":"sprites/sBurstingBrian/sBurstingBrian.yy",},"resourceVersion":"1.0","name":"37983f9b-d80a-4d68-9aec-56a6511c02ea","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sChasingChuck","path":"sprites/sChasingChuck/sChasingChuck.yy",},
+    "spriteId": {"name":"sBurstingBrian","path":"sprites/sBurstingBrian/sBurstingBrian.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"a02d76a3-e74a-4623-b76d-e125132c026c","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"495e7543-5ee1-4473-ad0b-1307345771d1","path":"sprites/sChasingChuck/sChasingChuck.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"f6ba2331-9ab6-445f-a8c5-7ced88cd2dd5","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"37983f9b-d80a-4d68-9aec-56a6511c02ea","path":"sprites/sBurstingBrian/sBurstingBrian.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,21 +58,21 @@
     "yorigin": 24,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sChasingChuck","path":"sprites/sChasingChuck/sChasingChuck.yy",},
+    "parent": {"name":"sBurstingBrian","path":"sprites/sBurstingBrian/sBurstingBrian.yy",},
     "resourceVersion": "1.3",
-    "name": "sChasingChuck",
+    "name": "sBurstingBrian",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"09668bb2-ee4a-4c12-850c-ffc56e75104e","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f254b6df-1182-4766-9077-2770b518001f","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "ld47",
+    "path": "ld47.yyp",
   },
   "resourceVersion": "1.0",
-  "name": "sChasingChuck",
+  "name": "sBurstingBrian",
   "tags": [],
   "resourceType": "GMSprite",
 }

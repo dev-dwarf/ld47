@@ -10,7 +10,13 @@ if (swing) {
 	
 	var xx = x + lengthdir_y(sprite_height*0.75, angle);
 	var yy = y - lengthdir_x(sprite_height*0.75, angle);
-	var dir = point_direction(oPlayer.x,oPlayer.y,mouse_x,mouse_y);
+	
+	if (!global.gamepad_connected) {
+		var dir = point_direction(oPlayer.x,oPlayer.y,mouse_x,mouse_y);
+	} else {
+		var dir = oPlayer.move_direction;		
+	}
+	
 	part_type_direction(oPlayer.sword_dust, dir, dir, 0, 5);
 	part_particles_create(oPlayer.dust, xx, yy, oPlayer.sword_dust, 1)
 	
@@ -62,8 +68,13 @@ if (oPlayer.state == player_states.dash or oPlayer.dash_not_ready) {
 } else {
 	offset_amount = lerp(offset_amount, offset_close, 0.2);
 	//target_angle = -cos_offset_angle*swing_angle*swing_flip*swing_amount - 67 * cos_offset_angle
-	target_angle = point_direction(oPlayer.x,oPlayer.y,mouse_x,mouse_y)- 90 + swing_angle*swing_flip*swing_amount;
-	targ_offset += point_direction(oPlayer.x,oPlayer.y,mouse_x,mouse_y)
+	if (!global.gamepad_connected) {
+		target_angle = point_direction(oPlayer.x,oPlayer.y,mouse_x,mouse_y)- 90 + swing_angle*swing_flip*swing_amount;
+		targ_offset += point_direction(oPlayer.x,oPlayer.y,mouse_x,mouse_y)
+	} else {
+		target_angle = oPlayer.move_direction- 90 + swing_angle*swing_flip*swing_amount;
+		targ_offset += oPlayer.move_direction
+	}
 }
 
 offset_angle = round(angle_lerp(offset_angle, targ_offset, 0.75));
