@@ -45,11 +45,7 @@ if (can_attack and attack_button) {
 }
 
 if (dash_not_ready) dash_not_ready--;
-if (dash_button_released and dash_not_ready == 0) {
-	if (state == player_states.idle and !global.gamepad_connected) {
-		move_direction = point_direction(x,y,mouse_x,mouse_y);	
-	}
-	
+if (dash_button_released and dash_not_ready == 0) {	
 	dash_direction = move_direction;
 	//log(dash_direction);
 	
@@ -66,6 +62,10 @@ switch state {
 	if (input_magnitude != 0) {
 		state = player_states.walk;
 		image_index = 0;	
+	}
+	
+	if (!global.gamepad_connected and move_speed < 0.1) {
+		move_direction = point_direction(x,y,mouse_x,mouse_y);	
 	}
 	
 	move_speed = lerp(move_speed, 0, move_decel);

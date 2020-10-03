@@ -57,6 +57,14 @@ part_type_life(dust_particles, 15, 20);
 part_type_speed(dust_particles, 1.5, 1.75, -0.12, 0.0);
 part_type_direction(dust_particles, 80, 100, 0, 5);
 
+sword_dust = part_type_create();
+part_type_sprite(sword_dust, sSwordDust, 1, 1, false);
+part_type_size(sword_dust, 0.8, 1.1, -0.01, 0);
+part_type_life(sword_dust, 10, 15);
+part_type_speed(sword_dust, 0.5, 0.75, 0.12, 0.0);
+part_type_direction(sword_dust, 80, 100, 0, 5);
+part_type_orientation(sword_dust, 0, 0, 0, 0, true);
+
 make_dust = function(xx, yy, count, range) {
 	repeat(count) {
 		var _xx = xx + random_range(-range, range);

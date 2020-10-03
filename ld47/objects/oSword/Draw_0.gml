@@ -13,7 +13,7 @@ if (oPlayer.state == player_states.walk) {
 
 draw_sprite_ext(sprite_index, image_index, 
 x, y - y_off,
-image_xscale, image_yscale, 
+abs(image_xscale), image_yscale, 
 angle, 
 c_white, image_alpha
 );
