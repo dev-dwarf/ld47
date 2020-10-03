@@ -3,12 +3,23 @@
 //state machine 
 switch cardSel_state
 {
+	//startup_transition: black circle grows to encompass screen
+	case "startup_transition":
+	{
+		var _t = room_width;
+		transition_radius = lerp(transition_radius, _t, 0.05);
+		
+		if transition_radius >= (_t * 0.95)
+			cardSel_state = "startup";
+	}
+	break;
+	
 	//startup: spawn cards. Buffs and debuffs associated with the cards are chosen here!
 	case "startup":
 	{
 		//x/y positions where cards are spawned
 		var _x = room_width / 2,
-			_y = room_height + 15;
+			_y = room_height + 50;
 			
 		//now we're gonna make 2 temporary lists representing the possible buffs/debuffs that can be chosen
 		var _buffs = ds_list_create(),
@@ -26,7 +37,8 @@ switch cardSel_state
 					_add = false;
 								
 				if _add
-					ds_list_add(_buffs, i);
+					ds_list_add(_buffs, 1);//debug
+					//ds_list_add(_buffs, i);
 			
 				i ++;
 			}
@@ -118,14 +130,12 @@ switch cardSel_state
 			//set cards' x/y targets, for when they start to move into place
 			var _yt = room_height / 2,
 				_xt_o = room_width / 2,
-				_card_space = sprite_get_width(spr_card_base) * 2;//space b/w cards
+				_card_space = sprite_get_width(spr_card_base) * 2.5;//space b/w cards
 				
 			with obj_card
 			{
 				xT = _xt_o + ((_card_space / 2) * (card_priority - 3));
 				yT = _yt;
-				
-				//log(card_priority);
 			}
 		}
 	}
@@ -136,7 +146,7 @@ switch cardSel_state
 	{
 		//move cards
 		var _lerp = 0.15,
-			_move_on = false;
+			_move_on = true;
 			
 		with obj_card
 		{
@@ -144,12 +154,13 @@ switch cardSel_state
 			y = lerp(y, yT, _lerp);			
 			angle = langle(angle, 0, _lerp);
 			
-			if point_distance(x, y, xT, yT) <= 0.5 && abs(angle_difference(angle, 0)) <= 0.5
+			if point_distance(x, y, xT, yT) <= 0.5 && abs(angle) <= 0.5
 			{
 				x = xT;
 				y = yT;
 				angle = 0;
-			} else _move_on = false;
+				
+			} else _move_on = false;			
 		}
 		
 		if _move_on
@@ -165,11 +176,15 @@ switch cardSel_state
 		{
 			if point_in_rectangle(mouse_x, mouse_y, bbox_left, bbox_top, bbox_right, bbox_bottom)
 			{
-				log("YAA");
-				//make the card grow a lil bit when it is being moused over
-				if !mouse_check_button(mb_left)
-				{
-					scale = lerp(scale, 1.5, 0.15);
+				if mouse_in_box()
+				{					
+					//make the card move up a bit when moused over
+					if !card_selected
+						y_off = lerp(y_off, 5, 0.15);
+						
+					//select card when clicking
+					if mouse_check_button_pressed(mb_left)
+						card_selected = !card_selected;
 				}
 			}
 		}

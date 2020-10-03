@@ -1,6 +1,15 @@
 {
 	"Buffs": "--------------------------------------------------------------------------------------------------------------",
+	"buff_0_name": "More Swords",
+	"buff_0_desc": "get more swords lol",
+
+	"buff_1_name": "Titan Sword",
+	"buff_1_desc": "The space around you distorts and twists, making any swords you are holding grow slightly larger and deal more damage.",
 	
 	"Debuffs": "--------------------------------------------------------------------------------------------------------------",
-	"Glass Bones": "Your bones become brittle like glass, and you take more damage from all sources.",
+	"debuff_0_name": "Buzz Saws",
+	"debuff_0_desc": "buzz saws get ur ass",
+
+	"debuff_1_name": "Buzz Saws",
+	"debuff_1_desc": "buzz saws get ur ass"
 }
