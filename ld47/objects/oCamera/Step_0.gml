@@ -17,7 +17,7 @@ if (screenshake > 0) {
 	new_y += random_range(screenshake_amount/2, screenshake_amount) * choose(-1, 1);
 	
 	if (global.gamepad_connected) {
-		gamepad_set_vibration(global.gamepad_slot, screenshake, screenshake)	
+		gamepad_set_vibration(global.gamepad_slot, screenshake*0.3, screenshake*0.3)	
 	}
 		
 	screenshake -= screenshake_decrease

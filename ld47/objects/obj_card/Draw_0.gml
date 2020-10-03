@@ -56,11 +56,11 @@ if mouse_in_box() or tt_draw > 0
 	
 	//draw name
 	draw_set_font(global.font_large);
-	draw_text(_tx, y - 115, _name);
+	draw_text(_tx, round(y) - 115, _name);
 	
 	//
 	//draw text
-	draw_text_ext(_tx, y + 16, _desc, string_height("Ag"), room_width - 50);
+	draw_text_ext(_tx, round(y) + 16, _desc, string_height("Ag"), room_width - 50);
 	
 	//reset halign
 	draw_set_halign(fa_left);

@@ -6,17 +6,10 @@ if (view_camera[0] > 0) {
 }
 
 scale = 3;
-window_x = (display_get_width()  - DEFAULT_WIDTH  * scale) / 2; //get centered coords
-window_y = (display_get_height() - DEFAULT_HEIGHT * scale) / 2;
+subpixel_level = 1;
 
-surface_resize(application_surface,DEFAULT_WIDTH,DEFAULT_HEIGHT);
-display_set_gui_size(DEFAULT_WIDTH*scale,DEFAULT_HEIGHT*scale);
+alarm[0] = 1;
 
-global.gui_scale = scale;
-if (!global.set_window) {
-	window_set_rectangle(window_x, window_y, DEFAULT_WIDTH*scale,DEFAULT_HEIGHT*scale); // centers window
-	global.set_window = true;
-}
 
 #region screenshake
 screenshake = 1;
