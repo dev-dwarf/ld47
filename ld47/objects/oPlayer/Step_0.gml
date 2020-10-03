@@ -50,6 +50,7 @@ if (dash_button_released and dash_not_ready == 0) {
 	}
 	
 	dash_direction = move_direction;
+	//log(dash_direction);
 	
 	state = player_states.dash;	
 }
@@ -147,7 +148,7 @@ switch state {
 	break;
 }
 
-log(string(state));
+//log(string(state));
 
 if (state != player_states.dash) {
 	move(move_speed, move_direction);
