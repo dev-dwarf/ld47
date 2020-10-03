@@ -30,6 +30,7 @@ var off = 0;
 //if (oPlayer.image_xscale == -1) {
 //	off = 180;
 //}
+if (i_frames) i_frames--;
 
 offset_angle = offset_angle mod 360;
 //if (offset_angle == 90) {
@@ -48,6 +49,8 @@ var target_angle; var targ_offset;
 targ_offset = 360 * number/instance_number(oSword)  + off;
 
 if (oPlayer.state == player_states.dash or oPlayer.dash_not_ready) {
+	sprite_index = sSwordPurple;
+
 	target_angle = oPlayer.dash_direction - 90;
 	image_xscale =    (oPlayer.image_xscale) * (oPlayer.sword_size*1.2);
 	image_yscale =     oPlayer.image_yscale  * (oPlayer.sword_size*1.2);

@@ -7,7 +7,7 @@ if (global.gamepad_connected) {
 	move_x_axis = gamepad_axis_value(global.gamepad_slot, gp_axislh) 
 	move_y_axis = gamepad_axis_value(global.gamepad_slot, gp_axislv) 
 
-	attack_button = g_check_r(global.gamepad_slot, gp_face3) or g_check_r(global.gamepad_slot, gp_shoulderrb);
+	attack_button = g_check_p(global.gamepad_slot, gp_face3) or g_check_p(global.gamepad_slot, gp_shoulderrb);
 	attack_button_charge = g_check(global.gamepad_slot, gp_face3) or g_check(global.gamepad_slot, gp_shoulderrb);
 	
 	dash_button_released = g_check_p(global.gamepad_slot, gp_face1) or g_check_p(global.gamepad_slot, gp_shoulderlb);
@@ -19,7 +19,7 @@ if (global.gamepad_connected) {
 	move_x_axis = check(vk_d) - check(vk_a);
 	move_y_axis = check(vk_s) - check(vk_w);
 	
-	attack_button = mouse_check_button_released(mb_left);
+	attack_button = mouse_check_button_pressed(mb_left);
 	attack_button_charge = mouse_check_button(mb_left);
 	
 	dash_button_released = mouse_check_button_pressed(mb_right);
@@ -39,13 +39,28 @@ if (can_attack and attack_button) {
 		oSword.swing_flip *= -1;
 	}
 	// TODO: sword swing sound
+	
+	if (hits_this_time > 0) {
+		consecutive_sword_hits++;
+		hits_this_time = 0;
+	} else {
+		consecutive_sword_hits = 0;
+	}
+	
+	play_sound(sndSwingMiss, 0, false, 0.8, 0.02, 1.0);
 }
+
+if (!oSword.swing) consecutive_sword_hits = lerp(consecutive_sword_hits, 0, 0.04);
 
 if (dash_not_ready) dash_not_ready--;
 if (dash_button_released and dash_not_ready == 0) {	
 	dash_direction = move_direction;
 	dash_start_x = x;
 	dash_start_y = y;
+	
+	play_sound(sndDashStrike, 0, false, 2.0, 0.02, 1.0);
+	play_sound(sndDashStrike, 0, false, 1.0, 0.02, 0.7);
+
 	
 	state = player_states.dash;	
 }
@@ -75,6 +90,18 @@ switch state {
 	
 	move_speed = lerp(move_speed, 0, move_decel);
 	
+	if (made_eyeflap) {
+		if !(ceil(image_index) == 7 or ceil(image_index) == 15 or ceil(image_index) == 17) {
+			made_eyeflap = false;	
+		}
+	} else {
+		if (ceil(image_index) == 7 or ceil(image_index) == 15 or ceil(image_index) == 17) {
+			made_eyeflap = true;
+			play_sound(sndEyeFlap, 10, false, 1.7, 0.05, 0.15);
+			
+		}
+	}
+	
 	break;#endregion
 	case player_states.walk  : #region
 		sprite_index = sPlayerWalk;
@@ -99,7 +126,7 @@ switch state {
 	} else {
 		if (ceil(image_index) == 1 or ceil(image_index) == 5) {
 			made_footstep = true;
-			// TODO: footstep sound
+			play_sound(sndFootstep, 10, false, 1.3, 0.01, 0.4);
 			
 			make_dust(x,y,2,3);
 		}

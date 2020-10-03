@@ -5,6 +5,8 @@
 // TODO enemy generation
 	// pick from presets?
 	
+	// TODO: fullscreen mode
+	
 // TODO enemy types
 
 
@@ -61,6 +63,11 @@ max_hp = 3 + oCardHolder.counts[card.good][good_cards.more_health  ];
 hp = max_hp/2;
 
 made_footstep = false;
+made_eyeflap = false;
+
+consecutive_sword_hits = 0;
+hits_this_time = 0;
+
 move_direction = 0;
 move_direction_speed = 0.5; 
 
@@ -71,7 +78,7 @@ move_decel = 0.2;
 
 draw_scale = 1.0;
 
-leach = 0.2*oCardHolder.counts[card.good][good_cards.life_leach  ];
+leach = 0.1*oCardHolder.counts[card.good][good_cards.life_leach  ];
 thorns = oCardHolder.counts[card.good][good_cards.thorns  ];
 heal_overtime = 0.001*power(oCardHolder.counts[card.good][good_cards.heal_overtime  ],2);
 
@@ -106,9 +113,15 @@ hurt_line = function(x1, y1, x2, y2) {
 				
 	for (var i = 0; i < ds_list_size(list); i ++) {
 		var inst = list[| i];
+		
+		if (inst.i_frames > 0) continue;
+		
 		inst.hp -= hit_damage;
 		inst.i_frames = 10;
 		oCamera.set_shake(0.2);
+		
+		oPlayer.hits_this_time++;
+		play_sound(sndSwordHit, 0, false, 1.0 + 0.075 * oPlayer.consecutive_sword_hits, 0.02, 1.0);
 		
 		if leach > 0 {
 			hp += leach*hit_damage;	

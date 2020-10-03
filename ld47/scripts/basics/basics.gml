@@ -87,7 +87,7 @@ function play_sound() {
 	}
 	var _modify_gain = argument_count > 5;
 	if (_modify_gain) {	
-		var _gain = argument[5];  ///@param gain?
+		var _gain = argument[5]*global.sound_volume;  ///@param gain?
 		audio_sound_gain(_id, _gain, 0);
 	}
 	return _id;

@@ -1,6 +1,6 @@
 /// @description
 
-var y_off = 0;
+var y_off = 3;
 
 if (oPlayer.state == player_states.walk) {
 	if (number mod 2) {
@@ -12,7 +12,7 @@ if (oPlayer.state == player_states.walk) {
 
 var sprite = sprite_index;
 
-if (oPlayer.i_frames > 1 and round(oPlayer.i_frames/3) mod 3) {
+if (oPlayer.i_frames > 1 and round(oPlayer.i_frames/3) mod 3) or i_frames > 0 {
 	sprite = sSwordWhite;
 }
 

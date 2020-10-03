@@ -4,6 +4,7 @@ event_inherited();
 number = global.sword_id++;
 
 angle = 0;
+i_frames = 10;
 
 offset_angle = 0;
 offset_amount = 20;
