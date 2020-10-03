@@ -43,8 +43,8 @@ move_direction = 0;
 move_direction_speed = 0.5; 
 
 move_speed = 0;
-move_speed_max = 2.5;
-move_accel = 0.02;
+move_speed_max = 1.8;
+move_accel = 0.07;
 move_decel = 0.2;
 
 draw_scale = 1.0;

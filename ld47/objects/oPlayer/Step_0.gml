@@ -55,8 +55,9 @@ if (dash_button_released and dash_not_ready == 0) {
 	state = player_states.dash;	
 }
 
+#region state
 switch state {
-	case player_states.idle  : 
+	case player_states.idle  : #region idle
 	sprite_index = sPlayerIdle;
 	
 	can_attack = true;
@@ -67,8 +68,8 @@ switch state {
 	
 	move_speed = lerp(move_speed, 0, move_decel);
 	
-	break;
-	case player_states.walk  : 
+	break;#endregion
+	case player_states.walk  : #region
 		sprite_index = sPlayerWalk;
 
 	can_attack = true;
@@ -81,7 +82,7 @@ switch state {
 	if (dir != 0)
 		image_xscale = dir;
 	
-	move_speed = lerp(move_speed, move_speed_max, move_accel);
+	move_speed = approach(move_speed, move_speed_max, move_accel);
 	move_direction = angle_lerp(move_direction, input_direction, move_direction_speed);
 	
 	if (made_footstep) {
@@ -97,8 +98,8 @@ switch state {
 		}
 	}
 	
-	break;
-	case player_states.dash: 
+	break; #endregion
+	case player_states.dash: #region dash
 	
 	can_attack = false;
 	
@@ -141,14 +142,13 @@ switch state {
 		break;
 	}
 	
-	break;
-	case player_states.freeze: 
+	break; #endregion
+	case player_states.freeze: #region freeze
 	can_attack = false;
 	
-	break;
+	break; #endregion
 }
-
-//log(string(state));
+#endregion//log(string(state));
 
 if (state != player_states.dash) {
 	move(move_speed, move_direction);

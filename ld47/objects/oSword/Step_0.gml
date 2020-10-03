@@ -44,12 +44,12 @@ if (oPlayer.state == player_states.dash or oPlayer.dash_not_ready) {
 	image_xscale = oPlayer.image_xscale*1.2;
 	image_yscale = oPlayer.image_yscale*1.2;
 	
-	offset_amount = lerp(offset_amount, 30, 0.8);
+	offset_amount = lerp(offset_amount, offset_far, 0.8);
 	
 	var p = 0.93;
 	targ_offset  = oPlayer.dash_direction*p + targ_offset*(1-p)
 } else {
-	offset_amount = lerp(offset_amount, 15, 0.2);
+	offset_amount = lerp(offset_amount, offset_close, 0.2);
 	target_angle = -cos_offset_angle*swing_angle*swing_flip*swing_amount - 67 * cos_offset_angle
 }
 
