@@ -290,7 +290,9 @@ switch cardSel_state
 		
 		if transition_radius <= 1
 		{
-			instance_destroy();
+			room_restart();
+			
+
 			oCamera.set_shake(0.5);
 		}
 			

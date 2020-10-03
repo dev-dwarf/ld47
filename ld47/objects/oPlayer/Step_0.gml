@@ -75,6 +75,8 @@ hp = approach(hp, max_hp, heal_overtime);
 hp = clamp(hp, 0, max_hp)
 //log(string(hp));
 
+if (check_p(vk_r)) room_restart();
+
 
 #region state
 switch state {
@@ -255,7 +257,9 @@ switch state {
 	
 	break; #endregion
 }
-#endregion//log(string(state));
+#endregion
+
+log(string(hp));
 
 if (state != player_states.dash) {
 	move(move_speed, move_direction);

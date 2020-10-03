@@ -59,8 +59,8 @@ dash_distance = 70;
 dash_frame_count = dash_start_frames;
 
 hit_damage = (1 + 0.2 * oCardHolder.counts[card.good][good_cards.bigger_swords]) * (1 + oCardHolder.counts[card.good][good_cards.more_damage]);
-max_hp = 3 + oCardHolder.counts[card.good][good_cards.more_health  ];
-hp = max_hp/2;
+max_hp = 3 * (1 + oCardHolder.counts[card.good][good_cards.more_health  ]);
+hp = max_hp;
 
 made_footstep = false;
 made_eyeflap = false;

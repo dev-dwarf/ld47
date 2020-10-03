@@ -14,7 +14,7 @@ if (state == enemy_states.attack) {
 	acceleration = approach(acceleration, 1, jerk);
 	speed = approach(speed, final_speed*5/4, acceleration);
 
-	if (speed > 1.5 and speed <= final_speed) {
+	if (speed > 1.5 and speed <= final_speed*0.75) {
 		direction = angle_lerp(direction, point_direction(x,y,oPlayer.x,oPlayer.y), 0.1);	
 	}
 }

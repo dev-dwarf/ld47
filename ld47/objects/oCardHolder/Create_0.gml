@@ -22,6 +22,9 @@ enum bad_cards  {
 	wall_spikes,
 	enemy_health, //done
 	enemy_damage, // done
+	laser_turrets,
+	enemy_faster,
+	enemy_attack_more,
 	size,
 	bad_final//same as good_final above
 }
@@ -45,28 +48,35 @@ stacks[card.good][good_cards.shield		  ]	= true ;
 stacks[card.good][good_cards.more_damage  ]	= true ;
 stacks[card.good][good_cards.thorns		  ]	= true ;
 
-stacks[card.bad ][bad_cards.buzz_saws	  ] = true ;
-stacks[card.bad ][bad_cards.turrets		  ] = true ;
-stacks[card.bad ][bad_cards.wall_spikes	  ] = true ;
-stacks[card.bad ][bad_cards.enemy_health  ] = true ;
-stacks[card.bad ][bad_cards.enemy_damage  ] = true ;
+stacks[card.bad ][bad_cards.buzz_saws		 ] = true ;
+stacks[card.bad ][bad_cards.turrets			 ] = false;
+stacks[card.bad ][bad_cards.wall_spikes		 ] = true ;
+stacks[card.bad ][bad_cards.enemy_health	 ] = true ;
+stacks[card.bad ][bad_cards.enemy_damage 	 ] = true ;
+stacks[card.bad ][bad_cards.laser_turrets	 ] = false;
+stacks[card.bad ][bad_cards.enemy_faster	 ] = true ;
+stacks[card.bad ][bad_cards.enemy_attack_more] = true ;
 
-counts[card.good][good_cards.more_swords  ]	= 1;
-counts[card.good][good_cards.bigger_swords]	= 0;
-counts[card.good][good_cards.laser_sword  ]	= 0;
-counts[card.good][good_cards.teleport_dash]	= 0;
-counts[card.good][good_cards.more_health  ]	= 0;
-counts[card.good][good_cards.heal_overtime]	= 0;
-counts[card.good][good_cards.life_leach	  ]	= 0;
-counts[card.good][good_cards.bomb_slice	  ]	= 0;
-counts[card.good][good_cards.shield		  ]	= 0;
-counts[card.good][good_cards.more_damage  ]	= 0;
-counts[card.good][good_cards.thorns		  ]	= 0;
-counts[card.bad ][bad_cards.buzz_saws	  ] = 0;
-counts[card.bad ][bad_cards.turrets		  ] = 0;
-counts[card.bad ][bad_cards.wall_spikes	  ] = 0;
-counts[card.bad ][bad_cards.enemy_health  ] = 0;
-counts[card.bad ][bad_cards.enemy_damage  ] = 0;
+
+counts[card.good][good_cards.more_swords	 ] = 1;
+counts[card.good][good_cards.bigger_swords	 ] = 0;
+counts[card.good][good_cards.laser_sword	 ] = 0;
+counts[card.good][good_cards.teleport_dash	 ] = 0;
+counts[card.good][good_cards.more_health	 ] = 0;
+counts[card.good][good_cards.heal_overtime	 ] = 0;
+counts[card.good][good_cards.life_leach		 ] = 0;
+counts[card.good][good_cards.bomb_slice		 ] = 0;
+counts[card.good][good_cards.shield			 ] = 0;
+counts[card.good][good_cards.more_damage	 ] = 0;
+counts[card.good][good_cards.thorns			 ] = 0;
+counts[card.bad ][bad_cards.buzz_saws		 ] = 0;
+counts[card.bad ][bad_cards.turrets			 ] = 0;
+counts[card.bad ][bad_cards.wall_spikes		 ] = 0;
+counts[card.bad ][bad_cards.enemy_health	 ] = 0;
+counts[card.bad ][bad_cards.enemy_damage 	 ] = 0;
+counts[card.bad ][bad_cards.laser_turrets	 ] = 0;
+counts[card.bad ][bad_cards.enemy_faster	 ] = 0;
+counts[card.bad ][bad_cards.enemy_attack_more] = 0;
 #endregion
 
 function generate_card_list(type, number_of_cards) {
@@ -89,6 +99,21 @@ function generate_card_list(type, number_of_cards) {
 	}
 	
 	return list;
+}
+
+function count_cards(type) {
+	var count = 0;
+	if type == card.good {
+		for (var i = 0; i <	good_cards.size; i++) {
+			count += counts[type][i];
+		}
+	} else {
+		for (var i = 0; i <	 bad_cards.size; i++) {
+				count += counts[type][i];	
+		}
+	}
+	
+	return count;
 }
 
 room_goto(Room1);
