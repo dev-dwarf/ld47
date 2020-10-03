@@ -24,6 +24,9 @@ function globals(){
 	//fonts
 	global.font_large = font_add_sprite_ext(spr_font_large,
 	" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,!?*()-+", 1, 2);
+	
+	global.font_small = font_add_sprite_ext(spr_font_small,
+	" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,!?*()-+", 1, 2);
 
 	
 	instance_create_depth(0,0,0,oGamepadManager);

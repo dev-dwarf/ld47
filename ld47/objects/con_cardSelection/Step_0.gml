@@ -1,5 +1,8 @@
 /// @description card selection state machine
 
+//text float timer
+tt_text = (tt_text + 3) mod 360;
+
 //state machine 
 switch cardSel_state
 {
@@ -50,6 +53,7 @@ switch cardSel_state
 		//}
 		_buffs = oCardHolder.generate_card_list(card.good, 5);
 		_debuffs = oCardHolder.generate_card_list(card.bad, 5);
+
 			
 		//spawn 5 cards at the above x/y coordinates
 		for (var i = 0; i < 5; i ++)
@@ -190,6 +194,106 @@ switch cardSel_state
 				}
 			}
 		}
+		
+		//confirmation
+		if mouse_check_button_pressed(mb_right)
+		{
+			//check that there is at LEAST one selected card
+			var _selCount = 0;
+			
+			with obj_card
+				_selCount += card_selected;
+				
+			if _selCount > 0
+			{
+				cardSel_state = "cards_flip";
+			}
+		}
+	}
+	break;
+	
+	//cards_flip: flip selected cards over to reveal debuffs, destroy non-selected cards
+	case "cards_flip":
+	{		
+		var _move_on = true;
+		
+		with obj_card
+		{
+			//flip selected cards
+			if card_selected
+			{
+				//squash cards until they are ready to flip
+				if !card_flipped
+				{
+					var _target = 0.005;
+					xS = lerp(xS, _target, 0.15);
+				
+					if xS <= _target * 1.5
+					{
+						card_flipped = true;
+						xS = _target;
+					}
+				} else xS = lerp(xS, 1, 0.15);
+				
+				if !card_flipped or (card_flipped && xS != 1)
+					_move_on = false;
+			}
+			//move non-selected cards offscreen
+			else
+			{
+				y = lerp(y, room_height * 1.25, 0.15);
+				if y >= (room_height * 1.15)
+					instance_destroy();
+			}
+		}
+		
+		if _move_on
+			cardSel_state = "cards_view_debuff";
+	}
+	break;
+	
+	//cards_view_debuff: player can view which debuffs they've received. 
+	case "cards_view_debuff":
+	{
+		//move on when right clicking, and apply buffs/debuffs
+		if mouse_check_button_pressed(mb_right)
+		{
+			//move on
+			cardSel_state = "cards_destroy";
+			
+			//apply buffs & debuffs
+			with obj_card
+				apply_card();
+		}
+	}
+	break;
+	
+	//cards_destroy: move cards offscreen
+	case "cards_destroy":
+	{
+		with obj_card
+		{
+			y = lerp(y, room_height * 1.25, 0.15);
+			if y >= (room_height * 1.15)
+				instance_destroy();
+		}
+		if !instance_exists(obj_card)
+		{
+			cardSel_state = "cards_wrapup";
+		}
+	}
+	break;
+	
+	case "cards_wrapup":
+	{
+		transition_radius = lerp(transition_radius, 0, 0.15);
+		
+		if transition_radius <= 1
+		{
+			instance_destroy();
+			oCamera.set_shake(0.5);
+		}
+			
 	}
 	break;
 }

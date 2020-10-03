@@ -1,12 +1,18 @@
 ///@param filename
 
-function load_json_map(_filename)
+function load_json_map(_filename) 
 {
-	var _buffer = buffer_load(_filename);
-	var _string = buffer_read(_buffer, buffer_string);
+	var file = file_text_open_read(_filename);
+	var _string = "";
 
-	buffer_delete(_buffer);
+	while !file_text_eof(file)
+	{
+	    _string += file_text_read_string(file);
+	    file_text_readln(file);
+	}
 
+	file_text_close(file);
+	
 	var _json = json_decode(_string);
 	return _json;
 }
