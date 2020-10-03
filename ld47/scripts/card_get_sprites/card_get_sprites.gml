@@ -17,16 +17,16 @@ function card_get_sprites(_buff, _debuff)
 		//
 	}
 	
-	/*
-	switch _debuff:
+	switch _debuff
 	{
-		//
+		case bad_cards.buzz_saws:
+		sd = spr_card_debuff_test;
+		break;
 	}
-	*/
 	
 	//debug/testing
 	sb = spr_card_bigSword;
-	sd = sb;
+	sd = spr_card_debuff_test;
 	
 	spr_buff = sb;
 	spr_debuff = sd;

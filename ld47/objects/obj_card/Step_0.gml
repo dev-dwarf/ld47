@@ -19,7 +19,7 @@ if tt_draw > 0
 	
 if mouse_in_box()
 {
-	tt_draw = 10;
+	tt_draw = 30;
 	
 	var _me = id;
 	with obj_card

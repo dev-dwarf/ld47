@@ -5,11 +5,65 @@
 
 	"buff_1_name": "Titan Sword",
 	"buff_1_desc": "The space around you distorts and twists, making any swords you are holding grow slightly larger and deal more damage.",
+
+	"buff_2_name": "Laser Sword",
+	"buff_2_desc": "swor d fire a laser",
+
+	"buff_3_name": "Tele-Dash",
+	"buff_3_desc": "teleport",
+
+	"buff_4_name": "More Health",
+	"buff_4_desc": "get more heatlh",
+
+	"buff_5_name": "Regenerate",
+	"buff_5_desc": "get more ergenerate health",
+
+	"buff_6_name": "Life Leech",
+	"buff_6_desc": "leech that life baby.",
+
+	"buff_7_name": "Bomb Slice",
+	"buff_7_desc": "boooom",
+
+	"buff_8_name": "Shield",
+	"buff_8_desc": "bget a shield",
+
+	"buff_9_name": "More Damage",
+	"buff_9_desc": "more dmg",
+
+	"buff_10_name": "Thorns",
+	"buff_10_desc": "ouchie",
 	
 	"Debuffs": "--------------------------------------------------------------------------------------------------------------",
 	"debuff_0_name": "Buzz Saws",
 	"debuff_0_desc": "buzz saws get ur ass",
 
-	"debuff_1_name": "Buzz Saws",
-	"debuff_1_desc": "buzz saws get ur ass"
+	"debuff_1_name": "Turrets",
+	"debuff_1_desc": "turrets get ur ass",
+
+	"debuff_2_name": "Wall Spikes",
+	"debuff_2_desc": "wall spikes get ur ass",
+
+	"debuff_3_name": "Enemy HP",
+	"debuff_3_desc": "enemy HP get ur ass",
+
+	"debuff_4_name": "Enemy Dmg",
+	"debuff_4_desc": "enemy damage get ur ass",
+
+	"debuff_5_name": "Size",
+	"debuff_5_desc": "size get ur ass",
+
+	"debuff_6_name": "???",
+	"debuff_6_desc": "buzz saws get ur ass",
+
+	"debuff_7_name": "???",
+	"debuff_7_desc": "buzz saws get ur ass",
+
+	"debuff_8_name": "???",
+	"debuff_8_desc": "buzz saws get ur ass",
+
+	"debuff_9_name": "???",
+	"debuff_9_desc": "buzz saws get ur ass",
+
+	"debuff_10_name": "???",
+	"debuff_10_desc": "buzz saws get ur ass"
 }
