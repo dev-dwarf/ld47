@@ -49,10 +49,10 @@ stacks[card.bad ][bad_cards.wall_spikes	  ] = true ;
 stacks[card.bad ][bad_cards.enemy_health  ] = true ;
 stacks[card.bad ][bad_cards.enemy_damage  ] = true ;
 
-counts[card.good][good_cards.more_swords  ]	= 0;
-counts[card.good][good_cards.bigger_swords]	= 0;
+counts[card.good][good_cards.more_swords  ]	= 5;
+counts[card.good][good_cards.bigger_swords]	= 5;
 counts[card.good][good_cards.laser_sword  ]	= 0;
-counts[card.good][good_cards.teleport_dash]	= 0;
+counts[card.good][good_cards.teleport_dash]	= 1;
 counts[card.good][good_cards.more_health  ]	= 0;
 counts[card.good][good_cards.heal_overtime]	= 0;
 counts[card.good][good_cards.life_leach	  ]	= 0;
@@ -85,3 +85,5 @@ function generate_card_list(type, number_of_cards) {
 		ds_list_add(list, index);
 	}
 }
+
+instance_create_layer(room_width/2, room_height/2, layer, oPlayer);

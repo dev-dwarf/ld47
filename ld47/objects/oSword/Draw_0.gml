@@ -10,8 +10,14 @@ if (oPlayer.state == player_states.walk) {
 	}
 }
 
+var sprite = sprite_index;
 
-draw_sprite_ext(sprite_index, image_index, 
+if (oPlayer.i_frames > 1 and round(oPlayer.i_frames/3) mod 3) {
+	sprite = sSwordWhite;
+}
+
+
+draw_sprite_ext(sprite, image_index, 
 x, y - y_off,
 abs(image_xscale), image_yscale, 
 angle, 

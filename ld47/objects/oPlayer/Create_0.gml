@@ -15,11 +15,11 @@ enum player_states {
 }
 
 global.sword_id = 0;
-sword_size = 1;
+global.sword_count = oCardHolder.counts[card.good][good_cards.more_swords  ];
+sword_size = 1 + 0.1*oCardHolder.counts[card.good][good_cards.bigger_swords];
 
 can_attack = false;
 state = player_states.idle;
-
 
 enum dash_states {
 	start, 
@@ -27,16 +27,21 @@ enum dash_states {
 	recover
 }
 
+i_frames = 0;
+
 dash_not_ready = 0;
-dash_recharge = 5;
-dash_is_teleport = false;
+dash_recharge = 10;
+dash_is_teleport = oCardHolder.counts[card.good][good_cards.teleport_dash];
 
 dash_state = dash_states.start;
 dash_start_frames = 3;
 dash_frames = 5;
 dash_recovery_frames = 2;
-dash_distance = 90;
+dash_distance = 70;
 dash_frame_count = dash_start_frames;
+
+hit_damage = (1 + 0.2 * oCardHolder.counts[card.good][good_cards.bigger_swords]) * (1 + oCardHolder.counts[card.good][good_cards.more_damage]);
+hp = 3 + oCardHolder.counts[card.good][good_cards.more_health  ];
 
 made_footstep = false;
 move_direction = 0;

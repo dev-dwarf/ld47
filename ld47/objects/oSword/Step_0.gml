@@ -1,8 +1,9 @@
 /// @description
 
 if (swing) {
+	sprite_index = sSwordPurple;
 	swing_amount = lerp(swing_amount, 1.0, 0.9);
-	offset_boost = lerp(offset_boost, 5, 0.8);
+	offset_boost = 7;
 	
 	image_xscale =    (oPlayer.image_xscale) * (oPlayer.sword_size + swing_scale * swing_amount);
 	image_yscale =     oPlayer.image_yscale  * (oPlayer.sword_size + swing_scale * swing_amount);
@@ -17,10 +18,11 @@ if (swing) {
 		swing = false;
 	}
 } else {
+	sprite_index = sSwordOrange;
 	offset_boost = lerp(offset_boost, 0, 0.2);	
 	
-	image_xscale =    (oPlayer.image_xscale)
-	image_yscale =     oPlayer.image_yscale 
+	image_xscale =    (oPlayer.image_xscale)  * (oPlayer.sword_size)
+	image_yscale =     oPlayer.image_yscale   * (oPlayer.sword_size)
 }
 
 
@@ -47,8 +49,8 @@ targ_offset = 360 * number/instance_number(oSword)  + off;
 
 if (oPlayer.state == player_states.dash or oPlayer.dash_not_ready) {
 	target_angle = oPlayer.dash_direction - 90;
-	image_xscale =    (oPlayer.image_xscale)*1.2;
-	image_yscale =     oPlayer.image_yscale *1.2;
+	image_xscale =    (oPlayer.image_xscale) * (oPlayer.sword_size*1.2);
+	image_yscale =     oPlayer.image_yscale  * (oPlayer.sword_size*1.2);
 	
 	offset_amount = lerp(offset_amount, offset_far, 0.8);
 	

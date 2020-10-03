@@ -1,6 +1,6 @@
 function MACROS() {
-	#macro DEFAULT_WIDTH 384	
-	#macro DEFAULT_HEIGHT 216
+	#macro DEFAULT_WIDTH 192	
+	#macro DEFAULT_HEIGHT 192
 
 	#region input stuff
 	#macro vk_a ord("A")
