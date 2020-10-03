@@ -4,7 +4,7 @@ switch state {
 	case enemy_states.idle 	 : #region
 	idle_timer--;
 	
-	if (idle_timer == 0) {
+	if (idle_timer <= 0) {
 		idle_timer = idle_time;
 		state = enemy_states.attack;
 	}
@@ -23,7 +23,7 @@ switch state {
 	
 	y = ystart - 4 * (1-attack_timer/attack_time);
 	
-	if (attack_timer == 0) {
+	if (attack_timer <= 0) {
 		instance_create_layer(x,y-sprite_height,layer,oProjectilePaulProjectile);
 		
 		attack_timer = attack_time;

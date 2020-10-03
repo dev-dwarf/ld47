@@ -2,7 +2,7 @@
 if (i_frames > 0) i_frames -= 1;
 
 var inst = instance_place(x,y,oSword);
-if (inst and ((inst.swing) or (oPlayer.state == player_states.dash or oPlayer.dash_not_ready)) and i_frames <= 0) {
+if (inst and ((inst.swing) or (oPlayer.state == player_states.dash or oPlayer.dash_not_ready)) and inst.i_frames <= 0) {
 	oPlayer.hits_this_time++;
 	
 	if (state == enemy_states.dead) {

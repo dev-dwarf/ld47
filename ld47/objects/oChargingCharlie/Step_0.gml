@@ -2,12 +2,13 @@
 // Inherit the parent event
 event_inherited();
 
+log(string(state));
 
 switch state {
 	case enemy_states.idle 	 : #region
 	idle_timer--;
 	
-	if (idle_timer == 0) {
+	if (idle_timer <= 0) {
 		idle_timer = idle_time;
 		state = enemy_states.attack;
 		attack_direction = point_direction(x,y,oPlayer.x,oPlayer.y);
