@@ -49,18 +49,18 @@ if mouse_in_box()
 	_name = get_card_info(_name_pointer);	
 	_desc = get_card_info(_desc_pointer);	
 	
-	var _tx = room_width / 2;//text x
+	var _tx = round(room_width / 2);//text x
 	
 	//set halign to center
 	draw_set_halign(fa_center);
 	
 	//draw name
 	draw_set_font(global.font_large);
-	draw_text(_tx, y - 115, _name);
+	draw_text(_tx, round(y) - 115, _name);
 	
 	//
 	//draw text
-	draw_text_ext(_tx, y + 16, _desc, string_height("Ag"), room_width - 50);
+	draw_text_ext(_tx, round(y) + 16, _desc, string_height("Ag"), room_width - 50);
 	
 	//reset halign
 	draw_set_halign(fa_left);
