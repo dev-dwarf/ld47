@@ -13,6 +13,7 @@ enum good_cards {
 	more_damage, //done
 	thorns, //done
 	size,
+	good_final//this is just for spawning cards. It doesn't do anything, just tells us what the last value is
 }
 
 enum bad_cards  {
@@ -22,6 +23,7 @@ enum bad_cards  {
 	enemy_health, //done
 	enemy_damage, // done
 	size,
+	bad_final//same as good_final above
 }
 
 enum card { 
@@ -30,7 +32,7 @@ enum card {
 }
 #endregion
 
-#region dataa
+#region data
 stacks[card.good][good_cards.more_swords  ]	= true ;
 stacks[card.good][good_cards.bigger_swords]	= true ;
 stacks[card.good][good_cards.laser_sword  ]	= true ;
@@ -49,17 +51,17 @@ stacks[card.bad ][bad_cards.wall_spikes	  ] = true ;
 stacks[card.bad ][bad_cards.enemy_health  ] = true ;
 stacks[card.bad ][bad_cards.enemy_damage  ] = true ;
 
-counts[card.good][good_cards.more_swords  ]	= 10;
+counts[card.good][good_cards.more_swords  ]	= 1;
 counts[card.good][good_cards.bigger_swords]	= 0;
 counts[card.good][good_cards.laser_sword  ]	= 0;
-counts[card.good][good_cards.teleport_dash]	= 1;
+counts[card.good][good_cards.teleport_dash]	= 0;
 counts[card.good][good_cards.more_health  ]	= 0;
 counts[card.good][good_cards.heal_overtime]	= 0;
-counts[card.good][good_cards.life_leach	  ]	= 3;
+counts[card.good][good_cards.life_leach	  ]	= 0;
 counts[card.good][good_cards.bomb_slice	  ]	= 0;
 counts[card.good][good_cards.shield		  ]	= 0;
-counts[card.good][good_cards.more_damage  ]	= 3;
-counts[card.good][good_cards.thorns		  ]	= 3;
+counts[card.good][good_cards.more_damage  ]	= 0;
+counts[card.good][good_cards.thorns		  ]	= 0;
 counts[card.bad ][bad_cards.buzz_saws	  ] = 0;
 counts[card.bad ][bad_cards.turrets		  ] = 0;
 counts[card.bad ][bad_cards.wall_spikes	  ] = 0;
