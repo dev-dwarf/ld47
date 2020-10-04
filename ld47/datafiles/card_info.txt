@@ -6,61 +6,64 @@
 	"buff_1_name": "Extradimensional Sword",
 	"buff_1_desc": "The space around you distorts and twists, making any swords you are holding grow slightly larger and deal more damage.",
 
-	"buff_2_name": "Unstable Atoms",
-	"buff_2_desc": "Your sword becomes imbued with the powers of the comsos, causing it to release a bolt of energy when attacking. If you have already received this boon, your projectile will instead deal additional damage.",
+	"buff_2_name": "Bolt Sword",
+	"buff_2_desc": "Your sword releases a bolt of energy when attacking. If you have already received this boon, your projectile will instead deal additional damage.",
 
 	"buff_3_name": "Teleport",
-	"buff_3_desc": "Phase your body through another plane, replacing your dash ability with an instantaneous teleportation ability.",
+	"buff_3_desc": "Replace your dash ability with an instantaneous teleportation ability by partially phasing your body into another plane.",
 
 	"buff_4_name": "Health Gland",
-	"buff_4_desc": "Grow a small, mysterious extradimensional gland, which increases your total hit points.",
+	"buff_4_desc": "Your total hit points are increased by a small, mysterious extradimensional gland growing in your body.",
 
 	"buff_5_name": "Totipotent Cells",
-	"buff_5_desc": "Your cells gain the ability to rapidly differentiate into any other type, giving you the ability to regenerate over time. Additional upgrades increase the power of your regeneration.",
+	"buff_5_desc": "Gain the ability to regenerate over time. Additional upgrades increase the power of your regeneration.",
 
 	"buff_6_name": "Draining Sword",
-	"buff_6_desc": "A dark presence from a strange void surrounds you. Your sword attacks will absorb a precentange of current enemy health. Additional upgrades increase regeneration amount.",
+	"buff_6_desc": "A dark presence from a strange void surrounds you, causing your sword attacks to absorb a precentange of current enemy health. Additional upgrades increase regeneration amount.",
 
 	"buff_7_name": "Fission Sword",
-	"buff_7_desc": "The atoms of your sword become unstable, causing defeated enemies to create explosions that damage other enemies. Additional upgrades increase the radius of explosions.",
+	"buff_7_desc": "Defeated enemies create explosions that damage other enemies due to unstable atoms in your sword. Additional upgrades increase the radius of explosions.",
 
 	"buff_8_name": "Prism Shield",
 	"buff_8_desc": "Bend the light around you, creating a shield capable of deflecting a single attack. After a period of time, the shield will regenerate. Additional upgrades decrease regeneration time.",
 
 	"buff_9_name": "Cosmic Sword",
-	"buff_9_desc": "Sharpen your sword with a whetstone made from a fallen star, increasing the damage your attacks deal.",
+	"buff_9_desc": "Increase the damage your sword attacks deal by sharpening your sword with a whetstone made from a falling star.",
 
 	"buff_10_name": "Thorns",
 	"buff_10_desc": "A dark presence from a strange void inhabits your body, causing you to damage enemies on contact. Additional upgrades increase the amount of damage you deal on contact.",
 	
 	"Debuffs": "--------------------------------------------------------------------------------------------------------------",
-	"debuff_0_name": "Buzz Saws",
-	"debuff_0_desc": "Sharp buzz saws will move in from the edges of the screen every now and then.",
+	"debuff_0_name": "Loose Gears",
+	"debuff_0_desc": "Razor sharp gears come loose from your surroundings, and bounce about the screen, damaging you on contact.",
 
-	"debuff_1_name": "Turrets",
-	"debuff_1_desc": "Spawns a turret that will occasionally fire projectiles at you.",
+	"debuff_1_name": "Seeking Turret",
+	"debuff_1_desc": "A clockwork turret tracks you through the room, firing projectiles at you occasionally.",
 
 	"debuff_2_name": "Wall Spikes",
-	"debuff_2_desc": "Spawns sharp spikes on the wall which damage you on contact.",
+	"debuff_2_desc": "Sharp spikes spawn on the wall which damage you on contact.",
 
-	"debuff_3_name": "Enemy HP",
+	"debuff_3_name": "Enemy Vitality",
 	"debuff_3_desc": "Enemies gain additional maximum hit points.",
 
 	"debuff_4_name": "Enemy Strength",
-	"debuff_4_desc": "Enemy attacks deal additional damage.",
+	"debuff_4_desc": "All enemy attacks deal more damage.",
 
-	"debuff_5_name": "Laser Turrets",
-	"debuff_5_desc": "???",
+	"debuff_5_name": "Beam Turret",
+	"debuff_5_desc": "A clockwork turret tracks you through the room, firing a laser of cosmic energy at you occasionally.",
 
-	"debuff_6_name": "Enemy Movement Speed",
-	"debuff_6_desc": "???",
+	"debuff_6_name": "Enemy Speed",
+	"debuff_6_desc": "Non-static enemies move more quickly around the room.",
 
-	"debuff_7_name": "Enemy Attack More",
-	"debuff_7_desc": "???",
+	"debuff_7_name": "Time Dilation",
+	"debuff_7_desc": "Enemy attack speed increases due to time dilation experienced by the player.",
 
-	"debuff_8_name": "Enemy Thorns",
-	"debuff_8_desc": "???",
+	"debuff_8_name": "Enemy Absorption",
+	"debuff_8_desc": "Enemies gain the ability to heal from attacking you, feasting on the cosmic power within your bloodstream.",
 
 	"debuff_9_name": "Glass Bones",
-	"debuff_9_desc": "???"
+	"debuff_9_desc": "Your bones become brittle like glass, causing you to take more damage from all sources.",
+
+	"debuff_10_name": "Minefield",
+	"debuff_10_desc": "???"
 }
