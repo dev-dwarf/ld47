@@ -21,6 +21,7 @@
     {"id":{"name":"oChargingCharlie","path":"objects/oChargingCharlie/oChargingCharlie.yy",},"order":14,},
     {"id":{"name":"sShotgunShitley","path":"sprites/sShotgunShitley/sShotgunShitley.yy",},"order":22,},
     {"id":{"name":"sSwordWhite","path":"sprites/sSwordWhite/sSwordWhite.yy",},"order":11,},
+    {"id":{"name":"con_tutorial","path":"objects/con_tutorial/con_tutorial.yy",},"order":0,},
     {"id":{"name":"spr_card_buff_7","path":"sprites/spr_card_buff_7/spr_card_buff_7.yy",},"order":7,},
     {"id":{"name":"oExitPortal","path":"objects/oExitPortal/oExitPortal.yy",},"order":22,},
     {"id":{"name":"spr_card_buff_9","path":"sprites/spr_card_buff_9/spr_card_buff_9.yy",},"order":9,},
@@ -141,6 +142,7 @@
     {"folderPath":"folders/Scripts/drawing.yy","order":2,"resourceVersion":"1.0","name":"drawing","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/effects.yy","order":17,"resourceVersion":"1.0","name":"effects","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/effects/particles.yy","order":1,"resourceVersion":"1.0","name":"particles","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/tutorial.yy","order":25,"resourceVersion":"1.0","name":"tutorial","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},
