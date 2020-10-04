@@ -8,7 +8,7 @@ if (view_camera[0] > 0) {
 x =  room_width /2 ;
 y =  room_height/2 ;
 
-scale = 2;
+scale = 1;
 subpixel_level = 2;
 
 alarm[0] = 1;

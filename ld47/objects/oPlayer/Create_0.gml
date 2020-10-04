@@ -25,6 +25,10 @@ global.sword_id = 0;
 global.sword_count = oCardHolder.counts[card.good][good_cards.more_swords  ];
 sword_size = 0.75 + 0.1*oCardHolder.counts[card.good][good_cards.bigger_swords];
 
+has_laser = (oCardHolder.counts[card.good][good_cards.laser_sword]>0);
+laser_regen_speed = 0.003 + 0.002 * oCardHolder.counts[card.good][good_cards.laser_sword];
+laser_available = 1.0;
+
 can_attack = false;
 state = player_states.idle;
 

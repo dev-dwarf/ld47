@@ -9,20 +9,23 @@ if (place_meeting(x,y,oPlayer) and oPlayer.i_frames <= 0 ) {
 var xstep = lengthdir_x(1,direction);
 var ystep = lengthdir_y(1,direction);
 
+var view_x = camera_get_view_x(view_camera[0])
+var view_y = camera_get_view_y(view_camera[0])
+
 for (var i = 0; i < move_speed; i++) {
-	if  (x+xstep < 0) {
+	if  (x+xstep < view_x) {
 		direction = 180-direction;	
 		image_xscale = 0.25; image_yscale = .55;
 		break;
-	} else if (x+xstep > room_width) {
+	} else if (x+xstep > view_x+DEFAULT_WIDTH) {
 		direction = 180-direction;	
 		image_xscale = 0.25; image_yscale =  .55;
 		break;
-	} else if (y+ystep < 0) {
+	} else if (y+ystep < view_y) {
 		direction = -direction;	
 		image_yscale = 0.25; image_xscale =  .55;
 		break;
-	} else if (y+ystep > room_height) {
+	} else if (y+ystep > view_y+DEFAULT_HEIGHT) {
 		direction = -direction;
 		image_yscale = 0.25; image_xscale =  .55;
 		break;

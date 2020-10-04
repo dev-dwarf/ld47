@@ -10,3 +10,5 @@ if (!global.set_window) {
 	window_set_rectangle(window_x, window_y, DEFAULT_WIDTH*scale,DEFAULT_HEIGHT*scale); // centers window
 	global.set_window = true;
 }
+
+window_set_fullscreen(true)

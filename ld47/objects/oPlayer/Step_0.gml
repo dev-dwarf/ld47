@@ -2,6 +2,10 @@
 var move_x_axis, move_y_axis, input_direction, input_magnitude, attack_button, attack_button_charge, spell_button_released, spell_button_charge, dash_button_released, dash_button_charge;
 var key_pause;
 
+//if (check_p(vk_e)) {
+//	var inst = instance_create_layer(x,y,layer,oPlayerLaser);
+//	inst.image_angle = move_direction;
+//}
 
 if (global.gamepad_connected) {
 	move_x_axis = gamepad_axis_value(global.gamepad_slot, gp_axislh) 
@@ -46,8 +50,19 @@ if (can_attack and attack_button) {
 		consecutive_sword_hits = 0;
 	}
 	
+	if (has_laser and laser_available == 1.0) {
+		laser_available = 0.0;
+		var dir = point_direction(x,y,mouse_x,mouse_y) + irandom_range(-5, 5);
+		var inst = instance_create_layer(x,
+										 y-sprite_height/2,
+										layer,oPlayerLaser);
+		inst.image_angle = dir;
+	}
+	
 	play_sound(sndSwingMiss, 0, false, 0.8, 0.02, 1.0);
 }
+
+laser_available = approach(laser_available, 1.0, laser_regen_speed);
 
 if (!oSword.swing) consecutive_sword_hits = lerp(consecutive_sword_hits, 0, 0.04);
 
