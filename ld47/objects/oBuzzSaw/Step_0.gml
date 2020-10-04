@@ -32,8 +32,8 @@ for (var i = 0; i < move_speed; i++) {
 	}
 }
 
-image_xscale = lerp(image_xscale, 1.0, 0.2);
-image_yscale = lerp(image_yscale, 1.0, 0.2);
+image_xscale = lerp(image_xscale, 1.5, 0.2);
+image_yscale = lerp(image_yscale, 1.5, 0.2);
 
-
-image_angle = angle_lerp(image_angle, direction, 0.2)
+image_angle -= 24;
+//image_angle = angle_lerp(image_angle, direction, 0.2)

@@ -13,6 +13,11 @@ if (inst and ((inst.swing) or (oPlayer.state == player_states.dash or oPlayer.da
 		
 	}
 	
+	var yy = irandom_range(sprite_height/2,-sprite_height/2);
+	var xx = irandom_range(sprite_width/2,-sprite_width/2);
+	
+	with instance_create_layer(x+xx,y+yy,-1000,oObjPari){ image_angle = irandom_range(0,360); sprite_index = sHit;}
+	
 	hp -= oPlayer.hit_damage;
 	knockback = 4 + oPlayer.sword_size;
 	knockback_dir = point_direction(oPlayer.x, oPlayer.y, x,y);

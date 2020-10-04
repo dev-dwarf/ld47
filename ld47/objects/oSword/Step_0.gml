@@ -23,8 +23,9 @@ if (swing) {
 		var dir = oPlayer.move_direction;		
 	}
 	
-	part_type_direction(oPlayer.sword_dust, dir, dir, 0, 5);
-	part_particles_create(oPlayer.dust, xx, yy, oPlayer.sword_dust, 1)
+	with instance_create_depth(x,y,-1000,oObjPari){ sprite_index = sSwordSlash; image_angle = dir; lock = true; parent = oPlayer.id} 
+	//part_type_direction(oPlayer.sword_dust, dir, dir, 0, 5);
+	//part_particles_create(oPlayer.dust, xx, yy, oPlayer.sword_dust, 1)
 	
 	if (swing_amount > .99) {
 		swing = false;

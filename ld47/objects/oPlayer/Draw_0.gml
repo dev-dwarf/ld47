@@ -26,3 +26,5 @@ if (state == player_states.dash or dash_not_ready){
 if (has_shield or shield_radius > 1) {
 	draw_circle(x,y-sprite_height/2, shield_radius + 4 * sin(current_time*0.004), true);
 }
+
+draw_text(x,y-10,hp)

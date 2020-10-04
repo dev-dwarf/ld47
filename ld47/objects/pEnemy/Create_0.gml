@@ -1,6 +1,8 @@
 /// @description
 event_inherited();
 
+with instance_create_depth(x,y,-1000,oObjPari) sprite_index = sTeleport;
+
 can_explode = true;
 hp = 3;
 i_frames = 0;

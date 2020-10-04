@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sPortal",
-    "path": "sprites/sPortal/sPortal.yy",
+    "name": "sSpawn",
+    "path": "sprites/sSpawn/sSpawn.yy",
   },
   "solid": false,
   "visible": true,
