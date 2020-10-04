@@ -13,14 +13,25 @@ switch state {
 	case enemy_states.idle 	 : #region
 	idle_timer--;
 	
+	
+	
 	if (idle_timer <= 0) {
 		idle_timer = idle_time;
 		state = enemy_states.attack;
-		attack_direction = point_direction(x,y,oPlayer.x,oPlayer.y);
+		attack_direction = image_angle;
 	}
 	
-	image_xscale = lerp(image_xscale, 0.8, 0.2);
-	image_yscale = lerp(image_yscale, 0.8, 0.2);
+	if (idle_timer < 20) {
+		image_xscale = lerp(image_xscale, 1.0, 0.2);
+		image_yscale = lerp(image_yscale, 1.0, 0.2);
+		image_angle = angle_lerp(image_angle, point_direction(x,y,oPlayer.x,oPlayer.y), 0.3);
+	} else if (idle_timer < idle_time*0.75) {
+		image_angle = angle_lerp(image_angle, new_dir, 0.3);
+		
+	} else {
+		image_xscale = lerp(image_xscale, 0.8, 0.2);
+		image_yscale = lerp(image_yscale, 0.8, 0.2);
+	}
 	
 	break; #endregion
 	case enemy_states.attack : #region
@@ -34,6 +45,7 @@ switch state {
 	var y_near = y + lengthdir_y(3,attack_direction);
 	if (place_meeting(x,y,oPlayer) or place_meeting(x_near,y_near,pSolid) or (x == xprevious and y ==yprevious)) {
 		state = enemy_states.recover;
+		new_dir = choose(0, 180);
 	}
 
 	break; #endregion

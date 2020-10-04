@@ -12,3 +12,6 @@ hp = 5;
 
 attack_time = 10;
 attack_timer = attack_time;
+
+draw_x = x;
+draw_y = y;

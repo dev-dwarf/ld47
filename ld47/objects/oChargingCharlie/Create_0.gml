@@ -12,3 +12,5 @@ hp = 3;
 attack_direction = 0;
 dash_speed = 12*(1 + 0.1 * oCardHolder.counts[card.bad ][bad_cards.enemy_faster]);
 attack_speed = 0;
+
+new_dir = choose(0, 180);
