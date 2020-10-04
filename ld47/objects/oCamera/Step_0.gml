@@ -1,8 +1,11 @@
 /// @description
 
-if (instance_exists(oPlayer)) {
+if (instance_exists(oPlayer) and oWaveController.state == wave_states.battle) {
 	x = lerp(x, room_width /2 + (oPlayer.x-oPlayer.xstart)*0.06, 0.2);
 	y = lerp(y, room_height/2 + (oPlayer.y-oPlayer.ystart)*0.06, 0.2);
+} else {
+	x = lerp(x, room_width /2, 0.2);
+	y = lerp(y, room_height/2, 0.2);
 }
 
 var new_width = DEFAULT_WIDTH  ;

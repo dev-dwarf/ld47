@@ -14,7 +14,7 @@ if (state == enemy_states.attack) {
 	acceleration = approach(acceleration, 1, jerk);
 	speed = approach(speed, final_speed*5/4, acceleration);
 
-	if (speed > 1.5 and place_meeting(x,y,pSolid)) instance_destroy();
+	if (speed > 4.5 and place_meeting(x,y,pSolid)) instance_destroy();
 
 	if (speed > 1.5 and speed <= final_speed*0.75) {
 		

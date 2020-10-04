@@ -80,5 +80,15 @@ for (var i = 0; i < oCardHolder.counts[card.bad][bad_cards.buzz_saws];i++) {
 		
 	instance_create_layer(xx,yy,layer,oBuzzSaw);
 }
+
+for (var i = 0; i < oCardHolder.counts[card.bad][bad_cards.wall_spikes];i++) {
+	var xx = irandom_range(2,5)*choose(-1,1);
+	var yy = irandom_range(2,5)*choose(-1,1);
+	
+	xx = room_width /2 + 24 * xx;
+	yy = 12 + room_height/2 + 24 * yy;
+		
+	instance_create_layer(xx,yy,layer,oSpikes);
+}
 	
 create_wave();

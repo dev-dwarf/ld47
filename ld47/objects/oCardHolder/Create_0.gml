@@ -16,7 +16,7 @@ enum good_cards {
 }
 
 enum bad_cards  {
-	buzz_saws,
+	buzz_saws, // done
 	turrets,
 	wall_spikes,
 	enemy_health, //done
@@ -72,7 +72,7 @@ counts[card.good][good_cards.shield			 ] = 0;
 counts[card.good][good_cards.more_damage	 ] = 0;
 counts[card.good][good_cards.thorns			 ] = 0;
 
-counts[card.bad ][bad_cards.buzz_saws		 ] = 1;
+counts[card.bad ][bad_cards.buzz_saws		 ] = 0;
 counts[card.bad ][bad_cards.turrets			 ] = 0;
 counts[card.bad ][bad_cards.wall_spikes		 ] = 0;
 counts[card.bad ][bad_cards.enemy_health	 ] = 0;
@@ -80,7 +80,7 @@ counts[card.bad ][bad_cards.enemy_damage 	 ] = 0;
 counts[card.bad ][bad_cards.laser_turrets	 ] = 0;
 counts[card.bad ][bad_cards.enemy_faster	 ] = 0;
 counts[card.bad ][bad_cards.enemy_attack_more] = 0;
-counts[card.bad ][bad_cards.enemy_leech		 ] = 1;
+counts[card.bad ][bad_cards.enemy_leech		 ] = 0;
 counts[card.bad ][bad_cards.glass_bones		 ] = 0;
 #endregion
 
