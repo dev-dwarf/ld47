@@ -32,7 +32,7 @@ function draw_text_float(argument0, argument1, argument2, argument3, argument4, 
 			_charStr = string(_char),
 			_char_w = string_width(_charStr);
 		
-		var _shift = _amp + dsin(_tt + (_tt_offset * _ii)),
+		var _shift = _amp * dsin(_tt + (_tt_offset * _ii)),
 			_yy = _y + _shift;
 		
 		draw_text(_x, _yy, _charStr);

@@ -37,7 +37,7 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"pSolid","path":"objects/pSolid/pSolid.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":18.8125,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":128.0,"y":48.0,"resourceVersion":"1.0","name":"inst_35D11013","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"con_cardSelection","path":"objects/con_cardSelection/con_cardSelection.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":true,"inheritItemSettings":false,"x":269.0,"y":187.0,"resourceVersion":"1.0","name":"inst_261248B9","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oWaveController","path":"objects/oWaveController/oWaveController.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":264.0,"y":209.0,"resourceVersion":"1.0","name":"inst_4170AD36","tags":[],"resourceType":"GMRInstance",},
-      ],"visible":true,"depth":-200,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":24,"gridY":24,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
+      ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":24,"gridY":24,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"oClockLargeHand","path":"objects/oClockLargeHand/oClockLargeHand.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":277.0,"y":184.0,"resourceVersion":"1.0","name":"inst_5AF4FE2","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oClockSmallHand","path":"objects/oClockSmallHand/oClockSmallHand.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":277.0,"y":185.0,"resourceVersion":"1.0","name":"inst_4C0640CD","tags":[],"resourceType":"GMRInstance",},
@@ -140,7 +140,6 @@
     {"name":"inst_55F29AB8","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_35D11013","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_261248B9","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_4170AD36","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_5AF4FE2","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_4C0640CD","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_33A785B1","path":"rooms/Room1/Room1.yy",},

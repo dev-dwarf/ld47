@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"sndSwordHit","path":"sounds/sndSwordHit/sndSwordHit.yy",},"order":4,},
+    {"id":{"name":"spawn_player","path":"scripts/spawn_player/spawn_player.yy",},"order":1,},
     {"id":{"name":"globals","path":"scripts/globals/globals.yy",},"order":1,},
     {"id":{"name":"sEnemy","path":"sprites/sEnemy/sEnemy.yy",},"order":9,},
     {"id":{"name":"sTurret","path":"sprites/sTurret/sTurret.yy",},"order":34,},
@@ -38,6 +39,7 @@
     {"id":{"name":"mouse_in_box","path":"scripts/mouse_in_box/mouse_in_box.yy",},"order":5,},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},"order":1,},
     {"id":{"name":"spr_card_base","path":"sprites/spr_card_base/spr_card_base.yy",},"order":0,},
+    {"id":{"name":"con_gameState","path":"objects/con_gameState/con_gameState.yy",},"order":1,},
     {"id":{"name":"spr_font_large","path":"sprites/spr_font_large/spr_font_large.yy",},"order":0,},
     {"id":{"name":"sPlayerShadow","path":"sprites/sPlayerShadow/sPlayerShadow.yy",},"order":14,},
     {"id":{"name":"sExplosion","path":"sprites/sExplosion/sExplosion.yy",},"order":27,},
@@ -110,6 +112,7 @@
     {"id":{"name":"sChasingChuck","path":"sprites/sChasingChuck/sChasingChuck.yy",},"order":20,},
     {"id":{"name":"spr_card_debuff_1","path":"sprites/spr_card_debuff_1/spr_card_debuff_1.yy",},"order":2,},
     {"id":{"name":"spr_card_debuff_0","path":"sprites/spr_card_debuff_0/spr_card_debuff_0.yy",},"order":1,},
+    {"id":{"name":"spr_title_text","path":"sprites/spr_title_text/spr_title_text.yy",},"order":0,},
     {"id":{"name":"Sprite14","path":"sprites/Sprite14/Sprite14.yy",},"order":13,},
     {"id":{"name":"sGear1","path":"sprites/sGear1/sGear1.yy",},"order":29,},
     {"id":{"name":"sndEyeFlap","path":"sounds/sndEyeFlap/sndEyeFlap.yy",},"order":1,},
@@ -128,6 +131,7 @@
     {"id":{"name":"sClockHandLarge","path":"sprites/sClockHandLarge/sClockHandLarge.yy",},"order":46,},
     {"id":{"name":"spr_card_debuff_3","path":"sprites/spr_card_debuff_3/spr_card_debuff_3.yy",},"order":4,},
     {"id":{"name":"spr_card_buff_2","path":"sprites/spr_card_buff_2/spr_card_buff_2.yy",},"order":2,},
+    {"id":{"name":"game_state","path":"scripts/game_state/game_state.yy",},"order":0,},
     {"id":{"name":"oBurstingBrian","path":"objects/oBurstingBrian/oBurstingBrian.yy",},"order":16,},
     {"id":{"name":"sTeleport","path":"sprites/sTeleport/sTeleport.yy",},"order":8,},
     {"id":{"name":"sGear4","path":"sprites/sGear4/sGear4.yy",},"order":41,},
@@ -183,7 +187,9 @@
     {"folderPath":"folders/Scripts/drawing.yy","order":2,"resourceVersion":"1.0","name":"drawing","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/effects.yy","order":17,"resourceVersion":"1.0","name":"effects","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/effects/particles.yy","order":1,"resourceVersion":"1.0","name":"particles","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Objects/tutorial.yy","order":25,"resourceVersion":"1.0","name":"tutorial","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/game control.yy","order":25,"resourceVersion":"1.0","name":"game control","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Scripts/game state.yy","order":3,"resourceVersion":"1.0","name":"game state","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/title.yy","order":26,"resourceVersion":"1.0","name":"title","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},
