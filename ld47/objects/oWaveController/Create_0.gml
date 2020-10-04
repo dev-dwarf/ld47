@@ -3,10 +3,11 @@
 enum wave_states {
 	spawn,
 	battle, 
-	next
+	next,
+	idle
 }
 
-state = wave_states.spawn;
+state = wave_states.idle;
 
 spawn_time = 90;
 spawn_timer = spawn_time;
