@@ -15,7 +15,7 @@
   "VTile": false,
   "For3D": false,
   "width": 24,
-  "height": 24,
+  "height": 34,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -55,7 +55,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 12,
-    "yorigin": 24,
+    "yorigin": 34,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sProjectilePaul","path":"sprites/sProjectilePaul/sProjectilePaul.yy",},
