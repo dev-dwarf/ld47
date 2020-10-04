@@ -1,4 +1,4 @@
 /// @description
-angle = irandom_range(0,360);
+angle = 0;
 number = 0;
 swing = true;
