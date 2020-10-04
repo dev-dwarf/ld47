@@ -295,6 +295,8 @@ switch cardSel_state
 			if y >= (room_height * 1.15)
 				instance_destroy();
 		}
+		//instance_create_layer(0,0,layer,oWaveController);
+
 		if !instance_exists(obj_card)
 		{
 			cardSel_state = "cards_wrapup";
@@ -309,7 +311,7 @@ switch cardSel_state
 		if transition_radius <= 1
 		{
 			room_restart();
-			
+			//instance_destroy();
 
 			oCamera.set_shake(0.5);
 		}
