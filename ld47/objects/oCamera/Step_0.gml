@@ -13,7 +13,7 @@ if (focus != last_focused and global.fullscreen) {
 }
 last_focused = focus;
 
-if (instance_exists(oPlayer) and oWaveController.state == wave_states.battle) {
+if (instance_exists(oPlayer) and instance_exists(oWaveController) and oWaveController.state == wave_states.battle) {
 	x = lerp(x, room_width /2 + (oPlayer.x-oPlayer.xstart)*0.06, 0.2);
 	y = lerp(y, room_height/2 + (oPlayer.y-oPlayer.ystart)*0.06, 0.2);
 } else {
