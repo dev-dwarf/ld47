@@ -12,7 +12,7 @@ alarm[0] = 1;
 
 
 #region screenshake
-screenshake = 1;
+screenshake = 0.25;
 screenshake_intensity = 6;
 screenshake_decrease = 0.03;
 
