@@ -299,6 +299,7 @@ switch cardSel_state
 
 		if !instance_exists(obj_card)
 		{
+			room_restart();
 			cardSel_state = "cards_wrapup";
 		}
 	}
@@ -310,8 +311,8 @@ switch cardSel_state
 		
 		if transition_radius <= 1
 		{
-			room_restart();
-			//instance_destroy();
+			
+			instance_destroy();
 
 			oCamera.set_shake(0.5);
 		}

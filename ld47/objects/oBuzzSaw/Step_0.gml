@@ -12,19 +12,19 @@ var ystep = lengthdir_y(1,direction);
 for (var i = 0; i < move_speed; i++) {
 	if  (x+xstep < 0) {
 		direction = 180-direction;	
-		image_xscale = 0.5; image_yscale = 1.25;
+		image_xscale = 0.25; image_yscale = .55;
 		break;
 	} else if (x+xstep > room_width) {
 		direction = 180-direction;	
-		image_xscale = 0.5; image_yscale = 1.25;
+		image_xscale = 0.25; image_yscale =  .55;
 		break;
 	} else if (y+ystep < 0) {
 		direction = -direction;	
-		image_yscale = 0.5; image_xscale = 1.25;
+		image_yscale = 0.25; image_xscale =  .55;
 		break;
 	} else if (y+ystep > room_height) {
 		direction = -direction;
-		image_yscale = 0.5; image_xscale = 1.25;
+		image_yscale = 0.25; image_xscale =  .55;
 		break;
 	} else {
 		x = (x+xstep);
@@ -32,8 +32,7 @@ for (var i = 0; i < move_speed; i++) {
 	}
 }
 
-image_xscale = lerp(image_xscale, 1.0, 0.2);
-image_yscale = lerp(image_yscale, 1.0, 0.2);
+image_xscale = lerp(image_xscale, 0.5, 0.2);
+image_yscale = lerp(image_yscale, 0.5, 0.2);
 
-
-image_angle = angle_lerp(image_angle, direction, 0.2)
+image_angle+=2*sign(dcos(direction));
