@@ -3,8 +3,10 @@
 //offset management
 if !card_selected
 {
-	if y_off > 0 && !mouse_in_box()
+	if y_off > 0 && !mouse_in_box() {
 		y_off = lerp(y_off, 0, 0.15);
+		
+	}
 } else if y_off > -10
 	y_off = lerp(y_off, -10, 0.15);
 	

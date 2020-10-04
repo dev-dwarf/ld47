@@ -10,6 +10,9 @@ y_off = 0;//offset of drawn y compared to actual y
 frame_arrow = 0;//frame of selection arrow
 tt_draw = 0;//timer for drawing text
 
+
+prev_dir = 1;
+
 //card data
 card_buff = 0;
 card_debuff = 0;

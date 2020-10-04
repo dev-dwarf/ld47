@@ -195,12 +195,21 @@ switch cardSel_state
 				if mouse_in_box()
 				{					
 					//make the card move up a bit when moused over
-					if !card_selected
-						y_off = lerp(y_off, 5, 0.15);
+					if !card_selected {
+						if (y_off < 1) 
+						{
+							play_sound(sndSwingMiss, 0, false, 1.0, 0.09, 0.5);
+						}	
+						y_off = lerp(y_off, 5, 0.25);
+							
+					}
 						
 					//select card when clicking
-					if mouse_check_button_pressed(mb_left)
+					if mouse_check_button_pressed(mb_left) 
+					{
+						play_sound(sndSwordHit, 0, false, 1.0 + 0.5 * card_selected, 0.02, 0.6);
 						card_selected = !card_selected;
+					}
 				}
 			}
 		}
@@ -215,12 +224,16 @@ switch cardSel_state
 				_selCount += card_selected;
 				
 			if _selCount > 0
+			{
 				cardSel_state = "cards_flip";
+				
+			}
 			else
 			{
 				tt_flash = room_speed * 1.5;//***
 				error_off = 5;
 				oCamera.set_shake(0.5);
+				play_sound(sndPlayerHurt, 0, false, 1.5, 0.02, 1.0);
 			}
 		}
 	}
@@ -281,8 +294,14 @@ switch cardSel_state
 		}
 		
 		with obj_card
-			if mouse_in_box()
+			if mouse_in_box() {
+				if (y_off < -9) 
+				{
+					play_sound(sndSwingMiss, 0, false, 1.0, 0.09, 0.5);
+				}	
 				y_off = lerp(y_off, 5, 0.15);
+				
+			}
 	}
 	break;
 	
