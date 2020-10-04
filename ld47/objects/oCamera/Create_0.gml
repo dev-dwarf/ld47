@@ -13,6 +13,8 @@ subpixel_level = 2;
 
 alarm[0] = 1;
 
+last_focused = window_has_focus();
+
 
 #region screenshake
 screenshake = 0.25;

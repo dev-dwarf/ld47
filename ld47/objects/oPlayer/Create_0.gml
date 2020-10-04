@@ -144,3 +144,5 @@ reset_cards = function() {
 	instance_create_layer(0,0,layer,oCardHolder);
 	global.wave_count = 0;
 }
+
+alarm[0]=1;

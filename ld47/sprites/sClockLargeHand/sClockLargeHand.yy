@@ -26,6 +26,7 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"571df8e8-1515-4ed4-b955-5746bd9bdbdb","path":"sprites/sClockLargeHand/sClockLargeHand.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"571df8e8-1515-4ed4-b955-5746bd9bdbdb","path":"sprites/sClockLargeHand/sClockLargeHand.yy",},"LayerId":{"name":"728c19d7-0304-4e2e-b7f1-900c04499a1a","path":"sprites/sClockLargeHand/sClockLargeHand.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"571df8e8-1515-4ed4-b955-5746bd9bdbdb","path":"sprites/sClockLargeHand/sClockLargeHand.yy",},"LayerId":{"name":"728c19d7-0304-4e2e-b7f1-900c04499a1a","path":"sprites/sClockLargeHand/sClockLargeHand.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sClockLargeHand","path":"sprites/sClockLargeHand/sClockLargeHand.yy",},"resourceVersion":"1.0","name":"571df8e8-1515-4ed4-b955-5746bd9bdbdb","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {

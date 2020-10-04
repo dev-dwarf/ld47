@@ -20,5 +20,5 @@ spread = 35;
 offset_direction = 0;
 
 attack_direction = 0;
-attack_speed = 1.2*(1 + 0.05 * oCardHolder.counts[card.bad ][bad_cards.enemy_faster]);
+attack_speed = 1.2*(1 + 0.1 * oCardHolder.counts[card.bad ][bad_cards.enemy_faster]);
 move_speed = 0;

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sClockLargeHand",
-    "path": "sprites/sClockLargeHand/sClockLargeHand.yy",
+    "name": "sClockHandLarge",
+    "path": "sprites/sClockHandLarge/sClockHandLarge.yy",
   },
   "solid": false,
   "visible": true,

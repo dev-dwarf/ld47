@@ -15,6 +15,8 @@ function globals(){
 	global.sound_volume = 1.0 * global.master_volume;
 	global.music_volume = 1.0 * global.master_volume;
 	
+	global.fullscreen = true;
+	
 	global.wave_count = 0;
 	
 	global.sword_count = 1;

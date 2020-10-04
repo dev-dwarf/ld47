@@ -11,4 +11,4 @@ if (!global.set_window) {
 	global.set_window = true;
 }
 
-window_set_fullscreen(true)
+window_set_fullscreen(global.fullscreen)

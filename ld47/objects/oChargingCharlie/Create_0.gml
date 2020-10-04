@@ -10,5 +10,5 @@ idle_timer = irandom_range(idle_time/2, idle_time);
 hp = 3;
 
 attack_direction = 0;
-dash_speed = 12*(1 + 0.05 * oCardHolder.counts[card.bad ][bad_cards.enemy_faster]);
+dash_speed = 12*(1 + 0.1 * oCardHolder.counts[card.bad ][bad_cards.enemy_faster]);
 attack_speed = 0;

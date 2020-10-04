@@ -1,5 +1,18 @@
 /// @description
 
+if (check_p(vk_f)) {
+	global.fullscreen = !global.fullscreen;
+	window_set_fullscreen(global.fullscreen);
+}
+
+// re focus if fullscreened
+
+var focus = window_has_focus();
+if (focus != last_focused and global.fullscreen) {
+	window_set_fullscreen(focus);
+}
+last_focused = focus;
+
 if (instance_exists(oPlayer) and oWaveController.state == wave_states.battle) {
 	x = lerp(x, room_width /2 + (oPlayer.x-oPlayer.xstart)*0.06, 0.2);
 	y = lerp(y, room_height/2 + (oPlayer.y-oPlayer.ystart)*0.06, 0.2);

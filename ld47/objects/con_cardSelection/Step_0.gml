@@ -23,7 +23,9 @@ switch cardSel_state
 		transition_radius = lerp(transition_radius, _t, 0.05);
 		
 		if transition_radius >= (_t * 0.95)
+		{
 			cardSel_state = "startup";
+		}
 	}
 	break;
 	
@@ -90,6 +92,8 @@ switch cardSel_state
 		
 		//move on to next state
 		cardSel_state = "cards_move_up";
+		play_sound(sndSwingMiss, 0, false, 0.5, 0.00, 1.0);
+			
 	}
 	break;
 	
@@ -116,6 +120,7 @@ switch cardSel_state
 			{
 				tt = 0;
 				cardSel_state = "cards_fan";
+				play_sound(sndEnterCardSelect, 0, false, 1.0, 0.00, 1.0);
 			}
 		}
 	}
