@@ -1,4 +1,10 @@
 /// @description
+
+if (oPlayer.state == player_states.death) {
+	image_blend = c_gray;
+	exit;
+}
+
 mask_index = sSwordOrange;
 if (swing) {
 	sprite_index = sSwordPurple;

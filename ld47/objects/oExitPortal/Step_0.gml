@@ -1,2 +1,2 @@
-	player = place_meeting(x,y,oPlayer)	
+player = place_meeting(x,y,oPlayer)	
 	

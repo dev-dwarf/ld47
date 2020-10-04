@@ -21,5 +21,5 @@ draw_sprite_ext(sprite, image_index,
 x, y - y_off,
 abs(image_xscale), image_yscale, 
 angle, 
-c_white, image_alpha
+image_blend, image_alpha
 );

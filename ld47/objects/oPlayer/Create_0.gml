@@ -17,12 +17,13 @@ enum player_states {
 	idle,
 	walk,
 	dash,
-	freeze
+	freeze,
+	death,
 }
 
 global.sword_id = 0;
 global.sword_count = oCardHolder.counts[card.good][good_cards.more_swords  ];
-sword_size = 0.75 + 0.075*oCardHolder.counts[card.good][good_cards.bigger_swords];
+sword_size = 0.75 + 0.1*oCardHolder.counts[card.good][good_cards.bigger_swords];
 
 can_attack = false;
 state = player_states.idle;
@@ -59,7 +60,7 @@ dash_distance = 70;
 dash_frame_count = dash_start_frames;
 
 hit_damage = (1 + 0.2 * oCardHolder.counts[card.good][good_cards.bigger_swords]) * (1 + oCardHolder.counts[card.good][good_cards.more_damage]);
-max_hp = 3 * (1 + oCardHolder.counts[card.good][good_cards.more_health  ]);
+max_hp = 5 * (1 + oCardHolder.counts[card.good][good_cards.more_health  ]);
 hp = max_hp;
 
 made_footstep = false;
@@ -129,4 +130,9 @@ hurt_line = function(x1, y1, x2, y2) {
 	}
 				
 	ds_list_destroy(list);
+}
+
+reset_cards = function() {
+	instance_destroy(oCardHolder);
+	instance_create_layer(0,0,layer,oCardHolder);
 }

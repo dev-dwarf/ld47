@@ -2,6 +2,12 @@
 // Inherit the parent event
 event_inherited();
 
+if (oPlayer.state == player_states.death) {
+	image_blend = c_gray;
+	exit;
+}
+
+
 switch state {
 	#region unused
 	case enemy_states.idle 	 : #region 

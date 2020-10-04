@@ -17,9 +17,16 @@ switch state {
 	}
 	
 	if (live_enemies == 0) {
-		instance_create_layer(room_width/2,room_height/2,layer,oExitPortal);
+		if (wave_number <= 0) {
+			instance_create_layer(room_width/2,room_height/2,layer,oExitPortal);
 
-		state = wave_states.next;
+			state = wave_states.next;
+		} else {
+			state = wave_states.spawn;
+			spawn_timer = spawn_time;
+			
+			create_wave();
+		}
 	}	
 	break; #endregion
 	case wave_states.next	: #region 

@@ -82,17 +82,43 @@ counts[card.bad ][bad_cards.enemy_attack_more] = 0;
 function generate_card_list(type, number_of_cards) {
 	var list = ds_list_create();
 	
+	var temp_counts;
+	temp_counts[card.good][good_cards.more_swords	 ] = counts[card.good][good_cards.more_swords	 ] ;
+	temp_counts[card.good][good_cards.bigger_swords	 ] = counts[card.good][good_cards.bigger_swords	 ] ;
+	temp_counts[card.good][good_cards.laser_sword	 ] = counts[card.good][good_cards.laser_sword	 ] ;
+	temp_counts[card.good][good_cards.teleport_dash	 ] = counts[card.good][good_cards.teleport_dash	 ] ;
+	temp_counts[card.good][good_cards.more_health	 ] = counts[card.good][good_cards.more_health	 ] ;
+	temp_counts[card.good][good_cards.heal_overtime	 ] = counts[card.good][good_cards.heal_overtime	 ] ;
+	temp_counts[card.good][good_cards.life_leach		 ] = counts[card.good][good_cards.life_leach	]	;
+	temp_counts[card.good][good_cards.bomb_slice		 ] = counts[card.good][good_cards.bomb_slice	]	;
+	temp_counts[card.good][good_cards.shield			 ] = counts[card.good][good_cards.shield		]	;
+	temp_counts[card.good][good_cards.more_damage	 ] = counts[card.good][good_cards.more_damage	 ] ;
+	temp_counts[card.good][good_cards.thorns			 ] = counts[card.good][good_cards.thorns		]	;
+	temp_counts[card.bad ][bad_cards.buzz_saws		 ] = counts[card.bad ][bad_cards.buzz_saws		 ] ;
+	temp_counts[card.bad ][bad_cards.turrets			 ] = counts[card.bad ][bad_cards.turrets		]	;
+	temp_counts[card.bad ][bad_cards.wall_spikes		 ] = counts[card.bad ][bad_cards.wall_spikes	]	;
+	temp_counts[card.bad ][bad_cards.enemy_health	 ] = counts[card.bad ][bad_cards.enemy_health	 ] ;
+	temp_counts[card.bad ][bad_cards.enemy_damage 	 ] = counts[card.bad ][bad_cards.enemy_damage 	 ] ;
+	temp_counts[card.bad ][bad_cards.laser_turrets	 ] = counts[card.bad ][bad_cards.laser_turrets	 ] ;
+	temp_counts[card.bad ][bad_cards.enemy_faster	 ] = counts[card.bad ][bad_cards.enemy_faster	 ] ;
+	temp_counts[card.bad ][bad_cards.enemy_attack_more] = counts[card.bad ][bad_cards.enemy_attack_more];
+	
 	var index = 0;
 	for (var i = 0; i <	number_of_cards; i++) {
 		if (type == card.good) {
 		do {
 			index = irandom(good_cards.size-1);
 			// this part below is to make sure we dont make duplicates of cards that cant stack
-		} until !(stacks[card.good][index] == false and counts[card.good][index] > 0);
+		} until !(stacks[card.good][index] == false and temp_counts[card.good][index] > 0);
+		
+		temp_counts[card.good][index]++;
 		} else {
 		do {
 			index = irandom(bad_cards.size-1);
-		} until !(stacks[card.bad][index] == false and counts[card.bad][index] > 0);
+			
+		} until !(stacks[card.bad][index] == false and temp_counts[card.bad][index] > 0);
+		
+		temp_counts[card.bad][index]++;
 		}
 		
 		ds_list_add(list, index);

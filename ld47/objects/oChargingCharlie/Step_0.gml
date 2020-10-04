@@ -2,6 +2,11 @@
 // Inherit the parent event
 event_inherited();
 
+if (oPlayer.state == player_states.death) {
+	image_blend = c_gray;
+	exit;
+}
+
 log(string(state));
 
 switch state {

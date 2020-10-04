@@ -52,7 +52,7 @@ if (can_attack and attack_button) {
 if (!oSword.swing) consecutive_sword_hits = lerp(consecutive_sword_hits, 0, 0.04);
 
 if (dash_not_ready) dash_not_ready--;
-if (dash_button_released and dash_not_ready == 0) {	
+if (can_attack and dash_button_released and dash_not_ready == 0) {	
 	if (!global.gamepad_connected) {
 		move_direction = point_direction(x,y,mouse_x,mouse_y);	
 	}
@@ -73,10 +73,16 @@ mask_index = sPlayerIdle
 
 hp = approach(hp, max_hp, heal_overtime);
 hp = clamp(hp, 0, max_hp)
+
+if (hp == 0 and state != player_states.death) {
+	state = player_states.death;	
+}
 //log(string(hp));
 
-if (check_p(vk_r)) room_restart();
-
+if (check_p(vk_r)) {
+	if (state == player_states.death) reset_cards();	
+	room_restart();
+}
 
 #region state
 switch state {
@@ -255,6 +261,13 @@ switch state {
 	case player_states.freeze: #region freeze
 	can_attack = false;
 	
+	break; #endregion
+	case player_states.death: #region
+	can_attack = false;
+	move_speed = lerp(move_speed, 0, 0.5);
+	
+	image_blend = c_gray;
+
 	break; #endregion
 }
 #endregion
