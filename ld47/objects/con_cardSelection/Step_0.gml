@@ -34,7 +34,7 @@ switch cardSel_state
 	{
 		//x/y positions where cards are spawned
 		var _x = room_width / 2,
-			_y = room_height + 50;
+			_y = room_height + 150;
 			
 		//now we're gonna make 2 temporary lists representing the possible buffs/debuffs that can be chosen
 		var _buffs = ds_list_create(),
@@ -92,7 +92,7 @@ switch cardSel_state
 		
 		//move on to next state
 		cardSel_state = "cards_move_up";
-		play_sound(sndSwingMiss, 0, false, 0.5, 0.00, 1.0);
+		play_sound(sndCardsSwingUp, 0, false, 1.0, 0.00, 1.0);
 			
 	}
 	break;
@@ -231,6 +231,7 @@ switch cardSel_state
 			if _selCount > 0
 			{
 				cardSel_state = "cards_flip";
+				play_sound(sndCardsFlip, 0, false, 1.0, 0.00, 1.0);
 				
 			}
 			else
@@ -302,7 +303,7 @@ switch cardSel_state
 			if mouse_in_box() {
 				if (y_off < -9) 
 				{
-					play_sound(sndSwingMiss, 0, false, 1.0, 0.09, 0.5);
+					play_sound(sndSwingMiss, 0, false, 0.7, 0.09, 0.5);
 				}	
 				y_off = lerp(y_off, 5, 0.15);
 				
