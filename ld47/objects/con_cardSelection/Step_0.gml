@@ -10,12 +10,24 @@ if error_off > 0
 	error_off = lerp(error_off, 0, 0.15);
 
 //particles
-if irandom(1000) <= 10
+if irandom(1000) <= 25
 	part_particles_create(sys, irandom_range(10, room_width - 10), irandom_range(10, room_height - 10), part_star, 1);
 
 //state machine 
 switch cardSel_state
 {
+	//startup_delay: delay after startup
+	case "startup_delay":
+	{
+		tt ++;
+		if tt >= 45
+		{
+			tt = 0;
+			cardSel_state = "startup_transition";
+		}		
+	}
+	break;
+	
 	//startup_transition: black circle grows to encompass screen
 	case "startup_transition":
 	{
