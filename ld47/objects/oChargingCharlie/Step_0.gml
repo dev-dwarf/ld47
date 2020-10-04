@@ -22,15 +22,13 @@ switch state {
 	}
 	
 	if (idle_timer < 20) {
-		image_xscale = lerp(image_xscale, 1.0, 0.2);
-		image_yscale = lerp(image_yscale, 1.0, 0.2);
+		draw_scale = lerp(draw_scale, 1.0, 0.2);
 		image_angle = angle_lerp(image_angle, point_direction(x,y,oPlayer.x,oPlayer.y), 0.3);
 	} else if (idle_timer < idle_time*0.75) {
 		image_angle = angle_lerp(image_angle, new_dir, 0.3);
 		
 	} else {
-		image_xscale = lerp(image_xscale, 0.8, 0.2);
-		image_yscale = lerp(image_yscale, 0.8, 0.2);
+		draw_scale = lerp(draw_scale, 0.8, 0.2);
 	}
 	
 	break; #endregion
@@ -65,8 +63,7 @@ switch state {
 	break;
 	case enemy_states.dead	 : 
 	image_blend = c_gray;
-	image_xscale = lerp(image_xscale, 0.5, 0.2);
-	image_yscale = lerp(image_yscale, 0.5, 0.2);
+	draw_scale = lerp(draw_scale, 0.5, 0.2);
 	
 	break;
 }
