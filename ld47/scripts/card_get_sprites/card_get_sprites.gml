@@ -5,29 +5,11 @@
 
 function card_get_sprites(_buff, _debuff)
 {
-	var sb = 0,//buff sprite
-		sd = 0;//debuff sprite
-		
-	switch _buff
-	{
-		case good_cards.bigger_swords:
-		sb = spr_card_bigSword;
-		break;
-		
-		//
-	}
+	var _id_buff = "spr_card_buff_" + string(_buff),
+		_id_debuff = "spr_card_debuff_" + string(_debuff),
+		_sprite_buff = asset_get_index(_id_buff),
+		_sprite_debuff = asset_get_index(_id_debuff);
 	
-	switch _debuff
-	{
-		case bad_cards.buzz_saws:
-		sd = spr_card_debuff_test;
-		break;
-	}
-	
-	//debug/testing
-	sb = spr_card_bigSword;
-	sd = spr_card_debuff_test;
-	
-	spr_buff = sb;
-	spr_debuff = sd;
+	spr_buff = _sprite_buff;
+	spr_debuff = _sprite_debuff;
 }
