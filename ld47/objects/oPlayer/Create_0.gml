@@ -13,6 +13,8 @@
 
 event_inherited();
 
+player_active = true;//can player object receive control input?
+
 enum player_states {
 	idle,
 	walk,

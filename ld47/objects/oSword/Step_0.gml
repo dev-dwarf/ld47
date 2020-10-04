@@ -71,9 +71,9 @@ if (oPlayer.state == player_states.dash or oPlayer.dash_not_ready) {
 	
 	var p = 0.93;
 	targ_offset  = oPlayer.dash_direction*p + targ_offset*(1-p)
-} else {
+} else if oPlayer.player_active {	
 	offset_amount = lerp(offset_amount, offset_close, 0.2);
-	//target_angle = -cos_offset_angle*swing_angle*swing_flip*swing_amount - 67 * cos_offset_angle
+	
 	if (!global.gamepad_connected) {
 		target_angle = point_direction(oPlayer.x,oPlayer.y,mouse_x,mouse_y)- 90 + swing_angle*swing_flip*swing_amount;
 		targ_offset += point_direction(oPlayer.x,oPlayer.y,mouse_x,mouse_y)
@@ -82,6 +82,7 @@ if (oPlayer.state == player_states.dash or oPlayer.dash_not_ready) {
 		targ_offset += oPlayer.move_direction
 	}
 }
+else target_angle = -45;
 
 offset_angle = round(angle_lerp(offset_angle, targ_offset, 0.75));
 angle = angle_lerp(angle, target_angle, 0.9);

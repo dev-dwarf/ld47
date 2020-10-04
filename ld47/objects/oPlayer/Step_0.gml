@@ -32,41 +32,45 @@ if (global.gamepad_connected) {
 var input_direction = point_direction(0, 0, move_x_axis, move_y_axis);
 var input_magnitude = clamp(point_distance( 0, 0, move_x_axis, move_y_axis), 0, 1);
 
-if (can_attack and attack_button) {
-	if (instance_exists(oSword)) {
-		oSword.swing = true;
-		oSword.swing_amount = 0.2;
-		oSword.swing_flip *= -1;
+if player_active
+{
+	if (can_attack and attack_button) {
+		if (instance_exists(oSword)) {
+			oSword.swing = true;
+			oSword.swing_amount = 0.2;
+			oSword.swing_flip *= -1;
+		}
+	
+		if (hits_this_time > 0) {
+			consecutive_sword_hits++;
+			hits_this_time = 0;
+		} else {
+			consecutive_sword_hits = 0;
+		}
+	
+		play_sound(sndSwingMiss, 0, false, 0.8, 0.02, 1.0);
 	}
+
+	if (!oSword.swing) consecutive_sword_hits = lerp(consecutive_sword_hits, 0, 0.04);
+
+	if (dash_not_ready) dash_not_ready--;
+	if (can_attack and dash_button_released and dash_not_ready == 0) {	
+		if (!global.gamepad_connected) {
+			move_direction = point_direction(x,y,mouse_x,mouse_y);	
+		}
 	
-	if (hits_this_time > 0) {
-		consecutive_sword_hits++;
-		hits_this_time = 0;
-	} else {
-		consecutive_sword_hits = 0;
+		dash_direction = move_direction;
+		dash_start_x = x;
+		dash_start_y = y;
+	
+		play_sound(sndDashStrike, 0, false, 2.0, 0.02, 1.0);
+		play_sound(sndDashStrike, 0, false, 1.0, 0.02, 0.7);
+
+	
+		state = player_states.dash;	
 	}
-	
-	play_sound(sndSwingMiss, 0, false, 0.8, 0.02, 1.0);
-}
+} else state = player_states.idle;
 
-if (!oSword.swing) consecutive_sword_hits = lerp(consecutive_sword_hits, 0, 0.04);
-
-if (dash_not_ready) dash_not_ready--;
-if (can_attack and dash_button_released and dash_not_ready == 0) {	
-	if (!global.gamepad_connected) {
-		move_direction = point_direction(x,y,mouse_x,mouse_y);	
-	}
-	
-	dash_direction = move_direction;
-	dash_start_x = x;
-	dash_start_y = y;
-	
-	play_sound(sndDashStrike, 0, false, 2.0, 0.02, 1.0);
-	play_sound(sndDashStrike, 0, false, 1.0, 0.02, 0.7);
-
-	
-	state = player_states.dash;	
-}
 #endregion
 
 mask_index = sPlayerIdle

@@ -23,8 +23,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "tutorial",
-    "path": "folders/Objects/tutorial.yy",
+    "name": "game control",
+    "path": "folders/Objects/game control.yy",
   },
   "resourceVersion": "1.0",
   "name": "con_tutorial",
