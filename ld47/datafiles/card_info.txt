@@ -27,7 +27,7 @@
 	"buff_8_name": "Prism Shield",
 	"buff_8_desc": "Bend the light around you, creating a shield capable of deflecting a single attack. After a period of time, the shield will regenerate. Additional upgrades decrease regeneration time.",
 
-	"buff_9_name": "Cosmic Whetstone",
+	"buff_9_name": "Cosmic ***",
 	"buff_9_desc": "Sharpen your sword with a whetstone made from a fallen star, increasing the damage your attacks deal.",
 
 	"buff_10_name": "Thorns",
@@ -49,21 +49,18 @@
 	"debuff_4_name": "Enemy Strength",
 	"debuff_4_desc": "Enemy attacks deal additional damage.",
 
-	"debuff_5_name": "Room Size",
-	"debuff_5_desc": "The size of the room shrinks, forcing you to duel enemies at close range.",
+	"debuff_5_name": "Laser Turrets",
+	"debuff_5_desc": "???",
 
-	"debuff_6_name": "???",
+	"debuff_6_name": "Enemy Movement Speed",
 	"debuff_6_desc": "???",
 
-	"debuff_7_name": "???",
+	"debuff_7_name": "Enemy Attack More",
 	"debuff_7_desc": "???",
 
-	"debuff_8_name": "???",
+	"debuff_8_name": "Enemy Thorns",
 	"debuff_8_desc": "???",
 
-	"debuff_9_name": "???",
-	"debuff_9_desc": "???",
-
-	"debuff_10_name": "???",
-	"debuff_10_desc": "???"
+	"debuff_9_name": "Glass Bones",
+	"debuff_9_desc": "???"
 }

@@ -10,7 +10,7 @@ if error_off > 0
 	error_off = lerp(error_off, 0, 0.15);
 
 //particles
-if irandom(1000) <= 10
+if irandom(1000) <= 45
 	part_particles_create(sys, irandom_range(10, room_width - 10), irandom_range(10, room_height - 10), part_star, 1);
 
 //state machine 
