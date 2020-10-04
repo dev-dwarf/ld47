@@ -25,7 +25,7 @@ enum player_states {
 
 global.sword_id = 0;
 global.sword_count = oCardHolder.counts[card.good][good_cards.more_swords  ];
-sword_size = 0.75 + 0.2*oCardHolder.counts[card.good][good_cards.bigger_swords];
+sword_size = 0.75 + 0.1*oCardHolder.counts[card.good][good_cards.bigger_swords];
 
 has_laser = (oCardHolder.counts[card.good][good_cards.laser_sword]>0);
 laser_regen_speed = 0.003 + 0.002 * oCardHolder.counts[card.good][good_cards.laser_sword];
@@ -61,11 +61,11 @@ dash_recharge = 10;
 if (dash_is_teleport) {
 	dash_start_frames = 2;
 	dash_frames = 3;
-	dash_recovery_frames = 4;
+	dash_recovery_frames = 7;
 } else {
 	dash_start_frames = 3;
 	dash_frames = 5;
-	dash_recovery_frames = 5;
+	dash_recovery_frames = 7;
 }
 
 knockback = 0;

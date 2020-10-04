@@ -6,19 +6,19 @@ var view_y = camera_get_view_y(view_camera[0])
 for (var i = 0; i < move_speed; i++) {
 	if  (x+xstep < view_x) {
 		direction = 180-direction;	
-		image_xscale = 0.25; image_yscale = .55;
+		image_xscale = 0.5; image_yscale = 1.5;
 		break;
 	} else if (x+xstep > view_x+DEFAULT_WIDTH) {
 		direction = 180-direction;	
-		image_xscale = 0.25; image_yscale =  .55;
+		image_xscale = 0.5; image_yscale =  1.55;
 		break;
 	} else if (y+ystep < view_y) {
 		direction = -direction;	
-		image_yscale = 0.25; image_xscale =  .55;
+		image_yscale = 0.5; image_xscale =  1.55;
 		break;
 	} else if (y+ystep > view_y+DEFAULT_HEIGHT) {
 		direction = -direction;
-		image_yscale = 0.25; image_xscale =  .55;
+		image_yscale = 0.5; image_xscale =  1.55;
 		break;
 	} else {
 		x = (x+xstep);
@@ -32,7 +32,7 @@ if (place_meeting(x,y,oPlayer) and oPlayer.i_frames <= 0 ) {
 	oCamera.set_shake( 0.5);
 	oPlayer.i_frames = 60;
 }
-image_xscale = lerp(image_xscale, 0.5, 0.2);
-image_yscale = lerp(image_yscale, 0.5, 0.2);
+image_xscale = lerp(image_xscale, 1.0, 0.2);
+image_yscale = lerp(image_yscale, 1.0, 0.2);
 
 image_angle+=10*sign(dcos(direction));
