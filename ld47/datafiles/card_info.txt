@@ -27,7 +27,7 @@
 	"buff_8_name": "Prism Shield",
 	"buff_8_desc": "Bend the light around you, creating a shield capable of deflecting a single attack. After a period of time, the shield will regenerate. Additional upgrades decrease regeneration time.",
 
-	"buff_9_name": "Cosmic ***",
+	"buff_9_name": "Cosmic Sword",
 	"buff_9_desc": "Sharpen your sword with a whetstone made from a fallen star, increasing the damage your attacks deal.",
 
 	"buff_10_name": "Thorns",
