@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sEnemyPlaceHolder",
-    "path": "sprites/sEnemyPlaceHolder/sEnemyPlaceHolder.yy",
+    "name": "sEnemy",
+    "path": "sprites/sEnemy/sEnemy.yy",
   },
   "solid": false,
   "visible": true,
