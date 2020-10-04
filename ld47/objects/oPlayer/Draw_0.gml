@@ -22,3 +22,7 @@ if (state == player_states.dash or dash_not_ready){
 } else {
 	draw_sprite_ext(sprite_index, image_index, x, y, draw_scale*image_xscale, draw_scale*image_yscale, image_angle, blend, image_alpha);
 }
+
+if (has_shield or shield_radius > 1) {
+	draw_circle(x,y-sprite_height/2, shield_radius + 4 * sin(current_time*0.004), true);
+}

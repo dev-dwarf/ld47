@@ -2,7 +2,7 @@
 if (i_frames > 0) i_frames -= 1;
 
 var inst = instance_place(x,y,oSword);
-if (inst and ((inst.swing) or (oPlayer.state == player_states.dash or oPlayer.dash_not_ready)) and inst.i_frames <= 0) and state != enemy_states.dead {
+if (inst and ((inst.swing) or (oPlayer.state == player_states.dash or oPlayer.dash_not_ready)) and i_frames <= 0) and state != enemy_states.dead {
 	oPlayer.hits_this_time++;
 	
 	if (state == enemy_states.dead) {
@@ -19,9 +19,18 @@ if (inst and ((inst.swing) or (oPlayer.state == player_states.dash or oPlayer.da
 	
 	if (hp <= 0) {
 		i_frames = 10;
-		knockback *= 2;
 		state = enemy_states.dead;
-		// TODO: enemy death sound
+		
+		
+		
+		if (oCardHolder.counts[card.good][good_cards.bomb_slice]) and can_explode {
+			with instance_create_layer(x,y - sprite_height*0.5,layer,oExplosion) {
+				image_xscale = 1 + 0.1 * 
+				oCardHolder.counts[card.good][good_cards.bomb_slice];
+				
+				image_yscale = image_xscale;
+			}
+		}
 	
 	} else {
 		i_frames = 10;
@@ -33,6 +42,8 @@ if (inst and ((inst.swing) or (oPlayer.state == player_states.dash or oPlayer.da
 		}
 	}
 }
+
+log(string(hp));
 
 move(knockback,knockback_dir);
 knockback = lerp(knockback, 0, 0.7);

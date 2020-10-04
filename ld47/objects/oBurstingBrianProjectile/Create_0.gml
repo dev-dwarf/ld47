@@ -1,5 +1,8 @@
 /// @description
 event_inherited();
+can_explode = false;
+parent = noone;
+hp = 1;
 
 speed = 1;
 

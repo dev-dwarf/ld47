@@ -1,5 +1,7 @@
 /// @description
 
+if (!instance_exists(parent)) instance_destroy();
+
 if (place_meeting(x,y,oPlayer) and oPlayer.i_frames <= 0 and oPlayer.dash_state != dash_states.mid) {
 	hit_player();
 	instance_destroy();
@@ -8,7 +10,9 @@ if (place_meeting(x,y,oPlayer) and oPlayer.i_frames <= 0 and oPlayer.dash_state 
 if (place_meeting(x,y,pSolid)) instance_destroy();
 
 if (state == enemy_states.attack) {
+	if (hp > 1) parent.hp += hp - 1;
 	hp = 1;
+	
 
 	image_angle = direction;
 	acceleration = approach(acceleration, 1, jerk);

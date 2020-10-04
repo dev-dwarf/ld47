@@ -35,6 +35,7 @@ switch state {
 								  y-sprite_height/2 + lengthdir_y(sprite_width/2, i+dir)
 			,layer,oBurstingBrianProjectile) {
 				direction = i+dir;	
+				parent = other.id;
 			}
 		}
 		

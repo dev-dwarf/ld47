@@ -1,6 +1,4 @@
 
-// Inherit the parent event
-event_inherited();
 
 if (oPlayer.state == player_states.death) {
 	image_blend = c_gray;
@@ -33,7 +31,7 @@ switch state {
 	oPlayer.make_dust(x,y,1, attack_speed*0.3);
 	
 	idle_timer--;
-	if (idle_timer == 0) {
+	if (idle_timer <= 0) {
 		idle_timer = idle_time;
 		image_xscale = 0.5;
 		image_yscale = 0.5;	
@@ -45,7 +43,8 @@ switch state {
 			with instance_create_layer( x + lengthdir_x(r, d),
 										y - sprite_height/2 + lengthdir_y(r, d),
 										layer, oShotgunShitleyProjectile) 
-			{								
+			{			
+				parent = other.id;
 				direction = d;					
 			}
 		}

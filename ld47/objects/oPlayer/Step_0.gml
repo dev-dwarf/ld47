@@ -69,6 +69,18 @@ if (can_attack and dash_button_released and dash_not_ready == 0) {
 }
 #endregion
 
+if (!has_shield) {
+	shield_radius = lerp(shield_radius, 0, 0.1);	
+	shield_regen = approach(shield_regen, 1.0, shield_regen_speed);
+	
+	if (shield_regen == 1.0) {
+		has_shield = true;
+		shield_regen = false;
+	}
+} else {
+	shield_radius = lerp(shield_radius, 24, 0.5);	
+}
+
 mask_index = sPlayerIdle
 
 hp = approach(hp, max_hp, heal_overtime);

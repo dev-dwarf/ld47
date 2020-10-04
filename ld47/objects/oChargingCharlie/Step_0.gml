@@ -7,7 +7,7 @@ if (oPlayer.state == player_states.death) {
 	exit;
 }
 
-log(string(state));
+//log(string(state));
 
 switch state {
 	case enemy_states.idle 	 : #region

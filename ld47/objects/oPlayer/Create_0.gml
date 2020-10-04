@@ -34,6 +34,11 @@ enum dash_states {
 	recover
 }
 
+has_shield = oCardHolder.counts[card.good][good_cards.shield] > 0;
+shield_regen_speed = 0.003 * oCardHolder.counts[card.good][good_cards.shield]
+shield_regen = 0;
+shield_radius = 24;
+
 i_frames = 0;
 
 dash_not_ready = 0;
@@ -43,11 +48,11 @@ dash_is_teleport = oCardHolder.counts[card.good][good_cards.teleport_dash];
 if (dash_is_teleport) {
 	dash_start_frames = 2;
 	dash_frames = 3;
-	dash_recovery_frames = 1;
+	dash_recovery_frames = 4;
 } else {
 	dash_start_frames = 3;
 	dash_frames = 5;
-	dash_recovery_frames = 1;
+	dash_recovery_frames = 5;
 }
 
 knockback = 0;
@@ -114,8 +119,6 @@ hurt_line = function(x1, y1, x2, y2) {
 				
 	for (var i = 0; i < ds_list_size(list); i ++) {
 		var inst = list[| i];
-		
-		if (inst.i_frames > 0) continue;
 		
 		inst.hp -= hit_damage;
 		inst.i_frames = 10;

@@ -29,7 +29,9 @@ switch state {
 	y = ystart - 4 * (1-attack_timer/attack_time);
 	
 	if (attack_timer <= 0) {
-		instance_create_layer(x,y-sprite_height,layer,oProjectilePaulProjectile);
+		with instance_create_layer(x,y-sprite_height,layer,oProjectilePaulProjectile) {
+			parent = other.id;	
+		}
 		
 		attack_timer = attack_time;
 		state = enemy_states.idle;

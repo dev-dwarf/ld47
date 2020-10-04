@@ -3,17 +3,16 @@
 enum good_cards {
 	more_swords, // done
 	bigger_swords, //done 
-	laser_sword,
+	laser_sword, 
 	teleport_dash, //done
 	more_health, //done
 	heal_overtime, //done 
 	life_leach, //done
-	bomb_slice, 
-	shield,
+	bomb_slice, // done
+	shield, // done
 	more_damage, //done
 	thorns, //done
 	size,
-	good_final//this is just for spawning cards. It doesn't do anything, just tells us what the last value is
 }
 
 enum bad_cards  {
@@ -23,10 +22,11 @@ enum bad_cards  {
 	enemy_health, //done
 	enemy_damage, // done
 	laser_turrets,
-	enemy_faster,
-	enemy_attack_more,
+	enemy_faster, // done
+	enemy_attack_more, // done
+	enemy_leech, // done
+	glass_bones, // done
 	size,
-	bad_final//same as good_final above
 }
 
 enum card { 
@@ -56,6 +56,8 @@ stacks[card.bad ][bad_cards.enemy_damage 	 ] = true ;
 stacks[card.bad ][bad_cards.laser_turrets	 ] = false;
 stacks[card.bad ][bad_cards.enemy_faster	 ] = true ;
 stacks[card.bad ][bad_cards.enemy_attack_more] = true ;
+stacks[card.bad ][bad_cards.enemy_leech	 ] = true ;
+stacks[card.bad ][bad_cards.glass_bones		 ] = true ;
 
 
 counts[card.good][good_cards.more_swords	 ] = 1;
@@ -69,7 +71,8 @@ counts[card.good][good_cards.bomb_slice		 ] = 0;
 counts[card.good][good_cards.shield			 ] = 0;
 counts[card.good][good_cards.more_damage	 ] = 0;
 counts[card.good][good_cards.thorns			 ] = 0;
-counts[card.bad ][bad_cards.buzz_saws		 ] = 0;
+
+counts[card.bad ][bad_cards.buzz_saws		 ] = 1;
 counts[card.bad ][bad_cards.turrets			 ] = 0;
 counts[card.bad ][bad_cards.wall_spikes		 ] = 0;
 counts[card.bad ][bad_cards.enemy_health	 ] = 0;
@@ -77,31 +80,35 @@ counts[card.bad ][bad_cards.enemy_damage 	 ] = 0;
 counts[card.bad ][bad_cards.laser_turrets	 ] = 0;
 counts[card.bad ][bad_cards.enemy_faster	 ] = 0;
 counts[card.bad ][bad_cards.enemy_attack_more] = 0;
+counts[card.bad ][bad_cards.enemy_leech		 ] = 1;
+counts[card.bad ][bad_cards.glass_bones		 ] = 0;
 #endregion
 
 function generate_card_list(type, number_of_cards) {
 	var list = ds_list_create();
 	
 	var temp_counts;
-	temp_counts[card.good][good_cards.more_swords	 ] = counts[card.good][good_cards.more_swords	 ] ;
-	temp_counts[card.good][good_cards.bigger_swords	 ] = counts[card.good][good_cards.bigger_swords	 ] ;
-	temp_counts[card.good][good_cards.laser_sword	 ] = counts[card.good][good_cards.laser_sword	 ] ;
-	temp_counts[card.good][good_cards.teleport_dash	 ] = counts[card.good][good_cards.teleport_dash	 ] ;
-	temp_counts[card.good][good_cards.more_health	 ] = counts[card.good][good_cards.more_health	 ] ;
-	temp_counts[card.good][good_cards.heal_overtime	 ] = counts[card.good][good_cards.heal_overtime	 ] ;
+	temp_counts[card.good][good_cards.more_swords		] = counts[card.good][good_cards.more_swords	 ] ;
+	temp_counts[card.good][good_cards.bigger_swords		] = counts[card.good][good_cards.bigger_swords	 ] ;
+	temp_counts[card.good][good_cards.laser_sword		] = counts[card.good][good_cards.laser_sword	 ] ;
+	temp_counts[card.good][good_cards.teleport_dash		] = counts[card.good][good_cards.teleport_dash	 ] ;
+	temp_counts[card.good][good_cards.more_health		] = counts[card.good][good_cards.more_health	 ] ;
+	temp_counts[card.good][good_cards.heal_overtime		] = counts[card.good][good_cards.heal_overtime	 ] ;
 	temp_counts[card.good][good_cards.life_leach		 ] = counts[card.good][good_cards.life_leach	]	;
 	temp_counts[card.good][good_cards.bomb_slice		 ] = counts[card.good][good_cards.bomb_slice	]	;
 	temp_counts[card.good][good_cards.shield			 ] = counts[card.good][good_cards.shield		]	;
-	temp_counts[card.good][good_cards.more_damage	 ] = counts[card.good][good_cards.more_damage	 ] ;
+	temp_counts[card.good][good_cards.more_damage		] = counts[card.good][good_cards.more_damage	 ] ;
 	temp_counts[card.good][good_cards.thorns			 ] = counts[card.good][good_cards.thorns		]	;
-	temp_counts[card.bad ][bad_cards.buzz_saws		 ] = counts[card.bad ][bad_cards.buzz_saws		 ] ;
+	temp_counts[card.bad ][bad_cards.buzz_saws			 ] = counts[card.bad ][bad_cards.buzz_saws		 ] ;
 	temp_counts[card.bad ][bad_cards.turrets			 ] = counts[card.bad ][bad_cards.turrets		]	;
 	temp_counts[card.bad ][bad_cards.wall_spikes		 ] = counts[card.bad ][bad_cards.wall_spikes	]	;
-	temp_counts[card.bad ][bad_cards.enemy_health	 ] = counts[card.bad ][bad_cards.enemy_health	 ] ;
-	temp_counts[card.bad ][bad_cards.enemy_damage 	 ] = counts[card.bad ][bad_cards.enemy_damage 	 ] ;
-	temp_counts[card.bad ][bad_cards.laser_turrets	 ] = counts[card.bad ][bad_cards.laser_turrets	 ] ;
-	temp_counts[card.bad ][bad_cards.enemy_faster	 ] = counts[card.bad ][bad_cards.enemy_faster	 ] ;
+	temp_counts[card.bad ][bad_cards.enemy_health		] = counts[card.bad ][bad_cards.enemy_health	 ] ;
+	temp_counts[card.bad ][bad_cards.enemy_damage 		] = counts[card.bad ][bad_cards.enemy_damage 	 ] ;
+	temp_counts[card.bad ][bad_cards.laser_turrets		] = counts[card.bad ][bad_cards.laser_turrets	 ] ;
+	temp_counts[card.bad ][bad_cards.enemy_faster		] = counts[card.bad ][bad_cards.enemy_faster	 ] ;
 	temp_counts[card.bad ][bad_cards.enemy_attack_more] = counts[card.bad ][bad_cards.enemy_attack_more];
+	temp_counts[card.bad ][bad_cards.enemy_leech		] = counts[card.bad ][bad_cards.enemy_leech	];
+	temp_counts[card.bad ][bad_cards.glass_bones		] = counts[card.bad ][bad_cards.glass_bones		];
 	
 	var index = 0;
 	for (var i = 0; i <	number_of_cards; i++) {

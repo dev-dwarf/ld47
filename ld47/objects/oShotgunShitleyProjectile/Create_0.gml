@@ -1,5 +1,7 @@
 /// @description
 event_inherited();
+can_explode = false;
+hp = 1;
 
 speed = 5*(1 + 0.05 * oCardHolder.counts[card.bad ][bad_cards.enemy_faster]);
 

@@ -67,9 +67,18 @@ function create_wave() {
 	wave_number--;
 	no_of_enemies -= max_enemies_per_wave;
 
+	
 
 	ds_list_destroy(enemy_list);
 	#endregion
+}
+
+for (var i = 0; i < oCardHolder.counts[card.bad][bad_cards.buzz_saws];i++) {
+	var xx = irandom(100);
+	if (chance(50)) xx = room_width-xx;
+	var yy = irandom(room_height);
+		
+	instance_create_layer(xx,yy,layer,oBuzzSaw);
 }
 	
 create_wave();
