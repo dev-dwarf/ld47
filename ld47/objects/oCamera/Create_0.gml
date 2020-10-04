@@ -16,6 +16,9 @@ screenshake = 1;
 screenshake_intensity = 6;
 screenshake_decrease = 0.03;
 
+screenshake_x = 0;
+screenshake_y = 0;
+
 #endregion
 
 function set_shake(shake) {

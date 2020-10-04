@@ -17,6 +17,7 @@ max_enemies_per_wave = 5;
 wave_number = ceil(no_of_enemies/max_enemies_per_wave);
 max_wave_number = wave_number;
 
+global.wave_count++;
 
 //log(string(enemy_list[| 0]));
 instance_create_layer(room_width/2, room_height/2, layer, oPlayer);

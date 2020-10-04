@@ -15,6 +15,8 @@ function globals(){
 	global.sound_volume = 1.0 * global.master_volume;
 	global.music_volume = 1.0 * global.master_volume;
 	
+	global.wave_count = 0;
+	
 	global.sword_count = 1;
 	global.sword_id = 0;
 	

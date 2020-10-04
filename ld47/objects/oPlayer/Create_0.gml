@@ -135,4 +135,5 @@ hurt_line = function(x1, y1, x2, y2) {
 reset_cards = function() {
 	instance_destroy(oCardHolder);
 	instance_create_layer(0,0,layer,oCardHolder);
+	global.wave_count = 0;
 }
