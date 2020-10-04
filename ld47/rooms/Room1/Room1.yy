@@ -20,7 +20,6 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"oGodRay","path":"objects/oGodRay/oGodRay.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":-98.29779,"scaleX":1.26568508,"scaleY":0.390625,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":385.64032,"y":-102.794357,"resourceVersion":"1.0","name":"inst_34F1C019","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oGodRay","path":"objects/oGodRay/oGodRay.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":-118.357361,"scaleX":1.4799999,"scaleY":0.546875,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":636.5619,"y":-62.23892,"resourceVersion":"1.0","name":"inst_71F450CA","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oGodRay","path":"objects/oGodRay/oGodRay.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":-51.3551178,"scaleX":1.810773,"scaleY":0.625,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":-90.77841,"y":-92.10852,"resourceVersion":"1.0","name":"inst_7B2EDF35","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[],"isDnd":false,"objectId":{"name":"oWaveController","path":"objects/oWaveController/oWaveController.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":288.0,"y":192.0,"resourceVersion":"1.0","name":"inst_35F09593","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":-300,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"light","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"oCardHolder","path":"objects/oCardHolder/oCardHolder.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":true,"inheritItemSettings":false,"x":128.0,"y":96.0,"resourceVersion":"1.0","name":"inst_769471FD","tags":[],"resourceType":"GMRInstance",},
@@ -218,7 +217,6 @@
     {"name":"inst_1CA88482","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_D322340","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_513320D1","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_35F09593","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_4170AD36","path":"rooms/Room1/Room1.yy",},
   ],
   "inheritCreationOrder": false,

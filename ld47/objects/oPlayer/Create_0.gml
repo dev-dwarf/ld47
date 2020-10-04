@@ -25,7 +25,7 @@ enum player_states {
 
 global.sword_id = 0;
 global.sword_count = oCardHolder.counts[card.good][good_cards.more_swords  ];
-sword_size = 0.75 + 0.1*oCardHolder.counts[card.good][good_cards.bigger_swords];
+sword_size = 0.75 + 0.2*oCardHolder.counts[card.good][good_cards.bigger_swords];
 
 has_laser = (oCardHolder.counts[card.good][good_cards.laser_sword]>0);
 laser_regen_speed = 0.003 + 0.002 * oCardHolder.counts[card.good][good_cards.laser_sword];
@@ -42,6 +42,14 @@ enum dash_states {
 
 has_shield = oCardHolder.counts[card.good][good_cards.shield] > 0;
 shield_regen_speed = 0.003 * oCardHolder.counts[card.good][good_cards.shield]
+hit_damage = (1 + global.sword_count * 0.3 + 0.2 * oCardHolder.counts[card.good][good_cards.bigger_swords]) * power(1.1, oCardHolder.counts[card.good][good_cards.more_damage]);
+max_hp = 5 + 2.5 * oCardHolder.counts[card.good][good_cards.more_health  ];
+dash_is_teleport = oCardHolder.counts[card.good][good_cards.teleport_dash];
+
+leach = 0.1*oCardHolder.counts[card.good][good_cards.life_leach  ];
+thorns = 0.3*oCardHolder.counts[card.good][good_cards.thorns  ];
+heal_overtime = 0.001*power(oCardHolder.counts[card.good][good_cards.heal_overtime  ],2);
+
 shield_regen = 0;
 shield_radius = 24;
 
@@ -49,7 +57,6 @@ i_frames = 0;
 
 dash_not_ready = 0;
 dash_recharge = 10;
-dash_is_teleport = oCardHolder.counts[card.good][good_cards.teleport_dash];
 
 if (dash_is_teleport) {
 	dash_start_frames = 2;
@@ -70,8 +77,7 @@ dash_state = dash_states.start;
 dash_distance = 70;
 dash_frame_count = dash_start_frames;
 
-hit_damage = (1 + 0.2 * oCardHolder.counts[card.good][good_cards.bigger_swords]) * (1 + oCardHolder.counts[card.good][good_cards.more_damage]);
-max_hp = 5 * (1 + oCardHolder.counts[card.good][good_cards.more_health  ]);
+
 hp = max_hp;
 
 made_footstep = false;
@@ -90,9 +96,7 @@ move_decel = 0.2;
 
 draw_scale = 1.0;
 
-leach = 0.1*oCardHolder.counts[card.good][good_cards.life_leach  ];
-thorns = oCardHolder.counts[card.good][good_cards.thorns  ];
-heal_overtime = 0.001*power(oCardHolder.counts[card.good][good_cards.heal_overtime  ],2);
+
 
 dust = part_system_create();
 dust_particles = part_type_create();

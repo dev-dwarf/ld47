@@ -25,8 +25,9 @@ if (inst and ((inst.swing) or (oPlayer.state == player_states.dash or oPlayer.da
 	if (hp <= 0) {
 		i_frames = 10;
 		state = enemy_states.dead;
-		play_sound(sndEnemyDeath, 0, false, 0.8, 0.2, 0.8);
 		
+		if (can_explode)
+			play_sound(sndEnemyDeath, 0, false, 0.8, 0.2, 0.8);	
 		
 		if (oCardHolder.counts[card.good][good_cards.bomb_slice]) and can_explode {
 			with instance_create_layer(x,y - sprite_height*0.5,layer,oExplosion) {

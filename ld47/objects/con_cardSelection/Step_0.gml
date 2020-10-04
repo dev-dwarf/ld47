@@ -10,7 +10,7 @@ if error_off > 0
 	error_off = lerp(error_off, 0, 0.15);
 
 //particles
-if irandom(1000) <= 45
+if irandom(1000) <= 90
 	part_particles_create(sys, irandom_range(10, room_width - 10), irandom_range(10, room_height - 10), part_star, 1);
 
 //state machine 
@@ -120,7 +120,7 @@ switch cardSel_state
 			{
 				tt = 0;
 				cardSel_state = "cards_fan";
-				play_sound(sndEnterCardSelect, 0, false, 1.0, 0.00, 1.0);
+				play_sound(sndCardsUnfold, 0, false, 1.0, 0.00, 1.0);
 			}
 		}
 	}
@@ -146,6 +146,7 @@ switch cardSel_state
 		//move on to next state
 		if _moveon
 		{
+			play_sound(sndEnterCardSelect, 0, false, 1.0, 0.00, 1.0);
 			cardSel_state = "cards_move_to_place";
 			
 			//set cards' x/y targets, for when they start to move into place
@@ -231,7 +232,7 @@ switch cardSel_state
 			if _selCount > 0
 			{
 				cardSel_state = "cards_flip";
-				play_sound(sndCardsFlip, 0, false, 1.0, 0.00, 1.0);
+				play_sound(sndCardsUnfold, 0, false, 2.0, 0.09, 1.0);
 				
 			}
 			else
@@ -249,7 +250,7 @@ switch cardSel_state
 	case "cards_flip":
 	{		
 		var _move_on = true;
-		
+		var flipped_the_thang = false;
 		with obj_card
 		{
 			//flip selected cards
@@ -264,6 +265,7 @@ switch cardSel_state
 					if xS <= _target * 1.5
 					{
 						card_flipped = true;
+						flipped_the_thang = true;
 						xS = _target;
 					}
 				} else xS = lerp(xS, 1, 0.15);
@@ -280,8 +282,12 @@ switch cardSel_state
 			}
 		}
 		
-		if _move_on
+		if (flipped_the_thang) play_sound(sndCardsFlip, 0, false, 1.0, 0.00, 1.0);	
+		
+		if _move_on {
 			cardSel_state = "cards_view_debuff";
+			
+		}
 	}
 	break;
 	
@@ -293,6 +299,8 @@ switch cardSel_state
 		{
 			//move on
 			cardSel_state = "cards_destroy";
+			play_sound(sndClockBigTick, 1, false, 1.0, 0.0, 1.0)
+
 			
 			//apply buffs & debuffs
 			with obj_card
@@ -336,7 +344,6 @@ switch cardSel_state
 		
 		if transition_radius <= 1
 		{
-			
 			instance_destroy();
 
 			oCamera.set_shake(0.5);
