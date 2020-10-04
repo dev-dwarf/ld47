@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"159ff669-9aa6-4788-8a2b-fdbfc71c2f23","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "ld47",
-    "path": "ld47.yyp",
+    "name": "Sprites",
+    "path": "folders/Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "sGear5",

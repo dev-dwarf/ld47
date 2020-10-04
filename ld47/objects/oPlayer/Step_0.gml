@@ -52,11 +52,13 @@ if (can_attack and attack_button) {
 	
 	if (has_laser and laser_available == 1.0) {
 		laser_available = 0.0;
+		oCamera.set_shake(0.25);
 		var dir = point_direction(x,y,mouse_x,mouse_y) + irandom_range(-5, 5);
 		var inst = instance_create_layer(x,
 										 y-sprite_height/2,
 										layer,oPlayerLaser);
 		inst.image_angle = dir;
+		play_sound(sndLaser, 0, false, 1.2, 0.04, 1.0);
 	}
 	
 	play_sound(sndSwingMiss, 0, false, 0.8, 0.02, 1.0);

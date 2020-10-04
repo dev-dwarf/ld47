@@ -23,6 +23,8 @@ hit_player = function() {
 		oPlayer.shield_radius = 32;
 	} else {
 		oPlayer.hp -= hit_damage*(1+0.5*oCardHolder.counts[card.bad][bad_cards.glass_bones]);
+			play_sound(sndPlayerHurt, 0, false, 1.0, 0.04, 1.0);
+
 	
 		oCamera.set_shake( 0.5);
 	
