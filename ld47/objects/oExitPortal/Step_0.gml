@@ -13,15 +13,6 @@ if (place_meeting(x,y,oPlayer)) {
 	oPlayer.y = lerp(oPlayer.y, y, 0.2);
 	oPlayer.state = player_states.freeze;
 	
-	if (!set_player) {
-		oPlayer.image_index = 0;
-		oPlayer.sprite_index = sPlayerTeleport;
-		oPlayer.state = player_states.freeze;
-		set_player = true;
-		
-		oSword.sprite_index = sSwordPurple;
-	}
-	
 	if (step_on_delay == 0) {
 		player = true;
 	}
