@@ -27,6 +27,9 @@
     {"compositeImage":{"FrameId":{"name":"350eddf5-eeb6-4c1e-815d-b053f504dcc4","path":"sprites/sShotgunShitley/sShotgunShitley.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"350eddf5-eeb6-4c1e-815d-b053f504dcc4","path":"sprites/sShotgunShitley/sShotgunShitley.yy",},"LayerId":{"name":"ddc817cf-e109-4f4e-b3ee-35fa89b1354f","path":"sprites/sShotgunShitley/sShotgunShitley.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sShotgunShitley","path":"sprites/sShotgunShitley/sShotgunShitley.yy",},"resourceVersion":"1.0","name":"350eddf5-eeb6-4c1e-815d-b053f504dcc4","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"d59feebd-6e02-4a22-94ba-9a14c9490493","path":"sprites/sShotgunShitley/sShotgunShitley.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"d59feebd-6e02-4a22-94ba-9a14c9490493","path":"sprites/sShotgunShitley/sShotgunShitley.yy",},"LayerId":{"name":"ddc817cf-e109-4f4e-b3ee-35fa89b1354f","path":"sprites/sShotgunShitley/sShotgunShitley.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sShotgunShitley","path":"sprites/sShotgunShitley/sShotgunShitley.yy",},"resourceVersion":"1.0","name":"d59feebd-6e02-4a22-94ba-9a14c9490493","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sShotgunShitley","path":"sprites/sShotgunShitley/sShotgunShitley.yy",},
@@ -36,12 +39,13 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 1.0,
+    "length": 2.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"3932453b-ee4c-4254-ba1e-3353bff5ffe6","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"350eddf5-eeb6-4c1e-815d-b053f504dcc4","path":"sprites/sShotgunShitley/sShotgunShitley.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"d137e6b8-6a44-411d-9b95-9def9d306c67","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d59feebd-6e02-4a22-94ba-9a14c9490493","path":"sprites/sShotgunShitley/sShotgunShitley.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,

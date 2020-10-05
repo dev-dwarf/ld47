@@ -2,8 +2,11 @@
 
 if (oPlayer.state == player_states.death) {
 	image_blend = global.that_one_purple;
+	y_off = 0;
 	exit;
 }
+
+y_off = sin(current_time*0.01) * 3;
 
 switch state {
 	#region unused
@@ -58,6 +61,29 @@ switch state {
 	image_blend = global.that_one_purple;
 	image_xscale = lerp(image_xscale, 0.5, 0.2);
 	image_yscale = lerp(image_yscale, 0.5, 0.2);
-	
+	y_off = 0;
+	break;
+}
+
+
+
+var p_dir = point_direction(x,y,oPlayer.x, oPlayer.y);
+
+switch ceil((p_dir-1)/90) {
+	case 1:
+	image_index = 1;
+	draw_flip = 1;
+	break;
+	case 0: case 4:
+	image_index = 0;
+	draw_flip = 1;
+	break;
+	case 2: 
+	image_index = 1;
+	draw_flip = -1;
+	break;
+	case 3: 
+	image_index = 0;
+	draw_flip = -1;
 	break;
 }

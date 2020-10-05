@@ -53,6 +53,7 @@
     {"id":{"name":"oGearTopLayer2","path":"objects/oGearTopLayer2/oGearTopLayer2.yy",},"order":31,},
     {"id":{"name":"get_card_info","path":"scripts/get_card_info/get_card_info.yy",},"order":2,},
     {"id":{"name":"sSwordDust","path":"sprites/sSwordDust/sSwordDust.yy",},"order":6,},
+    {"id":{"name":"sBoss","path":"sprites/sBoss/sBoss.yy",},"order":56,},
     {"id":{"name":"oDepthManager","path":"objects/oDepthManager/oDepthManager.yy",},"order":11,},
     {"id":{"name":"spr_card_debuff_9","path":"sprites/spr_card_debuff_9/spr_card_debuff_9.yy",},"order":10,},
     {"id":{"name":"card_get_sprites","path":"scripts/card_get_sprites/card_get_sprites.yy",},"order":1,},

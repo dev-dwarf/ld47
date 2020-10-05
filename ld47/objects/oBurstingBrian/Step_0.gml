@@ -2,8 +2,12 @@
 
 if (oPlayer.state == player_states.death) {
 	image_blend = global.that_one_purple;
+	y_off = 0;
 	exit;
 }
+
+y_off = sin(current_time*0.01) * 3;
+
 
 switch state {
 	case enemy_states.idle 	 : #region
