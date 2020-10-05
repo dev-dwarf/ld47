@@ -74,7 +74,7 @@ knockback_dir = 0;
 dash_start_x = x;
 dash_start_y = y;
 dash_state = dash_states.start;
-dash_distance = 58;
+dash_distance = 65;
 dash_frame_count = dash_start_frames;
 
 
