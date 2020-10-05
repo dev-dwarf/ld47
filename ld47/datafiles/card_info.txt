@@ -6,8 +6,8 @@
 	"buff_1_name": "Extradimensional Sword",
 	"buff_1_desc": "The space around you distorts and twists, making any swords you are holding grow slightly larger and deal more damage.",
 
-	"buff_2_name": "Bolt Sword",
-	"buff_2_desc": "Your sword releases a bolt of energy when attacking. If you have already received this boon, your projectile will instead deal additional damage.",
+	"buff_2_name": "Beam Sword",
+	"buff_2_desc": "Your sword releases a beam of energy when attacking. After a brief recharge period, you'll be able to fire the beam again. Additional upgrades increase the damage dealt by your beam attack.",
 
 	"buff_3_name": "Teleport",
 	"buff_3_desc": "Replace your dash ability with an instantaneous teleportation ability by partially phasing your body into another plane.",

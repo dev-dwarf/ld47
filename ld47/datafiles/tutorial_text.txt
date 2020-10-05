@@ -7,7 +7,7 @@
 
 	"3": "Hey, nice job! I knew I could do it. When you defeat all enemies, a portal will open. Step through it to move on!",
 
-	"4": "After stepping into the portal, you'll get to choose from 1-5 upgrades! But choose wisely. Each upgrade comes with a random debuff!",
+	"4": "After stepping into the portal, you'll get to choose from 1-5 upgrades. But choose wisely. Each upgrade comes with a random debuff!",
 
-	"5": "That's about everything, me. Good luck out there!",
+	"5": "That's about everything, me. Good luck out there! You can play around for a bit here, just press (spacebar) whenever you're ready to end the tutorial.",
 }

@@ -17,7 +17,7 @@ function globals(){
 	
 	global.that_one_purple = make_color_rgb(213, 137, 229);
 	
-	global.fullscreen = true;
+	//global.fullscreen = true;
 	
 	global.wave_count = 0;
 	

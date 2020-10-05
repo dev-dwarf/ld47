@@ -205,7 +205,7 @@ switch tutorial_state
 		tutorial_text_type();
 		move_box_in();
 		
-		if text_is_done() && mouse_check_button_pressed(mb_left)
+		if text_is_done() && keyboard_check_pressed(vk_space)
 		{
 			tutorial_state ++;
 			draw_dialogue = false;
@@ -227,7 +227,8 @@ switch tutorial_state
 				gameState = "tutorial_end";
 				
 			//create save file so player can skip tutorial in future runs
-			saveStringToFile("tutorial.done", "wow nice!");
+			if !file_exists("tutorial.done")
+				saveStringToFile("tutorial.done", "wow nice!");
 		}
 	}
 	break;

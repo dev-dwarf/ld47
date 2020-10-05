@@ -299,8 +299,6 @@ switch cardSel_state
 			if y >= (room_height * 1.15)
 				instance_destroy();
 		}
-		
-		
 
 		if !instance_exists(obj_card) 
 		{
