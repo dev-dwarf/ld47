@@ -43,3 +43,5 @@ hit_player = function() {
 		}
 	}
 }
+
+alarm[0]= 1;
