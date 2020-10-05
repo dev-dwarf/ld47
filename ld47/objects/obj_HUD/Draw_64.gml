@@ -74,7 +74,7 @@ if player_has_laser
 
 //boss HP
 //------------------------------------------------------------------------------
-if instance_exists(oBoss)
+if instance_exists(oBoss) && !instance_exists(con_dialogue)
 {
 	var _x = _xc,
 		_y = room_height - 25,
