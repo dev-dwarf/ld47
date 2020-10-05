@@ -41,7 +41,6 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"oTurret","path":"objects/oTurret/oTurret.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":true,"inheritItemSettings":false,"x":101.0,"y":125.0,"resourceVersion":"1.0","name":"inst_3BD73B01","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oLaserTurret","path":"objects/oLaserTurret/oLaserTurret.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":true,"inheritItemSettings":false,"x":82.0,"y":200.0,"resourceVersion":"1.0","name":"inst_21598B54","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oShotgunShitley","path":"objects/oShotgunShitley/oShotgunShitley.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":true,"inheritItemSettings":false,"x":240.0,"y":192.0,"resourceVersion":"1.0","name":"inst_41AADAC9","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[],"isDnd":false,"objectId":{"name":"oBoss","path":"objects/oBoss/oBoss.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":true,"inheritItemSettings":false,"x":312.0,"y":168.0,"resourceVersion":"1.0","name":"inst_D8A332F","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":24,"gridY":24,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[],"visible":true,"depth":-100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"FX","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
@@ -276,7 +275,6 @@
     {"name":"inst_498395D9","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_21598B54","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_41AADAC9","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_D8A332F","path":"rooms/Room1/Room1.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

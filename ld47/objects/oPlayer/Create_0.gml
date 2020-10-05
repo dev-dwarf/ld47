@@ -43,7 +43,7 @@ enum dash_states {
 has_shield = oCardHolder.counts[card.good][good_cards.shield] > 0;
 shield_regen_speed = 0.003 * power(oCardHolder.counts[card.good][good_cards.shield], 0.5)
 hit_damage = (1 + power(global.sword_count, 0.5) * 0.3 + 0.2 * power(oCardHolder.counts[card.good][good_cards.bigger_swords], 0.5)) * power(1.1, oCardHolder.counts[card.good][good_cards.more_damage]);
-max_hp = 5 + 2.0 * oCardHolder.counts[card.good][good_cards.more_health  ];
+max_hp = 5 + 2.5 * oCardHolder.counts[card.good][good_cards.more_health  ];
 dash_is_teleport = oCardHolder.counts[card.good][good_cards.teleport_dash];
 
 leach = 0.1*power(oCardHolder.counts[card.good][good_cards.life_leach  ], 0.75);
@@ -56,16 +56,16 @@ shield_radius = 24;
 i_frames = 0;
 
 dash_not_ready = 0;
-dash_recharge = 9;
+dash_recharge = 13;
 
 if (dash_is_teleport) {
 	dash_start_frames = 2;
 	dash_frames = 3;
-	dash_recovery_frames = 6;
+	dash_recovery_frames = 7;
 } else {
 	dash_start_frames = 3;
 	dash_frames = 5;
-	dash_recovery_frames = 6;
+	dash_recovery_frames = 7;
 }
 
 knockback = 0;

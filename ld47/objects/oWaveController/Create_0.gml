@@ -15,22 +15,11 @@ no_of_enemies  = round( 1.5 * oCardHolder.count_cards(card.bad)) + 2;
 max_enemies_per_wave = 5;
 
 wave_number = ceil(no_of_enemies/max_enemies_per_wave);
+max_wave_number = wave_number;
 
 global.wave_count++;
 
-
-if (global.wave_count mod 12 == 0) {
-	with instance_create_layer(room_width/2,
-							  room_height/2-100,
-							  layer,
-							  oSpawnSpot) {
-			object_to_spawn = oBoss;					  
-		}
-	
-	instance_create_layer(room_width/2, room_height/2+100, layer, oPlayer);
-	exit;
-}
-
+//log(string(enemy_list[| 0]));
 instance_create_layer(room_width/2, room_height/2, layer, oPlayer);
 
 function create_wave() {

@@ -38,7 +38,7 @@ hit_player = function() {
 		}
 		
 		if (oCardHolder.counts[card.bad ][bad_cards.enemy_leech	 ] > 0) {
-			hp += hit_damage * oCardHolder.counts[card.bad ][bad_cards.enemy_leech	 ] * 0.5;
+			hp += hit_damage * oCardHolder.counts[card.bad ][bad_cards.enemy_leech	 ] * 0.25;
 		}
 	}
 }
