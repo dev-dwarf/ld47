@@ -15,9 +15,14 @@ laser_flash = 0;
 blink = 0;
 blink_max = room_speed * 5;
 
+//boss hp
+boss_hp_c = 0;
+boss_hp = 0;
+boss_hpMax = 0;
+
 depth = -room_height * 10;
 
-//get variables from player
+//get variables from player && boss
 if instance_exists(oPlayer)
 {
 	//hp
@@ -28,4 +33,10 @@ if instance_exists(oPlayer)
 	//laser
 	player_has_laser = oPlayer.has_laser;
 	player_laser = oPlayer.laser_available;
+}
+if instance_exists(oBoss)
+{
+	boss_hp_c = oBoss.hp;
+	boss_hp = boss_hp_c;
+	boss_hpMax = oBoss.hpMax;
 }

@@ -1,4 +1,4 @@
-/// @description blink timer
+/// @description HUD behavior
 
 blink ++;
 
@@ -32,8 +32,14 @@ if instance_exists(oPlayer)
 	player_hpMax = _hpMax;
 	player_laser = _laser;
 }
+if instance_exists(oBoss)
+{
+	boss_hp_c = oBoss.hp;
+	boss_hpMax = oBoss.hpMax;
+}
 
 player_hp = lerp(player_hp, player_hp_c, 0.1);
+boss_hp = lerp(boss_hp, boss_hp_c, 0.1);
 
 if laser_off > 0
 	laser_off = lerp(laser_off, 0, 0.15);
