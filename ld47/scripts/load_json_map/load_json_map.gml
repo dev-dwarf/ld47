@@ -14,5 +14,6 @@ function load_json_map(_filename)
 	file_text_close(file);
 	
 	var _json = json_decode(_string);
+	
 	return _json;
 }

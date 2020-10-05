@@ -62,7 +62,7 @@ stacks[card.bad ][bad_cards.glass_bones		 ] = true ;
 
 counts[card.good][good_cards.more_swords	 ] = 1;
 counts[card.good][good_cards.bigger_swords	 ] = 0;
-counts[card.good][good_cards.laser_sword	 ] = 1;
+counts[card.good][good_cards.laser_sword	 ] = 0;
 counts[card.good][good_cards.teleport_dash	 ] = 0;
 counts[card.good][good_cards.more_health	 ] = 0;
 counts[card.good][good_cards.heal_overtime	 ] = 0;
@@ -72,7 +72,7 @@ counts[card.good][good_cards.shield			 ] = 0;
 counts[card.good][good_cards.more_damage	 ] = 0;
 counts[card.good][good_cards.thorns			 ] = 0;
 
-counts[card.bad ][bad_cards.buzz_saws		 ] = 1;
+counts[card.bad ][bad_cards.buzz_saws		 ] = 0;
 counts[card.bad ][bad_cards.turrets			 ] = 0;
 counts[card.bad ][bad_cards.wall_spikes		 ] = 0;
 counts[card.bad ][bad_cards.enemy_health	 ] = 0;

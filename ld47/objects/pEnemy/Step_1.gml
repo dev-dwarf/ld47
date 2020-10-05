@@ -49,7 +49,5 @@ if (inst and ((inst.swing) or (oPlayer.state == player_states.dash or oPlayer.da
 	}
 }
 
-log(string(hp));
-
 move(knockback,knockback_dir);
 knockback = lerp(knockback, 0, 0.7);

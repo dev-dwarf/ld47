@@ -1,0 +1,13 @@
+{
+	"0": "Hello? Can you hear me? It's me, you from the future! I don't have much time before the next time loop, so listen up. Left click to continue!",
+
+	"1": "Use WASD to move, left click to attack, and right click to dash. Give the controls a try, and press (spacebar) when you're ready for your next instructions.",
+
+	"2": "To make it through the time loop, you'll have to fight your way through several waves of enemies. Your first opponent is about to step through a portal, so you might want to step away from the middle of the room.",
+
+	"3": "Hey, nice job! I knew I could do it. When you defeat all enemies, a portal will open. Step through it to move on!",
+
+	"4": "After stepping into the portal, you'll get to choose from 1-5 upgrades! But choose wisely. Each upgrade comes with a random debuff!",
+
+	"5": "That's about everything, me. Good luck out there!",
+}
