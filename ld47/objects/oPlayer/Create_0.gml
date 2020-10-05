@@ -22,6 +22,7 @@ enum player_states {
 	dash,
 	freeze,
 	death,
+	victory
 }
 
 global.sword_id = 0;

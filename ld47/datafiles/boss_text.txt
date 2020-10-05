@@ -1,0 +1,11 @@
+{
+	"0": "So, you managed to defeat... yourself.",
+
+	"1": "Remember all those good times we shared during the tutorial? Thinking back on them makes me regret becoming evil.",
+
+	"2": "Well, nice work anyway. But beware... once you've taken too many upgrade cards, and the incomprehensible power of the very cosmos themselves flows through your veins... you'll be just like me.",
+
+	"3": "I gotta say, it was worth it. Nice fight bro!!",
+
+	"4": "Okay now I'm dead."
+}

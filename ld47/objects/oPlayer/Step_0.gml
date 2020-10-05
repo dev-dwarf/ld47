@@ -126,13 +126,23 @@ if (hp == 0 and state != player_states.death) {
 //log(string(hp));
 
 if (check_p(vk_r)) {
-	if (state == player_states.death) reset_cards();	
-	room_restart();
+	game_restart();
 }
 
 #region state
 switch state {
-	case player_states.idle  : #region idle
+	
+	case player_states.victory:
+	{
+		sprite_index = sPlayerIdle;
+		can_attack = false;
+		move_speed = 0;
+		speed = 0;
+		direction = 0;
+	}
+	break;
+	
+	case player_states.idle: #region idle
 	sprite_index = sPlayerIdle;
 	
 	can_attack = true;

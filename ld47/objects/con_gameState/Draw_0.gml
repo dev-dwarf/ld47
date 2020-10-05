@@ -42,3 +42,24 @@ if gameState == "title" or gameState == "startup" or gameState == "tutorial_init
 		
 	}
 }
+
+//draw defeat screen
+if gameState == "defeat_init" or gameState == "defeat" or gameState == "defeat_exit"
+{
+	var _xx = room_width / 2;
+	draw_sprite_ext(sGear3, 0, _xx, y_title + 25, 1, 1, rot_title + 25, c_white, 1);
+	
+	draw_text_float(_xx, y_title, 1, "Game Over", global.font_large_outline, tt_float, 1);
+	draw_text_float(_xx, y_title + string_height("Ag"), 1, "left click to try again!", global.font_large_outline, tt_float, 1);
+}
+
+//draw victory screen
+if gameState == "victory" or gameState == "victory_exit"
+{
+	var _xx = room_width / 2;
+	draw_sprite_ext(sGear3, 0, _xx, y_title + 25, 1, 1, rot_title + 25, c_white, 1);
+	
+	draw_text_float(_xx, y_title, 1, "!! - Victory - !!", global.font_large_outline, tt_float, 1);
+	draw_text_float(_xx, y_title + string_height("Ag"), 1, "You beat the game, congratulations! Thanks for playing!!", global.font_large_outline, tt_float, 1);
+	draw_text_float(_xx, y_title + (string_height("Ag") * 3), 1, "(left click to start a new loop)", global.font_large_outline, tt_float, 1);
+}

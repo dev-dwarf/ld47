@@ -1,6 +1,6 @@
 /// @description
 
-if (instance_exists(oExitPortal) or (instance_exists(oPlayer) and oPlayer.state == player_states.death)) {
+if (instance_exists(oExitPortal) or (instance_exists(oPlayer) and (oPlayer.state == player_states.death or oPlayer.state == player_states.victory))) {
 	image_blend = global.that_one_purple;
 	image_speed = 0;
 	exit;	

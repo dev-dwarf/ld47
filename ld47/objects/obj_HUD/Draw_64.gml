@@ -1,6 +1,6 @@
 /// @description draw HUD
 
-var _xc = room_width / 2,
+var _xc = (room_width / 2) + 50,
 	_HUD_y = 15;
 
 //HP

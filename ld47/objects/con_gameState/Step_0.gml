@@ -1,6 +1,8 @@
 /// @description game state machine
 
+//flotation and rotation
 rot_title = (rot_title + 1) mod 360;
+tt_float = (tt_float + 3) mod 360;
 
 switch gameState
 {
@@ -26,9 +28,6 @@ switch gameState
 	//title: player is on the title screen
 	case "title":
 	{
-		//float timer
-		tt_float = (tt_float + 3) mod 360;
-		
 		//instructional text lerp
 		var _target = room_height - 40;
 		if y_title_text != _target
@@ -88,7 +87,7 @@ switch gameState
 				with con_tutorial
 				{
 					tutorial_state = 1;
-					tutorial_text_next();
+					text_state_next();
 				}
 			}
 		}
@@ -141,7 +140,7 @@ switch gameState
 		if rad > 0
 			rad = lerp(rad, 0, 0.15);
 		
-		//check for defeat state
+		//check for defeat conditions
 		var _player_defeat = false;
 		with oPlayer
 			_player_defeat = (hp <= 0);
@@ -151,7 +150,34 @@ switch gameState
 		{
 			gameState_next("defeat_init");
 			y_title = -room_height;
+			
+			with oPlayer
+				sprite_index = sPlayerIdle;
 		}
+		
+		//check for victory conditions
+		var _player_victory = false;
+		with oBoss
+			_player_victory = (state == boss_states.dead);
+			
+		//initiate victory state
+		if _player_victory && !_player_defeat
+		{
+			//create dialogue object
+			 instance_create_depth(0, 0, -room_height * 2, con_dialogue);
+		 
+			 //move on
+			 gameState_next("victory_dialogue_init");
+			
+			//switch player to victory state
+			with oPlayer
+			{
+				speed = 0;
+				direction = 0;
+				state = player_states.victory;
+			}
+		}
+				
 	}
 	break;
 	
@@ -164,9 +190,14 @@ switch gameState
 			tt ++;
 		else
 		{
-			if tt == _delay
+			var _t = (room_height / 2) - 35;
+			
+			y_title = lerp(y_title, _t, 0.15);
+				
+			if diff(y_title, _t) <= 0.1
 			{
-				//***
+				y_title = _t;
+				gameState_next("defeat");
 			}
 		}	
 	}
@@ -176,17 +207,74 @@ switch gameState
 	case "defeat":
 	{
 		target_track_index	= sndTickingMusic;
-
-		//***
+		//click to restart
+		if mouse_check_button_pressed(mb_left)
+		{
+			//clear out room
+			room_restart();
+			instance_destroy(oCardHolder);
+			
+			//reset cards
+			reset_card_counts();
+			
+			//move on to next game state
+			gameState_next("defeat_exit");
+		}
 	}
 	break;
 	
-	//victory: player has beaten the boss!
+	//defeat_exit: move defeat offscreen
+	 case "defeat_exit":
+	 {
+		 rad = lerp(rad, room_width, 0.15);
+		 y_title = lerp(y_title, -room_height, 0.1);
+		
+		if diff(y_title, -room_height) <= 10 && diff(rad, room_width) <= 5
+			gameState_next("game_init");
+	 }
+	 break;
+	 
+	 //victory_dialogue_init: delay before initializing victory dialogue. any effects you want to add for the boss being defeated should go here
+	 case "victory_dialogue_init":
+	 {
+		 tt ++;
+		 if tt >= room_speed
+			gameState_next("victory_dialogue");
+	 }
+	 break;
+	 
+	 //victory_dialogue: player is chatting with the boss
+	 case "victory_dialogue":
+	 {
+		 //
+	 }
+	 break;
+	
+	//victory: player has beaten the boss and completed dialogue
 	case "victory":
 	{
-		//***
+		var _t = (room_height / 2) - 35;
+			
+		y_title = lerp(y_title, _t, 0.15);
+			
+		if diff(y_title, _t) <= 1 && mouse_check_button_pressed(mb_left)
+			gameState_next("victory_exit");
 	}
 	break;
+	 case "victory_exit":
+	 {
+		 rad = lerp(rad, room_width, 0.15);
+		 y_title = lerp(y_title, -room_height, 0.1);
+		
+		if diff(y_title, -room_height) <= 10 && diff(rad, room_width) <= 5
+		{
+			room_restart();			
+			global.wave_count = 0;
+			
+			gameState_next("game_init");
+		}
+	 }
+	 break;
 }
 
 #region switch tracks

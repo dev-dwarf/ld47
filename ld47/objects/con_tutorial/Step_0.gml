@@ -25,14 +25,14 @@ switch tutorial_state
 	//"hi there!" introduction
 	case 1:
 	{
-		tutorial_text_type();
+		advance_dialogue();
 		move_box_in();
 		
 		//move on
 		if text_is_done() && mouse_check_button_pressed(mb_left)
 		{
 			tutorial_state ++;
-			tutorial_text_next();
+			text_state_next();
 			
 			//unlock the player!
 			oPlayer.player_active = true;
@@ -43,13 +43,13 @@ switch tutorial_state
 	//controls explanation
 	case 2:
 	{
-		tutorial_text_type();
+		advance_dialogue();
 		
 		//move on
 		if text_is_done() && keyboard_check_pressed(vk_space)
 		{
 			tutorial_state ++;
-			tutorial_text_next();
+			text_state_next();
 		}
 	}
 	break;
@@ -57,7 +57,7 @@ switch tutorial_state
 	//text before having to fight enemies
 	case 3:
 	{
-		tutorial_text_type();
+		advance_dialogue();
 		
 		if text_is_done() && mouse_check_button_pressed(mb_left)
 		{
@@ -106,7 +106,7 @@ switch tutorial_state
 			{
 				tt = 0;
 				tutorial_state ++;
-				tutorial_text_next();
+				text_state_next();
 			}
 		}
 	}
@@ -116,7 +116,7 @@ switch tutorial_state
 	case 6:
 	{
 		move_box_in();
-		tutorial_text_type();
+		advance_dialogue();
 		
 		if text_is_done() && mouse_check_button_pressed(mb_left)
 		{
@@ -143,7 +143,7 @@ switch tutorial_state
 		{
 			tt = 0;
 			tutorial_state ++;
-			tutorial_text_next();
+			text_state_next();
 			
 			with con_cardSelection
 				cardSel_active = false;
@@ -154,7 +154,7 @@ switch tutorial_state
 	//8: explanation about upgrades
 	case 8:
 	{
-		tutorial_text_type();
+		advance_dialogue();
 		move_box_in();
 		
 		var _st = "";
@@ -190,7 +190,7 @@ switch tutorial_state
 		if !instance_exists(obj_card)
 		{				
 			tutorial_state ++;
-			tutorial_text_next();
+			text_state_next();
 			draw_dialogue = true;
 			
 			with oPlayer
@@ -202,7 +202,7 @@ switch tutorial_state
 	//10 - tutorial complete! left click to end the tutorial and start the game
 	case 10:
 	{
-		tutorial_text_type();
+		advance_dialogue();
 		move_box_in();
 		
 		if text_is_done() && keyboard_check_pressed(vk_space)
