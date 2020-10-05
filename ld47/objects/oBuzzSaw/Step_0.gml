@@ -6,19 +6,19 @@ var view_y = camera_get_view_y(view_camera[0])
 for (var i = 0; i < move_speed; i++) {
 	if  (x+xstep < view_x) {
 		direction = 180-direction;	
-		image_xscale = 0.5; image_yscale = 1.5;
+		image_xscale = 0.85; image_yscale = 1.15;
 		break;
 	} else if (x+xstep > view_x+DEFAULT_WIDTH) {
 		direction = 180-direction;	
-		image_xscale = 0.5; image_yscale =  1.55;
+		image_xscale = 0.85; image_yscale =  1.15;
 		break;
 	} else if (y+ystep < view_y) {
 		direction = -direction;	
-		image_yscale = 0.5; image_xscale =  1.55;
+		image_yscale = 0.85; image_xscale =  1.15;
 		break;
 	} else if (y+ystep > view_y+DEFAULT_HEIGHT) {
 		direction = -direction;
-		image_yscale = 0.5; image_xscale =  1.55;
+		image_yscale = 0.85; image_xscale =  1.15;
 		break;
 	} else {
 		x = (x+xstep);
