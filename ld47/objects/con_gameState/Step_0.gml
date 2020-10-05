@@ -207,8 +207,13 @@ if (target_track_index != current_track_index) {
 		audio_sound_gain(current_track_id, 0, 0);
 		audio_sound_gain(current_track_id, global.music_volume, 500);
 		
-		if (last != sndTickingMusic)
-			audio_sound_set_track_position(current_track_id, last_track_position)
+		if (last != sndTickingMusic) {
+			var new_pos = last_track_position;
+			var len = audio_sound_length(current_track_id);
+			new_pos = new_pos mod len;
+			
+			audio_sound_set_track_position(current_track_id, new_pos)
+		}
 		
 		last_track_position = -1;
 	} else {
