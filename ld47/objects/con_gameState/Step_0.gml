@@ -136,7 +136,7 @@ switch gameState
 		//***
 		
 		if rad > 0
-			rad = lerp(rad, 0, 0.35);
+			rad = lerp(rad, 0, 0.15);
 	}
 	break;
 	

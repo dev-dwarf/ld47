@@ -304,6 +304,7 @@ switch cardSel_state
 		{
 			cardSel_state = "cards_wrapup";
 			part_particles_clear(sys);
+			part_system_destroy(sys);
 		}
 	}
 	break;
