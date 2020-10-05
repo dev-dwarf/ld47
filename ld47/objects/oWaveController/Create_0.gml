@@ -11,7 +11,7 @@ state = wave_states.spawn;
 spawn_time = 90;
 spawn_timer = spawn_time;
 
-no_of_enemies  = max(1, oCardHolder.count_cards(card.bad));
+no_of_enemies  = round( 1.5 * oCardHolder.count_cards(card.bad));
 max_enemies_per_wave = 5;
 
 wave_number = ceil(no_of_enemies/max_enemies_per_wave);
