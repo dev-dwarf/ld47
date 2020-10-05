@@ -21,7 +21,7 @@ y = lerp(y, ystart + (oPlayer.y-oPlayer.ystart)*parralax_percent, 0.2);
 if (shoot_timer <= 0) {
 	image_speed = 1;
 
-	if (ceil(image_index) == image_number-4 and !instance_exists(preview)) {
+	if (ceil(image_index) == image_number-9 and !instance_exists(preview)) {
 		preview =
 		instance_create_layer(x + lengthdir_x(sprite_width*0.5, image_angle),
 							  y + lengthdir_y(sprite_width*0.5, image_angle),	

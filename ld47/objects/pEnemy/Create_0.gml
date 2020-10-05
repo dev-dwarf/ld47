@@ -11,7 +11,7 @@ i_frames = 0;
 knockback = 0;
 knockback_dir = 0;
 
-hit_damage = 1 + 0.8 * oCardHolder.counts[card.bad ][bad_cards.enemy_damage  ];
+hit_damage = 0.5 + 0.8 * oCardHolder.counts[card.bad ][bad_cards.enemy_damage  ];
 
 enum enemy_states {
 	idle, attack, recover, hit, dead

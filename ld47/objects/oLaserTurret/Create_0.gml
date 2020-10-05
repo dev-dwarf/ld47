@@ -5,5 +5,5 @@ preview = noone;
 
 angle_speed = 0;
 
-shoot_cooldown = 5*60;
+shoot_cooldown = 7.5*60;
 shoot_timer = choose(shoot_cooldown/2, shoot_cooldown);

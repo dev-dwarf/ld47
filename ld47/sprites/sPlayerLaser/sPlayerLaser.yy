@@ -15,7 +15,7 @@
   "VTile": false,
   "For3D": false,
   "width": 1,
-  "height": 6,
+  "height": 12,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -67,7 +67,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 0,
-    "yorigin": 3,
+    "yorigin": 6,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPlayerLaser","path":"sprites/sPlayerLaser/sPlayerLaser.yy",},

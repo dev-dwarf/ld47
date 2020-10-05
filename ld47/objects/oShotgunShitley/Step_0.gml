@@ -42,7 +42,7 @@ switch state {
 		var dir = point_direction(x,y,oPlayer.x, oPlayer.y) - spread/2;
 		var r = sprite_width;
 		for (var i = 0; i < pellets; i++) {
-			var d = dir+i*spread/pellets+random_range(-5,5);
+			var d = dir+i*spread/pellets+random_range(-18,18);
 			with instance_create_layer( x + lengthdir_x(r, d),
 										y - sprite_height/2 + lengthdir_y(r, d),
 										layer, oShotgunShitleyProjectile) 
