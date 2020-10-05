@@ -26,7 +26,7 @@ if (collision_line(x,y,x+lengthdir_x(sprite_width,image_angle),y+lengthdir_y(spr
 		oPlayer.shield_radius = 32;
 		oCamera.set_shake( 0.25);
 	} else {
-		oPlayer.hp -= hit_damage*(1+0.5*oCardHolder.counts[card.bad][bad_cards.glass_bones]);
+		oPlayer.hp -= hit_damage;
 		play_sound(sndPlayerHurt, 0, false, 1.0, 0.04, 1.0);
 		oCamera.set_shake( 0.5);
 	}
