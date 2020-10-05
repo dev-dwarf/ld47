@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sBoss",
-    "path": "sprites/sBoss/sBoss.yy",
+    "name": "sPlayerTeleport",
+    "path": "sprites/sPlayerTeleport/sPlayerTeleport.yy",
   },
   "solid": false,
   "visible": true,

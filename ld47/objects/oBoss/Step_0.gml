@@ -32,8 +32,9 @@ if (inst and ((inst.swing) or (oPlayer.state == player_states.dash or oPlayer.da
 
 switch state {
 	case boss_states.spawn	: #region 
-	image_blend = global.that_one_purple;
+//	image_blend = global.that_one_purple;
 	image_speed = 1;
+	sprite_index = sPlayerIdle;	
 	if state != enemy_states.dead and (place_meeting(x,y,oPlayer) and oPlayer.i_frames <= 0 and oPlayer.dash_state != dash_states.mid) {
 	
 		hit_player();
@@ -44,7 +45,8 @@ switch state {
 	draw_scale = lerp(draw_scale, 1.0, 0.1);	
 	
 	if (spawn_timer <= 0) {
-		state = boss_states.charger;
+		state = boss_states.transform;
+		next_state = boss_states.charger;
 	}
 	break; #endregion
 	case boss_states.charger: #region 
@@ -238,12 +240,15 @@ switch state {
 	break; #endregion
 	case boss_states.dead	: #region 
 	image_blend = global.that_one_purple;
+	sprite_index = sPlayerIdle;	
+	image_angle = 0;
+	draw_scale = 1;
 	break; #endregion
 	case boss_states.transform: #region
 	if (place_meeting(x,y,oPlayer) and oPlayer.i_frames <= 0 and oPlayer.dash_state != dash_states.mid) {
 		hit_player();
 	}
-	
+	sprite_index = sBoss;	
 	image_blend = global.that_one_purple;
 	image_speed = 1;
 	image_angle = angle_lerp(image_angle, 0, 0.2);
