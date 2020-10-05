@@ -126,8 +126,7 @@ if (hp == 0 and state != player_states.death) {
 //log(string(hp));
 
 if (check_p(vk_r)) {
-	if (state == player_states.death) reset_cards();	
-	room_restart();
+	game_restart();
 }
 
 #region state

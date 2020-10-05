@@ -149,6 +149,9 @@ switch gameState
 		{
 			gameState_next("defeat_init");
 			y_title = -room_height;
+			
+			with oPlayer
+				sprite_index = sPlayerIdle;
 		}
 	}
 	break;
@@ -162,9 +165,14 @@ switch gameState
 			tt ++;
 		else
 		{
-			if tt == _delay
+			var _t = (room_height / 2) - 35;
+			
+			y_title = lerp(y_title, _t, 0.15);
+				
+			if diff(y_title, _t) <= 0.1
 			{
-				//***
+				y_title = _t;
+				gameState_next("defeat");
 			}
 		}	
 	}
@@ -173,9 +181,35 @@ switch gameState
 	//defeat: player has lost the game
 	case "defeat":
 	{
-		//***
+		//float timer
+		tt_float = (tt_float + 3) mod 360;
+				
+		//click to restart
+		if mouse_check_button_pressed(mb_left)
+		{
+			//clear out room
+			room_restart();
+			instance_destroy(oCardHolder);
+			
+			//reset cards
+			reset_card_counts();
+			
+			//move on to next game state
+			gameState_next("defeat_exit");
+		}
 	}
 	break;
+	
+	//defeat_exit: move defeat offscreen
+	 case "defeat_exit":
+	 {
+		 rad = lerp(rad, room_width, 0.15);
+		 y_title = lerp(y_title, -room_height, 0.1);
+		
+		if diff(y_title, -room_height) <= 10 && diff(rad, room_width) <= 5
+			gameState_next("game_init");
+	 }
+	 break;
 	
 	//victory: player has beaten the boss!
 	case "victory":
