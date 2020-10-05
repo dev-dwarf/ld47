@@ -33,7 +33,7 @@ global.sword_count = oCardHolder.counts[card.good][good_cards.more_swords  ];
 sword_size = 0.75 + 0.15*power(oCardHolder.counts[card.good][good_cards.bigger_swords], 0.5);
 
 has_laser = (oCardHolder.counts[card.good][good_cards.laser_sword]>0);
-laser_regen_speed = 0.003 + 0.002 *power(oCardHolder.counts[card.good][good_cards.laser_sword], 0.4);
+laser_regen_speed = 0.003 + 0.004 *power(oCardHolder.counts[card.good][good_cards.laser_sword], 0.4);
 laser_available = 1.0;
 
 can_attack = false;
@@ -50,12 +50,12 @@ shield_regen_speed = 0.003 * power(oCardHolder.counts[card.good][good_cards.shie
 
 hit_damage = 0.5 + ((1 + power(global.sword_count, 0.5)) * 0.3 + 0.2 * (1+power(oCardHolder.counts[card.good][good_cards.bigger_swords], 0.5))) * power(1.1, oCardHolder.counts[card.good][good_cards.more_damage]);
 
-max_hp = 5 + 2.0 * oCardHolder.counts[card.good][good_cards.more_health  ];
+max_hp = 3.5 + 1.0 * oCardHolder.counts[card.good][good_cards.more_health];
 dash_is_teleport = oCardHolder.counts[card.good][good_cards.teleport_dash];
 
-leach = 0.1*power(oCardHolder.counts[card.good][good_cards.life_leach  ], 0.75);
-thorns = 2.5*oCardHolder.counts[card.good][good_cards.thorns  ];
-heal_overtime = 0.0014*power(oCardHolder.counts[card.good][good_cards.heal_overtime  ],0.5);
+leach = 0.1 * power(oCardHolder.counts[card.good][good_cards.life_leach  ], 0.75);
+thorns = 3 * oCardHolder.counts[card.good][good_cards.thorns];
+heal_overtime = 0.0012 * power(oCardHolder.counts[card.good][good_cards.heal_overtime], 0.5);
 
 shield_regen = 0;
 shield_radius = 24;
