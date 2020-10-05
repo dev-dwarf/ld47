@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sBzzsaw",
-    "path": "sprites/sBzzsaw/sBzzsaw.yy",
+    "name": "sBzzsaw4",
+    "path": "sprites/sBzzsaw4/sBzzsaw4.yy",
   },
   "solid": false,
   "visible": true,

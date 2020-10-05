@@ -245,7 +245,7 @@
     "spriteId": {"name":"spr_font_large","path":"sprites/spr_font_large/spr_font_large.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 10.0,
+    "playbackSpeed": 2.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
