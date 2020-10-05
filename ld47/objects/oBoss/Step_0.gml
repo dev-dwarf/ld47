@@ -126,6 +126,27 @@ switch state {
 	image_angle = angle_lerp(image_angle, 0, 0.1);
 	image_speed = 0;
 	image_blend = c_white;
+	
+	var p_dir = point_direction(x,y,oPlayer.x, oPlayer.y);
+
+	switch ceil((p_dir-1)/90) {
+		case 1:
+		image_index = 4;
+		draw_flip = 1;
+		break;
+		case 0: case 4:
+		image_index = 3;
+		draw_flip = 1;
+		break;
+		case 2: 
+		image_index = 3;
+		draw_flip = -1;
+		break;
+		case 3: 
+		image_index = 3;
+		draw_flip = -1;
+		break;
+	}
 
 	switch sub_state {
 		case boss_sub_states.target	: #region 
@@ -168,6 +189,8 @@ switch state {
 				sub_state = boss_sub_states.target;	
 				next_state = boss_states.burst;
 				state = boss_states.transform;
+				
+
 				charges = burst_shoot_count;
 			}
 		}
@@ -254,6 +277,7 @@ switch state {
 	image_angle = angle_lerp(image_angle, 0, 0.2);
 	
 	draw_scale = 0.5;
+	draw_flip = 1;
 	
 	
 	x = lerp(x,room_width /2,0.11);

@@ -1,5 +1,5 @@
 /// @description
-image_xscale *= draw_scale;
+image_xscale *= draw_scale*draw_flip;
 image_yscale *= draw_scale;
 
 if (round(i_frames--/3) mod 2) and state != enemy_states.dead {
@@ -10,5 +10,5 @@ if (round(i_frames--/3) mod 2) and state != enemy_states.dead {
 	draw_self();
 }
 
-image_xscale /= draw_scale;
+image_xscale /= draw_scale*draw_flip;
 image_yscale /= draw_scale;

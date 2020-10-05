@@ -3,6 +3,8 @@
 // Inherit the parent event
 event_inherited();
 
+draw_flip = 1;
+
 enum boss_states {
 	spawn,
 	charger,

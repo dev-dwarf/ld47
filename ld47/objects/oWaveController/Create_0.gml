@@ -14,7 +14,7 @@ con_gameState.target_track_index	= sndBattleMusic;
 spawn_time = 90;
 spawn_timer = spawn_time;
 
-no_of_enemies  = round( 1.25 * oCardHolder.count_cards(card.bad)) + 2;
+no_of_enemies  = max(5*round((global.wave_count+1)/4),  2);
 max_enemies_per_wave = 5;
 
 wave_number = ceil(no_of_enemies/max_enemies_per_wave);
