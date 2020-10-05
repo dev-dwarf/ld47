@@ -65,14 +65,14 @@ counts[card.good][good_cards.bigger_swords	 ] = 0;
 counts[card.good][good_cards.laser_sword	 ] = 0;
 counts[card.good][good_cards.teleport_dash	 ] = 0;
 counts[card.good][good_cards.more_health	 ] = 0;
-counts[card.good][good_cards.heal_overtime	 ] = 3;
-counts[card.good][good_cards.life_leach		 ] = 3;
+counts[card.good][good_cards.heal_overtime	 ] = 0;
+counts[card.good][good_cards.life_leach		 ] = 0;
 counts[card.good][good_cards.bomb_slice		 ] = 0;
 counts[card.good][good_cards.shield			 ] = 0;
 counts[card.good][good_cards.more_damage	 ] = 0;
 counts[card.good][good_cards.thorns			 ] = 0;
 
-counts[card.bad ][bad_cards.buzz_saws		 ] = 0;
+counts[card.bad ][bad_cards.buzz_saws		 ] = 2;
 counts[card.bad ][bad_cards.turrets			 ] = 0;
 counts[card.bad ][bad_cards.wall_spikes		 ] = 0;
 counts[card.bad ][bad_cards.enemy_health	 ] = 0;
