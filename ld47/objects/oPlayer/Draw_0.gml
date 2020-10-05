@@ -29,5 +29,3 @@ if (has_shield or shield_radius > 1)
 	draw_sprite_ext(spr_shield, 0, x, y - 10, 1, 1, shield_angle, c_white, _alp);
 	//draw_circle(x,y-sprite_height/2, shield_radius + 4 * sin(current_time*0.004), true);
 }
-
-draw_text(x,y-10,hp)
