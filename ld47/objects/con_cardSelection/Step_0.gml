@@ -302,9 +302,10 @@ switch cardSel_state
 		
 		
 
-		if !instance_exists(obj_card) {
+		if !instance_exists(obj_card) 
+		{
 			cardSel_state = "cards_wrapup";
-			con_gameState.gameState = "game_init";
+			part_particles_clear(sys);
 		}
 	}
 	break;
@@ -318,6 +319,10 @@ switch cardSel_state
 			instance_destroy();
 
 			oCamera.set_shake(0.5);
+			
+			if !instance_exists(con_tutorial)
+				with con_gameState
+					gameState = "game_init";
 		}
 			
 	}

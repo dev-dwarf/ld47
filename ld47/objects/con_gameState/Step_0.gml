@@ -118,18 +118,29 @@ switch gameState
 	//game_init: whatever needs to happen to start a round of gameplay happens here
 	case "game_init":
 	{
-		//***
-		gameState = "game";
-		instance_create_layer(0,0,"Instances",oWaveController);
+		//switch gamestate to active
+		gameState = "game_active";
+		
+		//spawn wave controller
+		instance_create_layer(0,0, "Instances", oWaveController);
+		
+		//spawn player
+		//
 	}
 	break;
-	case "game":
+	
+	//game_active: round of normal gameplay is running
+	case "game_active":
 	{
 			
 		//***
-		rad = lerp(rad, 0, 0.35);
+		
+		if rad > 0
+			rad = lerp(rad, 0, 0.35);
 	}
 	break;
 	
 	//
 }
+
+log(gameState);
