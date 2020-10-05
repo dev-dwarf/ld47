@@ -20,7 +20,7 @@ if (life <= 0) {
 	if (image_alpha == 0) instance_destroy();
 }
 
-if (place_meeting(x,y,oPlayer) and oPlayer.i_frames <= 0 ) {
+if (collision_line(x,y,x+lengthdir_x(sprite_width,image_angle),y+lengthdir_y(sprite_width,image_angle),oPlayer,true,true) and oPlayer.i_frames <= 0 ) {
 	if (oPlayer.has_shield) {
 		oPlayer.has_shield = false;
 		oPlayer.shield_radius = 32;

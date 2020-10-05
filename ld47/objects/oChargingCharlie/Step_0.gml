@@ -18,14 +18,14 @@ switch state {
 	if (idle_timer <= 0) {
 		idle_timer = idle_time;
 		state = enemy_states.attack;
-		attack_direction = image_angle;
+		attack_direction = draw_angle;
 	}
 	
 	if (idle_timer < 20) {
 		draw_scale = lerp(draw_scale, 1.0, 0.2);
-		image_angle = angle_lerp(image_angle, point_direction(x,y,oPlayer.x,oPlayer.y), 0.3);
+		draw_angle = angle_lerp(draw_angle, point_direction(x,y,oPlayer.x,oPlayer.y), 0.3);
 	} else if (idle_timer < idle_time*0.75) {
-		image_angle = angle_lerp(image_angle, new_dir, 0.3);
+		draw_angle = angle_lerp(draw_angle, new_dir, 0.3);
 		
 	} else {
 		draw_scale = lerp(draw_scale, 0.8, 0.2);

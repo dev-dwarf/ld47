@@ -9,4 +9,4 @@ angle = 0;
 number = 0;
 swing = true;
 
-life = 16;
+life = 30;
