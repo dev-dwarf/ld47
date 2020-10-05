@@ -45,10 +45,11 @@ if (inst and ((inst.swing) or (oPlayer.state == player_states.dash or oPlayer.da
 		
 		if (oCardHolder.counts[card.good][good_cards.bomb_slice]) and can_explode {
 			with instance_create_layer(x,y - sprite_height*0.5,layer,oExplosion) {
-				image_xscale = 1 + 0.1 * 
+				image_xscale = 1.6 + 0.2 * 
 				oCardHolder.counts[card.good][good_cards.bomb_slice];
 				
 				image_yscale = image_xscale;
+				iamge_angle = random(360);
 			}
 		}
 	
