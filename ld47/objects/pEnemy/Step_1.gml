@@ -60,6 +60,8 @@ if (inst and ((inst.swing) or (oPlayer.state == player_states.dash or oPlayer.da
 		
 		if oPlayer.leach > 0 {
 			oPlayer.hp += oPlayer.leach*oPlayer.hit_damage;	
+			repeat(irandom(3)+2)
+				instance_create_layer(x+random_range(-8,8),y+random_range(-8,8),layer,oHealParticle);
 		}
 	}
 }

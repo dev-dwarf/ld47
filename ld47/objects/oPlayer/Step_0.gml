@@ -128,6 +128,15 @@ if (!has_shield) {
 mask_index = sPlayerIdle
 
 hp = approach(hp, max_hp, heal_overtime);
+
+if (heal_overtime > 0) {
+	if (chance(10)) {
+		var inst = instance_create_layer(x+random_range(-8,8),y-8+random_range(-8,8),layer,oHealParticle);	
+		inst.image_xscale *= 0.3; inst.image_yscale *= 0.3;
+
+	}
+}
+
 hp = clamp(hp, 0, max_hp)
 
 if (hp == 0 and state != player_states.death) {
