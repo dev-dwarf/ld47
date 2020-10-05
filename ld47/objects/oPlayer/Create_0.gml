@@ -25,7 +25,7 @@ enum player_states {
 	victory
 }
 
-auto_click_delay = 13;
+auto_click_delay = 12;
 auto_click = auto_click_delay;
 
 global.sword_id = 0;
