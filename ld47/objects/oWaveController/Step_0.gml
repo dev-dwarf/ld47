@@ -39,6 +39,9 @@ switch state {
 		instance_destroy(oExitPortal);
 		instance_destroy(pEnemy);	
 		instance_destroy(oSword);
+		instance_destroy(oSpikes);
+		instance_destroy(oTurret);
+		instance_destroy(oLaserTurret);
 		instance_destroy();
 		instance_destroy(oPlayer);
 	} 

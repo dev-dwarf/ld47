@@ -23,6 +23,7 @@
     {"id":{"name":"sGodRay","path":"sprites/sGodRay/sGodRay.yy",},"order":28,},
     {"id":{"name":"oObjPari","path":"objects/oObjPari/oObjPari.yy",},"order":37,},
     {"id":{"name":"move_box_in","path":"scripts/move_box_in/move_box_in.yy",},"order":3,},
+    {"id":{"name":"sndMetalClang","path":"sounds/sndMetalClang/sndMetalClang.yy",},"order":16,},
     {"id":{"name":"sProjectilePaul","path":"sprites/sProjectilePaul/sProjectilePaul.yy",},"order":16,},
     {"id":{"name":"sClockSmallHand","path":"sprites/sClockSmallHand/sClockSmallHand.yy",},"order":26,},
     {"id":{"name":"sPlayerIdle","path":"sprites/sPlayerIdle/sPlayerIdle.yy",},"order":0,},

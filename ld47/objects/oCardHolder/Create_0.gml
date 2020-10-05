@@ -72,8 +72,8 @@ counts[card.good][good_cards.shield			 ] = 0;
 counts[card.good][good_cards.more_damage	 ] = 0;
 counts[card.good][good_cards.thorns			 ] = 0;
 
-counts[card.bad ][bad_cards.buzz_saws		 ] = 0;
-counts[card.bad ][bad_cards.turrets			 ] = 2;
+counts[card.bad ][bad_cards.buzz_saws		 ] = 1;
+counts[card.bad ][bad_cards.turrets			 ] = 0;
 counts[card.bad ][bad_cards.wall_spikes		 ] = 0;
 counts[card.bad ][bad_cards.enemy_health	 ] = 0;
 counts[card.bad ][bad_cards.enemy_damage 	 ] = 0;
