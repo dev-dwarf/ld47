@@ -17,6 +17,8 @@ function globals(){
 	
 	global.that_one_purple = make_color_rgb(213, 137, 229);
 	
+	cursor_sprite = sCursor;
+	
 	//global.fullscreen = true;
 	global.wave_count = 0;
 	//global.wave_count = 11;//skip to boss

@@ -94,6 +94,7 @@
     {"id":{"name":"oTopGear","path":"objects/oTopGear/oTopGear.yy",},"order":41,},
     {"id":{"name":"spr_HUD_sword","path":"sprites/spr_HUD_sword/spr_HUD_sword.yy",},"order":2,},
     {"id":{"name":"sGear7","path":"sprites/sGear7/sGear7.yy",},"order":43,},
+    {"id":{"name":"sCursor","path":"sprites/sCursor/sCursor.yy",},"order":74,},
     {"id":{"name":"spr_tut_gear_small","path":"sprites/spr_tut_gear_small/spr_tut_gear_small.yy",},"order":3,},
     {"id":{"name":"oClockBackground","path":"objects/oClockBackground/oClockBackground.yy",},"order":34,},
     {"id":{"name":"spr_card_buff_1","path":"sprites/spr_card_buff_1/spr_card_buff_1.yy",},"order":1,},
