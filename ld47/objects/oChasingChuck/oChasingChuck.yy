@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sChasingChuck86",
-    "path": "sprites/sChasingChuck86/sChasingChuck86.yy",
+    "name": "sChasingChuck",
+    "path": "sprites/sChasingChuck/sChasingChuck.yy",
   },
   "solid": false,
   "visible": true,

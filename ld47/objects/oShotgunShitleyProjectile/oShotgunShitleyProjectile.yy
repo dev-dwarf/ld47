@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sSSBitsShot",
-    "path": "sprites/sSSBitsShot/sSSBitsShot.yy",
+    "name": "sProjectilePaulProjectile",
+    "path": "sprites/sProjectilePaulProjectile/sProjectilePaulProjectile.yy",
   },
   "solid": false,
   "visible": true,
@@ -26,7 +26,6 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"oShotgunShitleyProjectile","path":"objects/oShotgunShitleyProjectile/oShotgunShitleyProjectile.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"oShotgunShitleyProjectile","path":"objects/oShotgunShitleyProjectile/oShotgunShitleyProjectile.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"parent":{"name":"oShotgunShitleyProjectile","path":"objects/oShotgunShitleyProjectile/oShotgunShitleyProjectile.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
