@@ -3,7 +3,8 @@
 enum wave_states {
 	spawn,
 	battle, 
-	next
+	next,
+	idle
 }
 
 state = wave_states.spawn;
@@ -18,7 +19,6 @@ wave_number = ceil(no_of_enemies/max_enemies_per_wave);
 
 global.wave_count++;
 
-
 if (global.wave_count mod 12 == 0) {
 	with instance_create_layer(room_width/2,
 							  room_height/2-100,
@@ -31,7 +31,9 @@ if (global.wave_count mod 12 == 0) {
 	exit;
 }
 
-instance_create_layer(room_width/2, room_height/2, layer, oPlayer);
+//log(string(enemy_list[| 0]));
+if !instance_exists(oPlayer)
+	instance_create_layer(room_width/2, room_height/2, layer, oPlayer);
 
 function create_wave() {
 	var enemy_list = ds_list_create();
@@ -146,4 +148,5 @@ for (var i = 0; i < oCardHolder.counts[card.bad][bad_cards.laser_turrets];i++) {
 	instance_create_layer(inst.x,inst.y,layer,oLaserTurret);
 }
 	
-create_wave();
+if !instance_exists(con_tutorial)
+	create_wave();

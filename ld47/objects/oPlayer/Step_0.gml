@@ -84,7 +84,6 @@ if (!oSword.swing) consecutive_sword_hits = lerp(consecutive_sword_hits, 0, 0.04
 	
 		play_sound(sndDashStrike, 0, false, 2.0, 0.02, 1.0);
 		play_sound(sndDashStrike, 0, false, 1.0, 0.02, 0.7);
-
 	
 		state = player_states.dash;	
 	}
@@ -307,8 +306,6 @@ switch state {
 	break; #endregion
 }
 #endregion
-
-log(string(hp));
 
 if (state != player_states.dash) {
 	move(move_speed, move_direction);

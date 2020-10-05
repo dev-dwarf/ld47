@@ -5,5 +5,5 @@
 
 function spawn_player(_x, _y)
 {
-	instance_create_depth(_x, _y, -_y, oPlayer);
+	return instance_create_layer(_x, _y, "Instances", oPlayer);
 }

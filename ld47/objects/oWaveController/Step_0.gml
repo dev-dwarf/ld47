@@ -30,15 +30,16 @@ switch state {
 		}
 	}	
 	break; #endregion
+	
 	case wave_states.next	: #region 
-	if (oExitPortal.player) {
+	if (instance_exists(oExitPortal) && oExitPortal.player) {
 		instance_create_layer(0,0,layer,con_cardSelection);
 		instance_destroy(oBuzzSaw);
 		instance_destroy(oExitPortal);
-		instance_destroy(pEnemy);
-		instance_destroy(oPlayer);
+		instance_destroy(pEnemy);	
 		instance_destroy(oSword);
 		instance_destroy();
+		instance_destroy(oPlayer);
 	} 
 	break; #endregion
 }

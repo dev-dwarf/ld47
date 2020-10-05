@@ -40,50 +40,19 @@ switch cardSel_state
 		var _buffs = ds_list_create(),
 			_debuffs = ds_list_create();
 			
-		//var i = 0;
-		//repeat(good_cards.good_final - 1)
-		//{
-		//	if i < good_cards.good_final
-		//	{
-		//		var _add = true;
-				
-		//		//if the player has the teleport dash, don't add that one to the list
-		//		if i == good_cards.teleport_dash && oCardHolder.counts[card.good][good_cards.teleport_dash]	> 0
-		//			_add = false;
-								
-		//		if _add
-		//			ds_list_add(_buffs, 1);//debug
-		//			//ds_list_add(_buffs, i);
-			
-		//		i ++;
-		//	}
-		//}
-		//repeat(bad_cards.bad_final - 1)
-		//{
-		//	ds_list_add(_debuffs, i);			
-		//	i ++;
-		//}
 		_buffs = oCardHolder.generate_card_list(card.good, 5);
 		_debuffs = oCardHolder.generate_card_list(card.bad, 5);
 
 			
 		//spawn 5 cards at the above x/y coordinates
 		for (var i = 0; i < 5; i ++)
-		{		
-			//shuffle the lists
-			//ds_list_shuffle(_buffs);
-			//ds_list_shuffle(_debuffs);
-			
+		{
 			//choose random buff/debuff to give player
 			var _buff = _buffs[| i];
 			var	_debuff = _debuffs[| i];
 				
 			//spawn the card!
 			spawn_card(_x, _y, i + 1, _buff, _debuff);
-			
-			//remove the chosen buff/debuff from list
-			//ds_list_delete(_buffs, 0);
-			//ds_list_delete(_debuffs, 0);
 		}
 		
 		//destroy temporary lists
@@ -93,7 +62,9 @@ switch cardSel_state
 		//move on to next state
 		cardSel_state = "cards_move_up";
 		play_sound(sndCardsSwingUp, 0, false, 1.0, 0.00, 1.0);
-			
+		
+		if !cardSel_active
+			cardSel_state = "pause";
 	}
 	break;
 	
@@ -331,10 +302,7 @@ switch cardSel_state
 		//instance_create_layer(0,0,layer,oWaveController);
 
 		if !instance_exists(obj_card)
-		{
-			room_restart();
 			cardSel_state = "cards_wrapup";
-		}
 	}
 	break;
 	

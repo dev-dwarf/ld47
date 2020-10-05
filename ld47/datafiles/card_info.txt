@@ -40,8 +40,8 @@
 	"debuff_1_name": "Seeking Turret",
 	"debuff_1_desc": "A clockwork turret tracks you through the room, firing projectiles at you occasionally.",
 
-	"debuff_2_name": "Wall Spikes",
-	"debuff_2_desc": "Sharp spikes spawn on the wall which damage you on contact.",
+	"debuff_2_name": "Floors Spikes",
+	"debuff_2_desc": "Sharp spikes spawn around the room, which damage you on contact.",
 
 	"debuff_3_name": "Enemy Vitality",
 	"debuff_3_desc": "Enemies gain additional maximum hit points.",

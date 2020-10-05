@@ -8,7 +8,7 @@ function globals(){
 	global.gamepad_is_xbox		= false;
 	#endregion
 	
-	global.set_window = false;
+	global.set_window = true;
 	global.fullscreen = false;
 	
 	global.master_volume = 0.75; 
@@ -25,14 +25,13 @@ function globals(){
 	global.sword_id = 0;
 	
 	global.gui_scale = 0;
-	global.set_window= false;
 	
 	//fonts
 	global.font_large = font_add_sprite_ext(spr_font_large,
-	" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,!?*()-+", 1, 2);
+	" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,!?*()-+'", 1, 2);
 	
 	global.font_small = font_add_sprite_ext(spr_font_small,
-	" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,!?*()-+", 1, 2);
+	" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,!?*()-+'", 1, 2);
 	
 	//colors
 	#macro C_black make_color_rgb(8, 3, 18)
