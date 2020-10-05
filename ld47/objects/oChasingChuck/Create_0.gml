@@ -11,7 +11,7 @@ hp = 2;
 state = enemy_states.attack;
 bits_index = sChasingChuckBits;
 
-
+last_p_dir = 0;
 attack_direction = 0;
 dash_speed = 2*(1 + 0.1 * oCardHolder.counts[card.bad ][bad_cards.enemy_faster]);
 attack_accel = 0.05;

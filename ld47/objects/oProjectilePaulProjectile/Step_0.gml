@@ -16,9 +16,9 @@ if (state == enemy_states.attack) {
 
 	if (speed > 4.5 and place_meeting(x,y,pSolid)) instance_destroy();
 
-	if (speed > 1.5 and speed <= final_speed*0.75) {
+	if (speed > 1.5 and speed <= final_speed) {
 		
-		direction = angle_lerp(direction, point_direction(x,y,oPlayer.x,oPlayer.y), 0.1);	
+		direction = angle_lerp(direction, point_direction(x,y,oPlayer.x,oPlayer.y), 0.16);	
 	}
 }
 

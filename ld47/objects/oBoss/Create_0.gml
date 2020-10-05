@@ -9,6 +9,7 @@ enum boss_states {
 	avoid,
 	burst,
 	dead,
+	transform,
 }
 
 enum boss_sub_states {
@@ -56,6 +57,8 @@ burst_shoot_timer = burst_shoot_time;
 after_burst_recovery_timer = after_burst_recovery_time
 
 draw_scale = 1.0;
+
+next_state = 0;
 
 
 hit_player = function() {

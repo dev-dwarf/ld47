@@ -1,5 +1,5 @@
 /// @description
-
+play_sound(sndLaserCharge, 0, false, 1.3, 0.04, 1.0);
 image_yscale = 0;
 
 first_solid = noone;

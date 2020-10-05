@@ -29,6 +29,7 @@ switch state {
 	y = ystart - 4 * (1-attack_timer/attack_time);
 	
 	if (attack_timer <= 0) {
+		play_sound(sndProjectilePaul, 0, false, 1.0, 0.09, 1.0);	
 		with instance_create_layer(x,y-sprite_height,layer,oProjectilePaulProjectile) {
 			parent = other.id;	
 		}

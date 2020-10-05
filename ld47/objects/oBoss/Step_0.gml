@@ -61,13 +61,17 @@ switch state {
 			if (charges == 0) {
 				charge_timer = charge_time;
 				sub_state = boss_sub_states.target;	
-				state = boss_states.avoid;
+				
+				next_state = boss_states.avoid;
+				state = boss_states.transform;
+				
 				charges = avoid_count;
 				avoid_gone_to_center = false;
 			} else {
 				charge_timer = charge_time;
 				sub_state = boss_sub_states.attack;
 				move_direction = shoot_direction;
+				play_sound(sndCharger, 0, false, 1.0, 0.04, 1.0);
 			}
 		}
 	
@@ -110,17 +114,6 @@ switch state {
 	break; #endregion
 	case boss_states.avoid	: #region 
 	
-	
-	if (!avoid_gone_to_center) {
-		x = lerp(x,room_width /2,0.1);
-		y = lerp(y,room_height/2,0.1);
-		
-		if (abs(room_width/2-x) < 1 and abs(room_height/2-y) < 1) {
-			avoid_gone_to_center = true;
-		}
-		exit;
-	}
-	
 	switch sub_state {
 		case boss_sub_states.target	: #region 
 		if (distance_to_object(oPlayer) < avoid_range) {
@@ -143,7 +136,7 @@ switch state {
 			avoid_shoot_timer = avoid_shoot_time;
 			charges--;
 			draw_scale = 0.8;
-		
+			play_sound(sndShotgun, 0, false, 1.0, 0.09, 1.0);	
 			var dir = point_direction(x,y,oPlayer.x, oPlayer.y) - avoid_spread/2;
 			var r = sprite_width;
 			for (var i = 0; i < avoid_pellets; i++) {
@@ -160,7 +153,8 @@ switch state {
 			
 			if (charges <= 0) {
 				sub_state = boss_sub_states.target;	
-				state = boss_states.burst;
+				next_state = boss_states.burst;
+				state = boss_states.transform;
 				charges = burst_shoot_count;
 			}
 		}
@@ -203,6 +197,8 @@ switch state {
 		burst_shoot_timer = burst_shoot_time;
 		sub_state = boss_sub_states.target;
 		charges--;
+		
+		play_sound(sndBurstingBrian, 0, false, 0.8, 0.09, 1.0);
 			
 		if (charges <= 0) {
 			sub_state = boss_sub_states.recover;	
@@ -214,7 +210,8 @@ switch state {
 		after_burst_recovery_timer--;
 		if(after_burst_recovery_timer <= 0) {
 			sub_state = boss_sub_states.target;	
-			state = boss_states.charger;
+			next_state = boss_states.charger;
+			state = boss_states.transform;
 			charges = charge_count;
 		}
 		break; #endregion
@@ -223,5 +220,13 @@ switch state {
 	break; #endregion
 	case boss_states.dead	: #region 
 	image_blend = global.that_one_purple;
+	break; #endregion
+	case boss_states.transform: #region
+	x = lerp(x,room_width /2,0.19);
+	y = lerp(y,room_height/2,0.19);
+		
+	if (abs(room_width/2-x) < 1 and abs(room_height/2-y) < 1) {
+		state = next_state;
+	}
 	break; #endregion
 }

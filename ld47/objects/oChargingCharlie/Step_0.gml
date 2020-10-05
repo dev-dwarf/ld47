@@ -19,6 +19,8 @@ switch state {
 		idle_timer = idle_time;
 		state = enemy_states.attack;
 		attack_direction = draw_angle;
+		play_sound(sndCharger, 0, false, 1.3, 0.09, 1.0);
+
 	}
 	
 	if (idle_timer < 20) {
@@ -26,9 +28,14 @@ switch state {
 		draw_angle = angle_lerp(draw_angle, point_direction(x,y,oPlayer.x,oPlayer.y), 0.3);
 	} else if (idle_timer < idle_time*0.75) {
 		draw_angle = angle_lerp(draw_angle, new_dir, 0.3);
-		
+		if (!made_swish) {
+			play_sound(sndCardsUnfold, 0, false, 2.2, 0.09, 1.0);	
+			made_swish = true;
+		}
 	} else {
 		draw_scale = lerp(draw_scale, 0.8, 0.2);
+		made_swish = false;
+
 	}
 	
 	break; #endregion

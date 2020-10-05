@@ -10,14 +10,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "sndSelectMusic.ogg",
-  "duration": 16.005,
+  "soundFile": "sndTurretLaser.ogg",
+  "duration": 1.100306,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sndSelectMusic",
+  "name": "sndTurretLaser",
   "tags": [],
   "resourceType": "GMSound",
 }

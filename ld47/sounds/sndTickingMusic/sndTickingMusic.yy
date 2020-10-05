@@ -13,8 +13,8 @@
   "soundFile": "sndTickingMusic.ogg",
   "duration": 2.005,
   "parent": {
-    "name": "ld47",
-    "path": "ld47.yyp",
+    "name": "Sounds",
+    "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
   "name": "sndTickingMusic",

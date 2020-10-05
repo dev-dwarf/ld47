@@ -1,4 +1,6 @@
 /// @description
+play_sound(sndTurretLaser, 0, false, 1.3, 0.04, 1.0);
+
 hit_damage = 1 + 0.8 * oCardHolder.counts[card.bad ][bad_cards.enemy_damage  ];
 
 image_yscale = 0;

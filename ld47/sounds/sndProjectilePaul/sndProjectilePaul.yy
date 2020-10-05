@@ -10,14 +10,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "sndSelectMusic.ogg",
-  "duration": 16.005,
+  "soundFile": "sndProjectilePaul.ogg",
+  "duration": 1.231916,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sndSelectMusic",
+  "name": "sndProjectilePaul",
   "tags": [],
   "resourceType": "GMSound",
 }

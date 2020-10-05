@@ -10,14 +10,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "sndSelectMusic.ogg",
-  "duration": 16.005,
+  "soundFile": "sndCharger.ogg",
+  "duration": 1.347993,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sndSelectMusic",
+  "name": "sndCharger",
   "tags": [],
   "resourceType": "GMSound",
 }

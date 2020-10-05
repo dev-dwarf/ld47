@@ -41,8 +41,8 @@ switch state {
 }
 
 var p_dir = point_direction(x,y,oPlayer.x, oPlayer.y);
-
-switch round((p_dir-1)/90) {
+p_dir =  round((p_dir-1)/90);
+switch p_dir {
 	case 1:
 	image_index = 1;
 	break;
@@ -57,4 +57,9 @@ switch round((p_dir-1)/90) {
 	case 3: 
 	image_index = 2;
 	break;
+}
+
+if (p_dir != last_p_dir) {
+	last_p_dir = p_dir;
+	play_sound(sndCardsUnfold, 0, false, 1.6, 0.09, 0.5);	
 }

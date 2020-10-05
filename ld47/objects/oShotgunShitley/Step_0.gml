@@ -38,7 +38,7 @@ switch state {
 		idle_timer = idle_time;
 		image_xscale = 0.5;
 		image_yscale = 0.5;	
-		
+		play_sound(sndShotgun, 0, false, 1.2, 0.09, 1.0);	
 		var dir = point_direction(x,y,oPlayer.x, oPlayer.y) - spread/2;
 		var r = sprite_width;
 		for (var i = 0; i < pellets; i++) {
