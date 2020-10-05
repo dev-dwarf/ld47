@@ -146,12 +146,15 @@ switch gameState
 		
 		//initiate defeat state
 		if _player_defeat
-			gameState_next("defeat");
+		{
+			gameState_next("defeat_init");
+			y_title = -room_height;
+		}
 	}
 	break;
 	
-	//defeat: player has lost the game
-	case "defeat":
+	//initialize defeat state
+	case "defeat_init":
 	{
 		var _delay = room_speed;
 		
@@ -161,9 +164,15 @@ switch gameState
 		{
 			if tt == _delay
 			{
+				//***
 			}
 		}	
-		
+	}
+	break;
+	
+	//defeat: player has lost the game
+	case "defeat":
+	{
 		//***
 	}
 	break;
