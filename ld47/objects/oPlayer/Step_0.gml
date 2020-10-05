@@ -1,6 +1,6 @@
 mask_index = sPlayerIdle;
 
-shield_angle = (shield_angle + 3) mod 360;
+shield_angle = (shield_angle + 0.5) mod 360;
 
 #region input
 var move_x_axis, move_y_axis, input_direction, input_magnitude, attack_button, attack_button_charge, spell_button_released, spell_button_charge, dash_button_released, dash_button_charge;
