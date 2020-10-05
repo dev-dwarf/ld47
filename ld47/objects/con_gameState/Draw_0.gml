@@ -32,16 +32,17 @@ if gameState == "title" or gameState == "startup" or gameState == "tutorial_init
 	//instructions
 	var _y_text = y_title_text,
 		_space = 25,
-		_quick_restart = file_exists("tutorial.done");
 	
-	if _quick_restart
+	if tutorial_completeted
 		_y_text -= _space;
 		
-	draw_text_float(_x, _y_text, true, "left click to start", global.font_large, tt_float, 1);
-	
-	if _quick_restart
+	if tutorial_completeted
 	{
-		_y_text += _space;
-		draw_text_float(_x, _y_text, true, "right click to quickstart", global.font_large, tt_float + 90, 1);
+		draw_text_float(_x, _y_text, true, "left click to start", global.font_large, tt_float + 90, 1);
+		draw_text_float(_x, _y_text+_space, true, "right click for tutorial", global.font_large, tt_float, 1);
+
+	} else {
+		draw_text_float(_x, _y_text, true, "left click to start", global.font_large, tt_float, 1);
+		
 	}
 }

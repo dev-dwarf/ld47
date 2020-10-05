@@ -35,18 +35,39 @@ switch gameState
 		if y_title_text != _target
 			y_title_text = lerp(y_title_text, _target, 0.15);
 				
-		//left click - start tutorial
-		if mouse_check_button_pressed(mb_left)
-		{
-			//next state
-			gameState_next("tutorial_init");
+		if (tutorial_completeted) {
+			//left click - start tutorial
+			if mouse_check_button_pressed(mb_right)
+			{
+				//next state
+				gameState_next("tutorial_init");
 			
-			//spawn player
-			with spawn_player(room_width / 2, room_height / 2)
-				player_active = false;
+				//spawn player
+				with spawn_player(room_width / 2, room_height / 2)
+					player_active = false;
 				
-			//spawn tutorial manager
-			instance_create_depth(0, 0, -room_height * 2, con_tutorial);
+				//spawn tutorial manager
+				instance_create_depth(0, 0, -room_height * 2, con_tutorial);
+			}
+		
+			if mouse_check_button_pressed(mb_left)
+			{
+				//next state
+				gameState_next("game_init");
+			}
+		} else {
+			if mouse_check_button_pressed(mb_left)
+			{
+				//next state
+				gameState_next("tutorial_init");
+			
+				//spawn player
+				with spawn_player(room_width / 2, room_height / 2)
+					player_active = false;
+				
+				//spawn tutorial manager
+				instance_create_depth(0, 0, -room_height * 2, con_tutorial);
+			}
 		}
 	}
 	break;
@@ -89,6 +110,7 @@ switch gameState
 		{
 			rad = room_width;
 			gameState = "game_init";
+			room_restart();
 		}
 	}
 	break;
@@ -97,6 +119,15 @@ switch gameState
 	case "game_init":
 	{
 		//***
+		gameState = "game";
+		instance_create_layer(0,0,"Instances",oWaveController);
+	}
+	break;
+	case "game":
+	{
+			
+		//***
+		rad = lerp(rad, 0, 0.35);
 	}
 	break;
 	

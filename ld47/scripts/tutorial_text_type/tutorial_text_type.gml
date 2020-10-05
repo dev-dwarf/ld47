@@ -9,9 +9,12 @@ function tutorial_text_type()
 	{
 		tt_string = 0;
 		
+		if (char_is_grammar(string_char_at(string_current, str_pos)))
+			play_sound(sndPlayerVoice, 0, false, 1.4, 0.2, 0.6);
+			
 		//increment string position
-		str_pos ++;
-		
+		str_pos += 1;	
+			
 		//add next character to string
 		var _char = string_char_at(string_current, str_pos);
 		

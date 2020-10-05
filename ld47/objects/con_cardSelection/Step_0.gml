@@ -299,10 +299,13 @@ switch cardSel_state
 			if y >= (room_height * 1.15)
 				instance_destroy();
 		}
-		//instance_create_layer(0,0,layer,oWaveController);
+		
+		
 
-		if !instance_exists(obj_card)
+		if !instance_exists(obj_card) {
 			cardSel_state = "cards_wrapup";
+			con_gameState.gameState = "game_init";
+		}
 	}
 	break;
 	

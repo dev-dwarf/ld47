@@ -89,9 +89,8 @@ switch tutorial_state
 	case 5:
 	{
 		var _en_defeat = false;
-		
-		with oBurstingBrian
-			_en_defeat = (state == enemy_states.dead);
+
+		_en_defeat = instance_exists(oBits);
 			
 		if _en_defeat
 		{
