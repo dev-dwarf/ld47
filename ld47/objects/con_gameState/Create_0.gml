@@ -10,3 +10,16 @@ tt = 0;//generic timer variable
 rot_title = 0;
 
 tutorial_completeted = file_exists("tutorial.done");
+
+// vars for music
+current_track_index = noone;
+current_track_id	= noone;
+
+last_track_position = -1;
+
+track_pitch			= 1.0;
+pitch_max = 7.0;
+
+track_volume		= 1.0;
+
+target_track_index	= sndTickingMusic;

@@ -9,6 +9,8 @@ enum wave_states {
 
 state = wave_states.spawn;
 
+con_gameState.target_track_index	= sndBattleMusic;
+
 spawn_time = 90;
 spawn_timer = spawn_time;
 

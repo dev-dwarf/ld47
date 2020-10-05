@@ -74,6 +74,7 @@ switch gameState
 	//tutorial_init: move title offscreen, shrink overlay
 	case "tutorial_init":
 	{
+		target_track_index	= sndTickingMusic;
 		y_title = lerp(y_title, -room_height, 0.1);
 		y_title_text = lerp(y_title_text, room_height + 30, 0.15);
 		
@@ -118,6 +119,7 @@ switch gameState
 	//game_init: whatever needs to happen to start a round of gameplay happens here
 	case "game_init":
 	{
+		target_track_index	= sndBattleMusic;
 		y_title = lerp(y_title, -room_height, 0.1);
 		y_title_text = lerp(y_title_text, room_height + 30, 0.15);
 		
@@ -173,6 +175,8 @@ switch gameState
 	//defeat: player has lost the game
 	case "defeat":
 	{
+		target_track_index	= sndTickingMusic;
+
 		//***
 	}
 	break;
@@ -184,3 +188,42 @@ switch gameState
 	}
 	break;
 }
+
+#region switch tracks
+if (target_track_index != current_track_index) {
+	
+	if (last_track_position == -1) {
+		last_track_position = audio_sound_get_track_position(current_track_id);	
+	}
+	
+	if (current_track_id == noone) {
+		var last = current_track_index;
+		current_track_index = target_track_index;
+		current_track_id = audio_play_sound(current_track_index, 0, true);
+		
+		track_pitch = 1.0;	
+		track_volume= 1.0;
+		
+		audio_sound_gain(current_track_id, 0, 0);
+		audio_sound_gain(current_track_id, global.music_volume, 500);
+		
+		if (last != sndTickingMusic)
+			audio_sound_set_track_position(current_track_id, last_track_position)
+		
+		last_track_position = -1;
+	} else {
+		track_pitch = approach(track_pitch, pitch_max, 0.15);
+		track_volume = approach(track_volume, 0, 0.024);
+			
+		if (track_volume == 0) {
+			audio_stop_sound(current_track_id);
+			current_track_id = noone;
+			
+		}
+	}
+	
+	audio_sound_pitch(current_track_id, track_pitch);
+	audio_sound_gain(current_track_id, global.music_volume*track_volume, 0);
+}
+
+#endregion

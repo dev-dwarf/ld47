@@ -293,6 +293,7 @@ switch cardSel_state
 	//cards_destroy: move cards offscreen
 	case "cards_destroy":
 	{
+		con_gameState.target_track_index	= sndBattleMusic;
 		with obj_card
 		{
 			y = lerp(y, room_height * 1.25, 0.15);

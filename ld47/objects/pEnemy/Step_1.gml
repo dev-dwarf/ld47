@@ -49,7 +49,7 @@ if (inst and ((inst.swing) or (oPlayer.state == player_states.dash or oPlayer.da
 				oCardHolder.counts[card.good][good_cards.bomb_slice];
 				
 				image_yscale = image_xscale;
-				iamge_angle = random(360);
+				image_angle = random(360);
 			}
 		}
 	

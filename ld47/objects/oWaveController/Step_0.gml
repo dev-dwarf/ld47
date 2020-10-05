@@ -33,6 +33,7 @@ switch state {
 	
 	case wave_states.next	: #region 
 	if (instance_exists(oExitPortal) && oExitPortal.player) {
+		con_gameState.target_track_index	= sndSelectMusic;
 		instance_create_layer(0,0,layer,con_cardSelection);
 		instance_destroy(oBuzzSaw);
 		instance_destroy(oExitPortal);
