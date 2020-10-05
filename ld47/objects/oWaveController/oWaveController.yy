@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "ld47",
+    "path": "ld47.yyp",
   },
   "resourceVersion": "1.0",
   "name": "oWaveController",
