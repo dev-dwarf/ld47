@@ -16,25 +16,26 @@ for (var i = 0; i < move_speed; i++) {
 		direction = 180-direction;	
 		image_xscale = 0.85; image_yscale = 1.15;
 		play_sound(sndMetalClang, 0, false, 1.5, 0.09, 0.4);	
-		break;										  
+		var xstep = lengthdir_x(1, direction);
+		var ystep = lengthdir_y(1, direction);								  
 	} else if (x+xstep > view_x+DEFAULT_WIDTH) {	  
 		direction = 180-direction;					  
 		image_xscale = 0.85; image_yscale =  1.15;	  
-		play_sound(sndMetalClang, 0, false, 1.5, 0.09, 0.4);	
-													 
-		break;										 
+		play_sound(sndMetalClang, 0, false, 1.5, 0.09, 0.4);													 
+		var xstep = lengthdir_x(1, direction);
+		var ystep = lengthdir_y(1, direction);									 
 	} else if (y+ystep < view_y) {					 
 		direction = -direction;						 
 		image_yscale = 0.85; image_xscale =  1.15;	 
-		play_sound(sndMetalClang, 0, false, 1.5, 0.09, 0.4);	
-													  
-		break;										  
+		play_sound(sndMetalClang, 0, false, 1.5, 0.09, 0.4);													 
+		var xstep = lengthdir_x(1, direction);
+		var ystep = lengthdir_y(1, direction);										  
 	} else if (y+ystep > view_y+DEFAULT_HEIGHT) {	  
 		direction = -direction;						  
 		image_yscale = 0.85; image_xscale =  1.15;	  
-		play_sound(sndMetalClang, 0, false, 1.5, 0.09, 0.4);	
-
-		break;
+		play_sound(sndMetalClang, 0, false, 1.5, 0.09, 0.4);													 
+		var xstep = lengthdir_x(1, direction);
+		var ystep = lengthdir_y(1, direction);		
 	} else {
 		x = (x+xstep);
 		y = (y+ystep);

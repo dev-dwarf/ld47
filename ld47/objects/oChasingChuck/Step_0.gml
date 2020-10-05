@@ -59,7 +59,7 @@ switch p_dir {
 	break;
 }
 
-if (p_dir != last_p_dir) {
+if (p_dir != last_p_dir and point_distance(x,y,oPlayer.x,oPlayer.y) > 5) {
 	last_p_dir = p_dir;
 	play_sound(sndCardsUnfold, 0, false, 1.6, 0.09, 0.5);	
 }

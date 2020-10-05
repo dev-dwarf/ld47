@@ -184,6 +184,7 @@ switch gameState
 	//initialize defeat state
 	case "defeat_init":
 	{
+		target_track_index	= sndTickingMusic;
 		var _delay = room_speed;
 		
 		if tt < _delay
@@ -206,7 +207,7 @@ switch gameState
 	//defeat: player has lost the game
 	case "defeat":
 	{
-		target_track_index	= sndTickingMusic;
+		
 		//click to restart
 		if mouse_check_button_pressed(mb_left)
 		{
