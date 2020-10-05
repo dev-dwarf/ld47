@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"sndSwordHit","path":"sounds/sndSwordHit/sndSwordHit.yy",},"order":4,},
+    {"id":{"name":"oBoss","path":"objects/oBoss/oBoss.yy",},"order":45,},
     {"id":{"name":"spawn_player","path":"scripts/spawn_player/spawn_player.yy",},"order":1,},
     {"id":{"name":"globals","path":"scripts/globals/globals.yy",},"order":1,},
     {"id":{"name":"sEnemy","path":"sprites/sEnemy/sEnemy.yy",},"order":9,},
