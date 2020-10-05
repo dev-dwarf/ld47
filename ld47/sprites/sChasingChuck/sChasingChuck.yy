@@ -24,9 +24,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
+    {"compositeImage":{"FrameId":{"name":"6f59713c-7b15-41c4-a732-c0719db2e62b","path":"sprites/sChasingChuck/sChasingChuck.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"6f59713c-7b15-41c4-a732-c0719db2e62b","path":"sprites/sChasingChuck/sChasingChuck.yy",},"LayerId":{"name":"09668bb2-ee4a-4c12-850c-ffc56e75104e","path":"sprites/sChasingChuck/sChasingChuck.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sChasingChuck","path":"sprites/sChasingChuck/sChasingChuck.yy",},"resourceVersion":"1.0","name":"6f59713c-7b15-41c4-a732-c0719db2e62b","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"495e7543-5ee1-4473-ad0b-1307345771d1","path":"sprites/sChasingChuck/sChasingChuck.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"495e7543-5ee1-4473-ad0b-1307345771d1","path":"sprites/sChasingChuck/sChasingChuck.yy",},"LayerId":{"name":"09668bb2-ee4a-4c12-850c-ffc56e75104e","path":"sprites/sChasingChuck/sChasingChuck.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sChasingChuck","path":"sprites/sChasingChuck/sChasingChuck.yy",},"resourceVersion":"1.0","name":"495e7543-5ee1-4473-ad0b-1307345771d1","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"029fed18-49cd-46ab-a470-84f6aa2fcf7a","path":"sprites/sChasingChuck/sChasingChuck.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"029fed18-49cd-46ab-a470-84f6aa2fcf7a","path":"sprites/sChasingChuck/sChasingChuck.yy",},"LayerId":{"name":"09668bb2-ee4a-4c12-850c-ffc56e75104e","path":"sprites/sChasingChuck/sChasingChuck.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sChasingChuck","path":"sprites/sChasingChuck/sChasingChuck.yy",},"resourceVersion":"1.0","name":"029fed18-49cd-46ab-a470-84f6aa2fcf7a","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sChasingChuck","path":"sprites/sChasingChuck/sChasingChuck.yy",},
@@ -36,12 +42,14 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 1.0,
+    "length": 3.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"a02d76a3-e74a-4623-b76d-e125132c026c","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"495e7543-5ee1-4473-ad0b-1307345771d1","path":"sprites/sChasingChuck/sChasingChuck.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"aaf3218c-0d45-4329-aa83-54c35b20bf1f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6f59713c-7b15-41c4-a732-c0719db2e62b","path":"sprites/sChasingChuck/sChasingChuck.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"a02d76a3-e74a-4623-b76d-e125132c026c","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"495e7543-5ee1-4473-ad0b-1307345771d1","path":"sprites/sChasingChuck/sChasingChuck.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"451f7780-ca71-4678-8ee2-2d65247f5a6b","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"029fed18-49cd-46ab-a470-84f6aa2fcf7a","path":"sprites/sChasingChuck/sChasingChuck.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,

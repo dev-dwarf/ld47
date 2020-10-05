@@ -2,8 +2,10 @@
 // Inherit the parent event
 event_inherited();
 
+image_speed = 0;
+
 if (oPlayer.state == player_states.death) {
-	image_blend = c_gray;
+	image_blend = global.that_one_purple;
 	exit;
 }
 
@@ -31,9 +33,28 @@ switch state {
 	break; #endregion
 	
 	case enemy_states.dead	 : 
-	image_blend = c_gray;
+	image_blend = global.that_one_purple;
 	image_xscale = lerp(image_xscale, 0.5, 0.2);
 	image_yscale = lerp(image_yscale, 0.5, 0.2);
 	
+	break;
+}
+
+var p_dir = point_direction(x,y,oPlayer.x, oPlayer.y);
+
+switch round((p_dir-1)/90) {
+	case 1:
+	image_index = 1;
+	break;
+	case 0: 
+	image_index = 0;
+	draw_flip = 1;
+	break;
+	case 2: 
+	image_index = 0;
+	draw_flip = -1;
+	break;
+	case 3: 
+	image_index = 2;
 	break;
 }

@@ -1,0 +1,22 @@
+.wrapper  {
+    background-repeat: repeat;
+    background-attachment: fixed;
+	
+    -webkit-animation: backgroundScroll 10s linear 1;
+    -webkit-animation-fill-mode: forwards;
+	-webkit-animation-iteration-count: infinite;
+	
+    animation: backgroundScroll 10s linear 1;
+    animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: 00px 300px;}
+}
+
+@keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: 00px 300px;}
+}

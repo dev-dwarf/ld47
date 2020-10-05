@@ -90,5 +90,49 @@ for (var i = 0; i < oCardHolder.counts[card.bad][bad_cards.wall_spikes];i++) {
 		
 	instance_create_layer(xx,yy,layer,oSpikes);
 }
+
+make_gear_list = function() {
+	var gear_list = ds_list_create();
+	var cam_x = camera_get_view_x(view_camera[0]);
+	var cam_y = camera_get_view_y(view_camera[0]);
+
+	for (var i = 0; i < instance_number(oTopGear);i++) {
+		var inst =  instance_find(oTopGear, i)
+		
+		if (inst.x >= cam_x and inst.x <= cam_x+DEFAULT_WIDTH ) and
+		   (inst.y >= cam_y and inst.y <= cam_x+DEFAULT_HEIGHT) {
+			ds_list_add(gear_list, inst);
+		}
+	}
+	return gear_list;
+}
+
+var gear_list = make_gear_list();
+
+for (var i = 0; i < oCardHolder.counts[card.bad][bad_cards.turrets];i++) {
+	var index = irandom(ds_list_size(gear_list)-1);
+	var inst = gear_list[| index]
+	ds_list_delete(gear_list, index);
+	
+	if (ds_list_size(gear_list) == 0) {
+		ds_list_destroy(gear_list);
+		gear_list = make_gear_list();
+	}
+		
+	instance_create_layer(inst.x,inst.y,layer,oTurret);
+}
+
+for (var i = 0; i < oCardHolder.counts[card.bad][bad_cards.laser_turrets];i++) {
+	var index = irandom(ds_list_size(gear_list)-1);
+	var inst = gear_list[| index]
+	ds_list_delete(gear_list, index);
+	
+	if (ds_list_size(gear_list) == 0) {
+		ds_list_destroy(gear_list);
+		gear_list = make_gear_list();
+	}
+		
+	instance_create_layer(inst.x,inst.y,layer,oLaserTurret);
+}
 	
 create_wave();

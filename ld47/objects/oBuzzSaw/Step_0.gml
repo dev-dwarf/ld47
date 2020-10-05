@@ -1,3 +1,11 @@
+
+if (instance_exists(oExitPortal) or (instance_exists(oPlayer) and oPlayer.state == player_states.death)) {
+	image_blend = global.that_one_purple;
+	image_speed = 0;
+	exit;	
+}
+
+
 var xstep = lengthdir_x(1, direction);
 var ystep = lengthdir_y(1, direction);
 var view_x = camera_get_view_x(view_camera[0])

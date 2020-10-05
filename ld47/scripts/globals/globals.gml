@@ -15,6 +15,8 @@ function globals(){
 	global.sound_volume = 1.0 * global.master_volume;
 	global.music_volume = 1.0 * global.master_volume;
 	
+	global.that_one_purple = make_color_rgb(213, 137, 229);
+	
 	global.fullscreen = true;
 	
 	global.wave_count = 0;

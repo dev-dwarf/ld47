@@ -1,7 +1,7 @@
 /// @description
 
 if (oPlayer.state == player_states.death) {
-	image_blend = c_gray;
+	image_blend = global.that_one_purple;
 	exit;
 }
 

@@ -1,7 +1,7 @@
 /// @description
 
 if (oPlayer.state == player_states.death) {
-	image_blend = c_gray;
+	image_blend = global.that_one_purple;
 	exit;
 }
 
@@ -9,8 +9,9 @@ switch state {
 	case enemy_states.idle 	 : #region
 	idle_timer--;
 	
-	draw_x = irandom_range(1,-1)
-	draw_y = irandom_range(1,-1)	
+	var r = 3*idle_timer/idle_time
+	draw_x = random_range(r,-r)
+	draw_y = random_range(r,-r)	
 	
 	if (idle_timer <= 0) {
 		idle_timer = idle_time;
@@ -54,7 +55,7 @@ switch state {
 	
 	//break;
 	case enemy_states.dead	 : 
-	image_blend = c_gray;
+	image_blend = global.that_one_purple;
 	image_xscale = lerp(image_xscale, 0.5, 0.2);
 	image_yscale = lerp(image_yscale, 0.5, 0.2);
 	

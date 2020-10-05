@@ -1,4 +1,11 @@
 /// @description
+
+if (instance_exists(oExitPortal) or (instance_exists(oPlayer) and oPlayer.state == player_states.death)) {
+	image_blend = global.that_one_purple;
+	image_speed = 0;
+	exit;	
+}
+
 shoot_timer--;
 
 image_xscale = lerp(image_xscale, 1.0 + 0.1 * image_index/5, 0.2);
@@ -32,6 +39,6 @@ if (shoot_timer <= 0) {
 	image_speed = 0;
 	image_index = 0;
 	
-	image_angle = angle_lerp(image_angle, point_direction(x,y,oPlayer.x,oPlayer.y), 0.4);
+	image_angle = angle_lerp(image_angle, point_direction(x,y,oPlayer.x,oPlayer.y-oPlayer.sprite_height/2), 0.4);
 	
 }

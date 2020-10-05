@@ -1,7 +1,7 @@
 /// @description
 
 if (oPlayer.state == player_states.death) {
-	image_blend = c_gray;
+	image_blend = global.that_one_purple;
 	exit;
 }
 
@@ -45,7 +45,7 @@ switch state {
 	
 	//break;
 	case enemy_states.dead	 : 
-	image_blend = c_gray;
+	image_blend = global.that_one_purple;
 	image_xscale = lerp(image_xscale, 0.5, 0.2);
 	image_yscale = lerp(image_yscale, 0.5, 0.2);
 	

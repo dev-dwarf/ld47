@@ -1,3 +1,5 @@
+mask_index = sPlayerIdle;
+
 #region input
 var move_x_axis, move_y_axis, input_direction, input_magnitude, attack_button, attack_button_charge, spell_button_released, spell_button_charge, dash_button_released, dash_button_charge;
 var key_pause;
@@ -293,13 +295,14 @@ switch state {
 	break; #endregion
 	case player_states.freeze: #region freeze
 	can_attack = false;
+	move_speed = 0;
 	
 	break; #endregion
 	case player_states.death: #region
 	can_attack = false;
 	move_speed = lerp(move_speed, 0, 0.5);
 	
-	image_blend = c_gray;
+	image_blend = global.that_one_purple;
 
 	break; #endregion
 }
