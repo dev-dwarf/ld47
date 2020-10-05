@@ -13,8 +13,8 @@
   "soundFile": "sndTurretShoot.ogg",
   "duration": 0.9572,
   "parent": {
-    "name": "ld47",
-    "path": "ld47.yyp",
+    "name": "Sounds",
+    "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
   "name": "sndTurretShoot",
