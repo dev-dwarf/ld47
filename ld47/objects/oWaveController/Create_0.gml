@@ -21,13 +21,13 @@ global.wave_count++;
 
 if (global.wave_count mod 12 == 0) {
 	with instance_create_layer(room_width/2,
-							  room_height/2-100,
+							  room_height/2-50,
 							  layer,
 							  oSpawnSpot) {
 			object_to_spawn = oBoss;					  
 		}
 	
-	instance_create_layer(room_width/2, room_height/2+100, layer, oPlayer);
+	instance_create_layer(room_width/2, room_height/2+60, layer, oPlayer);
 	exit;
 }
 
@@ -59,7 +59,7 @@ function create_wave() {
 		//until (enemy_counts[type] <= average_enemy_count+2);
 	
 		var angle = i * 360/nnn + 0.5 * random_range(-0.5*360/nnn,0.5*360/nnn);
-		var radius = random_range(80, 120);
+		var radius = random_range(80, 110);
 	
 		with instance_create_layer(room_width/2 + lengthdir_x(radius, angle),
 							  room_height/2 + lengthdir_y(radius, angle),

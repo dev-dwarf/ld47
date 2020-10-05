@@ -21,23 +21,27 @@ state = boss_states.spawn;
 sub_state = boss_sub_states.target;
 
 spawn_delay = 60;
+i_frames = 0;
 
-hp = 50 * (1 + 0.4*oCardHolder.counts[card.bad ][bad_cards.enemy_health  ]);
+hp = 35 * (1 + 0.4*oCardHolder.counts[card.bad ][bad_cards.enemy_health  ]);
 
 charge_count = 3; // how many charges he does before going to next states
 charge_time = 60/(1 + 0.05 * oCardHolder.counts[card.bad ][bad_cards.enemy_attack_more]);
 charge_speed = 9*(1 + 0.1 * oCardHolder.counts[card.bad ][bad_cards.enemy_faster]);
 
 avoid_count = 3;
-avoid_shoot_time = 1.5*60/(1 + 0.05 * oCardHolder.counts[card.bad ][bad_cards.enemy_attack_more]); // time between shots, rn 1 1/2 seconds
+avoid_shoot_time = 1.85*60/(1 + 0.05 * oCardHolder.counts[card.bad ][bad_cards.enemy_attack_more]); // time between shots, rn 1 1/2 seconds
 avoid_speed = 1.2*(1 + 0.1 * oCardHolder.counts[card.bad ][bad_cards.enemy_faster]);
 
 avoid_range = 70;
 avoid_spread = 20;
-avoid_pellets = 5;
+avoid_pellets = 4;
+avoid_gone_to_center = false;
 
-burst_shoot_count = 5;
+burst_shoot_count = 4;
 burst_shoot_time = 0.75*60/(1 + 0.05 * oCardHolder.counts[card.bad ][bad_cards.enemy_attack_more]);
+projectile_number = 10;
+after_burst_recovery_time = 1.00*60/(1 + 0.05 * oCardHolder.counts[card.bad ][bad_cards.enemy_attack_more]);
 
 hit_damage = 1.5 + 0.8 * oCardHolder.counts[card.bad ][bad_cards.enemy_damage  ];
 
@@ -49,6 +53,7 @@ charges = charge_count;
 charge_timer = charge_time;
 avoid_shoot_timer = avoid_shoot_time;
 burst_shoot_timer = burst_shoot_time;
+after_burst_recovery_timer = after_burst_recovery_time
 
 draw_scale = 1.0;
 
@@ -77,4 +82,6 @@ hit_player = function() {
 			hp += hit_damage * oCardHolder.counts[card.bad ][bad_cards.enemy_leech	 ] * 0.5;
 		}
 	}
+	
+	oCamera.set_shake(0.65);
 }
