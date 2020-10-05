@@ -20,9 +20,6 @@ if player_hp <= 0
 var c = C_purple_light;
 if (player_hp-0.1 > player_hp_c and (current_time*0.02) mod 2) c = C_white;
 	
-//HP bar - outline
-//draw_rect_color(_x, _y - 1, _x + _bar_w_total + 1, _y + _bar_h + 1, C_black, 0);
-
 //HP bar - bar base
 draw_rect_color(_x, _y, _x + _bar_w_total, _y + _bar_h, C_purple_dark, 0);
 draw_rect_color(_x, _y, _x - _bar_w_total, _y + _bar_h, C_purple_dark, 0);
@@ -32,8 +29,6 @@ draw_rect_color(_x, _y, _x + _bar_w_fill, _y + _bar_h, c, 0);
 draw_rect_color(_x, _y, _x - _bar_w_fill, _y + _bar_h, c, 0);
 
 //HP sprite
-
-
 draw_sprite(spr_HUD_heart, _frame, _xc, _HUD_y);
 
 //Laser
@@ -75,4 +70,35 @@ if player_has_laser
 		
 		shader_reset();
 	}
+}
+
+//boss HP
+//------------------------------------------------------------------------------
+if instance_exists(oBoss)
+{
+	var _x = _xc,
+		_y = room_height - 25,
+		_off = 10,
+		_bar_h = 4,
+		_bar_w_total = 75 + _off,
+		_bar_w_fill = _bar_w_total * (boss_hp / boss_hpMax);
+	
+	var _frame = (blink >= blink_max * 0.95);
+	
+	if boss_hp <= 0
+		_frame = 2;
+	
+	var c = C_yellow;
+	if (boss_hp - 0.1 > boss_hp_c and (current_time * 0.02) mod 2) c = C_white;
+	
+	//HP bar - bar base
+	draw_rect_color(_x, _y, _x + _bar_w_total, _y + _bar_h, C_orange_dark, 0);
+	draw_rect_color(_x, _y, _x - _bar_w_total, _y + _bar_h, C_orange_dark, 0);
+
+	//HP bar - bar fill
+	draw_rect_color(_x, _y, _x + _bar_w_fill, _y + _bar_h, c, 0);
+	draw_rect_color(_x, _y, _x - _bar_w_fill, _y + _bar_h, c, 0);
+
+	//HP sprite
+	draw_sprite(spr_HUD_heart_boss, _frame, _xc, _y);
 }

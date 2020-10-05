@@ -42,6 +42,7 @@ function globals(){
 	#macro C_yellow make_color_rgb(237, 162, 59)
 	#macro C_purple_light make_color_rgb(164, 134, 166)
 	#macro C_purple_dark make_color_rgb(83, 73, 95)
+	#macro C_orange_dark make_color_rgb(143, 43, 23)
 
 	
 	instance_create_depth(0,0,0,oGamepadManager);

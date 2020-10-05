@@ -114,6 +114,7 @@
     {"id":{"name":"spr_card_debuff_2","path":"sprites/spr_card_debuff_2/spr_card_debuff_2.yy",},"order":3,},
     {"id":{"name":"spr_card_debuff_5","path":"sprites/spr_card_debuff_5/spr_card_debuff_5.yy",},"order":6,},
     {"id":{"name":"sLightning","path":"sprites/sLightning/sLightning.yy",},"order":7,},
+    {"id":{"name":"spr_HUD_heart_boss","path":"sprites/spr_HUD_heart_boss/spr_HUD_heart_boss.yy",},"order":3,},
     {"id":{"name":"typewriter_text_wrap","path":"scripts/typewriter_text_wrap/typewriter_text_wrap.yy",},"order":0,},
     {"id":{"name":"sProjectilePaulProjectile","path":"sprites/sProjectilePaulProjectile/sProjectilePaulProjectile.yy",},"order":19,},
     {"id":{"name":"sndCardsUnfold","path":"sounds/sndCardsUnfold/sndCardsUnfold.yy",},"order":13,},
