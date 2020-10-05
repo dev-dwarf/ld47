@@ -48,7 +48,7 @@ dash_is_teleport = oCardHolder.counts[card.good][good_cards.teleport_dash];
 
 leach = 0.1*power(oCardHolder.counts[card.good][good_cards.life_leach  ], 0.75);
 thorns = 0.3*power(oCardHolder.counts[card.good][good_cards.thorns  ], 0.6);
-heal_overtime = 0.001*power(oCardHolder.counts[card.good][good_cards.heal_overtime  ],2);
+heal_overtime = 0.0007*power(oCardHolder.counts[card.good][good_cards.heal_overtime  ],0.5);
 
 shield_regen = 0;
 shield_radius = 24;
@@ -56,7 +56,7 @@ shield_radius = 24;
 i_frames = 0;
 
 dash_not_ready = 0;
-dash_recharge = 10;
+dash_recharge = 13;
 
 if (dash_is_teleport) {
 	dash_start_frames = 2;
@@ -74,7 +74,7 @@ knockback_dir = 0;
 dash_start_x = x;
 dash_start_y = y;
 dash_state = dash_states.start;
-dash_distance = 70;
+dash_distance = 58;
 dash_frame_count = dash_start_frames;
 
 
@@ -130,7 +130,7 @@ hurt_line = function(x1, y1, x2, y2) {
 	for (var i = 0; i < ds_list_size(list); i ++) {
 		var inst = list[| i];
 		
-		inst.hp -= hit_damage;
+		inst.hp -= hit_damage*0.5;
 		inst.i_frames = 10;
 		oCamera.set_shake(0.2);
 		
