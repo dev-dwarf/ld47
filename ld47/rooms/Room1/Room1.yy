@@ -239,8 +239,6 @@
     {"name":"inst_1CA88482","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_D322340","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_513320D1","path":"rooms/Room1/Room1.yy",},
-    {"name":"Room1","path":"rooms/Room1/Room1.yy",},
-    {"name":"Room1","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_5AF4FE2","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_4C0640CD","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_7F9AE5AD","path":"rooms/Room1/Room1.yy",},
