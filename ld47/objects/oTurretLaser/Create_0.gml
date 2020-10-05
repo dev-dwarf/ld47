@@ -1,7 +1,7 @@
 /// @description
 play_sound(sndTurretLaser, 0, false, 1.3, 0.04, 1.0);
 
-hit_damage = 0.6 + 0.3 * oCardHolder.counts[card.bad ][bad_cards.glass_bones];
+hit_damage = 0.6 + 0.05 * oCardHolder.counts[card.bad ][bad_cards.glass_bones];
 
 image_yscale = 0;
 
