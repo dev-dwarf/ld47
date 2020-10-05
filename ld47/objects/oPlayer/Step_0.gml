@@ -144,10 +144,6 @@ if (hp == 0 and state != player_states.death) {
 }
 //log(string(hp));
 
-if (check_p(vk_r)) {
-	game_restart();
-}
-
 #region state
 switch state {
 	
