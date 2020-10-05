@@ -28,7 +28,4 @@ if instance_exists(oPlayer)
 	//laser
 	player_has_laser = oPlayer.has_laser;
 	player_laser = oPlayer.laser_available;
-	
-	//shield
-	//***
 }

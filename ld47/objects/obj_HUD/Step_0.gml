@@ -9,8 +9,7 @@ if instance_exists(oPlayer)
 {
 	var _hp = 0,
 		_hpMax = 0,
-		_laser = 0,
-		_shield = 0;
+		_laser = 0;
 	
 	with oPlayer
 	{
