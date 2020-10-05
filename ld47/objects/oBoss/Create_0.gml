@@ -24,7 +24,7 @@ sub_state = boss_sub_states.target;
 spawn_delay = 60;
 i_frames = 0;
 
-hp = 35 * (1 + 0.4*oCardHolder.counts[card.bad ][bad_cards.enemy_health  ]);
+hp = 50 * (1 + 0.4*oCardHolder.counts[card.bad ][bad_cards.enemy_health  ]);
 
 charge_count = 3; // how many charges he does before going to next states
 charge_time = 60/(1 + 0.05 * oCardHolder.counts[card.bad ][bad_cards.enemy_attack_more]);
@@ -56,9 +56,13 @@ avoid_shoot_timer = avoid_shoot_time;
 burst_shoot_timer = burst_shoot_time;
 after_burst_recovery_timer = after_burst_recovery_time
 
+min_transition_time = 20;
+transition_timer = min_transition_time;
+
 draw_scale = 1.0;
 
 next_state = 0;
+new_dir = 0;
 
 
 hit_player = function() {

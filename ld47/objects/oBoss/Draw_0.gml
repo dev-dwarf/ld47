@@ -1,4 +1,7 @@
 /// @description
+image_xscale *= draw_scale;
+image_yscale *= draw_scale;
+
 if (round(i_frames--/3) mod 2) and state != enemy_states.dead {
 	shader_set(shFlash);
 	draw_self();
@@ -6,3 +9,6 @@ if (round(i_frames--/3) mod 2) and state != enemy_states.dead {
 } else {
 	draw_self();
 }
+
+image_xscale /= draw_scale;
+image_yscale /= draw_scale;

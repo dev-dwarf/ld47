@@ -32,6 +32,8 @@ if (inst and ((inst.swing) or (oPlayer.state == player_states.dash or oPlayer.da
 
 switch state {
 	case boss_states.spawn	: #region 
+	image_blend = global.that_one_purple;
+	image_speed = 1;
 	if state != enemy_states.dead and (place_meeting(x,y,oPlayer) and oPlayer.i_frames <= 0 and oPlayer.dash_state != dash_states.mid) {
 	
 		hit_player();
@@ -46,6 +48,10 @@ switch state {
 	}
 	break; #endregion
 	case boss_states.charger: #region 
+	image_index = 1;
+	image_speed = 0;
+	image_angle = shoot_direction;
+	image_blend = c_white;
 	
 	if state != enemy_states.dead and (place_meeting(x,y,oPlayer) and oPlayer.i_frames <= 0 and oPlayer.dash_state != dash_states.mid) {
 	
@@ -79,7 +85,7 @@ switch state {
 			draw_scale = lerp(draw_scale, 1.0, 0.2);
 			shoot_direction = angle_lerp(shoot_direction, point_direction(x,y,oPlayer.x,oPlayer.y), 0.5);
 		} else if (charge_timer < charge_time*0.75) {
-			shoot_direction = angle_lerp(shoot_direction, 0, 0.3);
+			shoot_direction = angle_lerp(shoot_direction, new_dir, 0.3);
 		
 		} else {
 			draw_scale = lerp(draw_scale, 0.8, 0.2);
@@ -95,6 +101,7 @@ switch state {
 		var y_near = y + lengthdir_y(3,move_direction);
 		if (place_meeting(x_near,y_near,pSolid) or place_meeting(x,y,oPlayer) or (x == xprevious and y == yprevious)) {
 			sub_state = boss_sub_states.recover;
+			new_dir = choose(0, 180);
 		}
 		break; #endregion
 		case boss_sub_states.recover: #region 
@@ -113,7 +120,11 @@ switch state {
 	
 	break; #endregion
 	case boss_states.avoid	: #region 
-	
+	image_index = 3;
+	image_angle = angle_lerp(image_angle, 0, 0.1);
+	image_speed = 0;
+	image_blend = c_white;
+
 	switch sub_state {
 		case boss_sub_states.target	: #region 
 		if (distance_to_object(oPlayer) < avoid_range) {
@@ -142,7 +153,7 @@ switch state {
 			for (var i = 0; i < avoid_pellets; i++) {
 				var d = dir+i*avoid_spread/avoid_pellets+random_range(-5,5);
 				with instance_create_layer( x + lengthdir_x(r, d),
-											y - sprite_height/2 + lengthdir_y(r, d),
+											y + lengthdir_y(r, d),
 											layer, oShotgunShitleyProjectile) 
 				{			
 					parent = other.id;
@@ -168,6 +179,12 @@ switch state {
 	}
 	break; #endregion
 	case boss_states.burst	: #region 
+	image_index = 0;
+	image_angle = angle_lerp(image_angle, 0, 0.1)
+	image_speed = 0;
+	image_blend = c_white;
+
+
 	switch sub_state {
 		case boss_sub_states.target	: #region 
 		burst_shoot_timer--;
@@ -184,10 +201,11 @@ switch state {
 		draw_scale = lerp(draw_scale, 1.0, 0.2);
 		break; #endregion
 		case boss_sub_states.attack	: #region 
+		image_angle = 90;
 		var dir = point_direction(x,y,oPlayer.x,oPlayer.y);
 		for (var i = 0; i < 360; i += 360/projectile_number) {
 			with instance_create_layer(x + lengthdir_x(sprite_width/2, i+dir),
-									y-sprite_height/2 + lengthdir_y(sprite_width/2, i+dir)
+									y + lengthdir_y(sprite_width/2, i+dir)
 			,layer,oBurstingBrianProjectile) {
 				direction = i+dir;	
 				parent = other.id;
@@ -222,11 +240,28 @@ switch state {
 	image_blend = global.that_one_purple;
 	break; #endregion
 	case boss_states.transform: #region
-	x = lerp(x,room_width /2,0.19);
-	y = lerp(y,room_height/2,0.19);
-		
-	if (abs(room_width/2-x) < 1 and abs(room_height/2-y) < 1) {
-		state = next_state;
+	if (place_meeting(x,y,oPlayer) and oPlayer.i_frames <= 0 and oPlayer.dash_state != dash_states.mid) {
+		hit_player();
 	}
+	
+	image_blend = global.that_one_purple;
+	image_speed = 1;
+	image_angle = angle_lerp(image_angle, 0, 0.2);
+	
+	draw_scale = 0.5;
+	
+	
+	x = lerp(x,room_width /2,0.11);
+	y = lerp(y,room_height/2,0.11);
+		
+	if (point_distance(x,y,room_width/2,room_height/2) < 1 and transition_timer-- <= 0) {
+		state = next_state;
+		transition_timer = min_transition_time;
+
+		sprite_index = sBoss;	
+		image_speed = 0;
+	} 
 	break; #endregion
 }
+
+	draw_scale = lerp(draw_scale, 1.0, 0.1);
