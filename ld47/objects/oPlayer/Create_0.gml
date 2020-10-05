@@ -146,6 +146,8 @@ hurt_line = function(x1, y1, x2, y2) {
 		
 		if leach > 0 {
 			hp += leach*hit_damage;	
+			repeat(irandom(3)+2)
+				instance_create_layer(x+random_range(-8,8),y+random_range(-8,8),layer,oHealParticle);
 		}			
 	}
 				

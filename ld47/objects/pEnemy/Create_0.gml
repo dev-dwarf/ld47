@@ -36,6 +36,8 @@ hit_player = function() {
 	
 		if (oPlayer.thorns) {
 			hp -= hit_damage * power(1 + 0.3 * oPlayer.thorns, 2);	
+			repeat(irandom(3)+2)
+				instance_create_layer(x+random_range(-8,8),y+random_range(-8,8),layer,oThornsParticle);
 		}
 		
 		if (oCardHolder.counts[card.bad ][bad_cards.enemy_leech	 ] > 0) {
