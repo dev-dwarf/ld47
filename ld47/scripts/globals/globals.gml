@@ -11,7 +11,7 @@ function globals(){
 	global.set_window = true;
 	global.fullscreen = false;
 	
-	global.master_volume = 0//0.75; 
+	global.master_volume = 0.75; 
 	global.sound_volume = 1.0 * global.master_volume;
 	global.music_volume = 1.0 * global.master_volume;
 	

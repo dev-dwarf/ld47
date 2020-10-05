@@ -25,6 +25,9 @@ enum player_states {
 	victory
 }
 
+auto_click_delay = 13;
+auto_click = auto_click_delay;
+
 global.sword_id = 0;
 global.sword_count = oCardHolder.counts[card.good][good_cards.more_swords  ];
 sword_size = 0.75 + 0.15*power(oCardHolder.counts[card.good][good_cards.bigger_swords], 0.5);
@@ -44,7 +47,9 @@ enum dash_states {
 
 has_shield = oCardHolder.counts[card.good][good_cards.shield] > 0;
 shield_regen_speed = 0.003 * power(oCardHolder.counts[card.good][good_cards.shield], 0.5)
-hit_damage = (1 + power(global.sword_count, 0.5) * 0.3 + 0.2 * power(oCardHolder.counts[card.good][good_cards.bigger_swords], 0.5)) * power(1.1, oCardHolder.counts[card.good][good_cards.more_damage]);
+
+hit_damage = 0.5 + ((1 + power(global.sword_count, 0.5)) * 0.3 + 0.2 * (1+power(oCardHolder.counts[card.good][good_cards.bigger_swords], 0.5))) * power(1.1, oCardHolder.counts[card.good][good_cards.more_damage]);
+
 max_hp = 5 + 2.0 * oCardHolder.counts[card.good][good_cards.more_health  ];
 dash_is_teleport = oCardHolder.counts[card.good][good_cards.teleport_dash];
 

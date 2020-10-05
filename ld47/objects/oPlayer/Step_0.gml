@@ -30,6 +30,16 @@ if (global.gamepad_connected) {
 	attack_button = mouse_check_button_pressed(mb_left);
 	attack_button_charge = mouse_check_button(mb_left);
 	
+	if (attack_button_charge and !attack_button) {
+		auto_click--;
+		if (auto_click == 0) {
+			attack_button = true;
+			auto_click = auto_click_delay;
+		}
+	} else {
+		auto_click = auto_click_delay;
+	}
+	
 	dash_button_released = mouse_check_button_pressed(mb_right);
 	dash_button_charge   = mouse_check_button(mb_right);
 	//in_control_of_camera = false;
