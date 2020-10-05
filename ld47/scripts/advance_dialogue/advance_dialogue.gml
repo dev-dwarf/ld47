@@ -1,5 +1,6 @@
-// 
-function tutorial_text_type()
+// Advances displayed dialogue string.
+
+function advance_dialogue()
 {
 	tt_string ++;
 	

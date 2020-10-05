@@ -1,0 +1,11 @@
+{
+	"0": "So, you managed to defeat yourself, again.",
+
+	"1": "I guess we've already had time to reflect on the good times we shared during the tutorial. Or... did we? This time loop stuff is kind of confusing.",
+
+	"2": "Well, nice work again. I guess the incomprehensible power of the very cosmos themselves flowing through your veins hasn't taken it's toll quite yet.",
+
+	"3": "Well, good luck with that! You'll get there some day. Probably not soon though, because nothing particularly special is coded in after beating the boss other than this dialogue.",
+
+	"4": "Okay now I'm dead."
+}

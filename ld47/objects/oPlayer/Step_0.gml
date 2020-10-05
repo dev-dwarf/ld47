@@ -131,7 +131,18 @@ if (check_p(vk_r)) {
 
 #region state
 switch state {
-	case player_states.idle  : #region idle
+	
+	case player_states.victory:
+	{
+		sprite_index = sPlayerIdle;
+		can_attack = false;
+		move_speed = 0;
+		speed = 0;
+		direction = 0;
+	}
+	break;
+	
+	case player_states.idle: #region idle
 	sprite_index = sPlayerIdle;
 	
 	can_attack = true;
