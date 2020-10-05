@@ -62,7 +62,7 @@ stacks[card.bad ][bad_cards.glass_bones		 ] = true ;
 
 counts[card.good][good_cards.more_swords	 ] = 1;
 counts[card.good][good_cards.bigger_swords	 ] = 0;
-counts[card.good][good_cards.laser_sword	 ] = 1;
+counts[card.good][good_cards.laser_sword	 ] = 0;
 counts[card.good][good_cards.teleport_dash	 ] = 0;
 counts[card.good][good_cards.more_health	 ] = 0;
 counts[card.good][good_cards.heal_overtime	 ] = 0;
