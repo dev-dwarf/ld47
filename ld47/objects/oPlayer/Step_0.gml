@@ -1,5 +1,7 @@
 mask_index = sPlayerIdle;
 
+shield_angle = (shield_angle + 0.5) mod 360;
+
 #region input
 var move_x_axis, move_y_axis, input_direction, input_magnitude, attack_button, attack_button_charge, spell_button_released, spell_button_charge, dash_button_released, dash_button_charge;
 var key_pause;
@@ -76,6 +78,16 @@ if (!oSword.swing) consecutive_sword_hits = lerp(consecutive_sword_hits, 0, 0.04
 	if (can_attack and dash_button_released and dash_not_ready == 0) {	
 		if (!global.gamepad_connected) {
 			move_direction = point_direction(x,y,mouse_x,mouse_y);	
+			
+			//dash i frames
+			var _dash_i = 10;
+			//if player has teleport, give them a little more i frames
+			with oCardHolder
+				if counts[card.good][good_cards.teleport_dash] > 0
+					_dash_i = 15;
+			
+			//set i frames
+			i_frames = clamp(i_frames + _dash_i, 0, _dash_i);
 		}
 	
 		dash_direction = move_direction;

@@ -15,6 +15,10 @@ if !draw_dialogue
 frame_arrow ++;
 if frame_arrow >= room_speed
 	frame_arrow = 0;
+	
+//make player invincible
+with oPlayer
+	hp = max_hp;
 
 switch tutorial_state
 {
@@ -178,7 +182,7 @@ switch tutorial_state
 	//9
 	case 9:
 	{
-		//spawn player when cards are gone
+		//move on when cards are gone
 		var _cardSel_state = "null";
 		with con_cardSelection
 			_cardSel_state = cardSel_state;
@@ -188,6 +192,9 @@ switch tutorial_state
 			tutorial_state ++;
 			tutorial_text_next();
 			draw_dialogue = true;
+			
+			with oPlayer
+				player_active = true;
 		}
 	}
 	break;
@@ -198,7 +205,7 @@ switch tutorial_state
 		tutorial_text_type();
 		move_box_in();
 		
-		if text_is_done() && mouse_check_button_pressed(mb_left)
+		if text_is_done() && keyboard_check_pressed(vk_space)
 		{
 			tutorial_state ++;
 			draw_dialogue = false;
@@ -220,7 +227,8 @@ switch tutorial_state
 				gameState = "tutorial_end";
 				
 			//create save file so player can skip tutorial in future runs
-			saveStringToFile("tutorial.done", "wow nice!");
+			if !file_exists("tutorial.done")
+				saveStringToFile("tutorial.done", "wow nice!");
 		}
 	}
 	break;

@@ -14,6 +14,7 @@
 event_inherited();
 
 player_active = true;//can player object receive control input?
+shield_angle = 0;
 
 enum player_states {
 	idle,
@@ -152,3 +153,6 @@ reset_cards = function() {
 }
 
 alarm[0]=1;
+
+//spawn HUD
+instance_create_depth(0, 0, 0, obj_HUD);

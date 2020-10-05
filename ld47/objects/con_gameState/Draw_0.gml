@@ -9,21 +9,17 @@ if rad > 0
 }
 
 //draw title
-if gameState == "title" or gameState == "startup" or gameState == "tutorial_init"
+if gameState == "title" or gameState == "startup" or gameState == "tutorial_init" or gameState == "game_init"
 {
 	var _shift = 5 * dsin(tt_float),
 		_y = y_title + _shift,
 		_x = room_width / 2;
-		/*
+		
 	//gear 1
-	draw_sprite_ext(sGear1, 0, _x - 50, _y + 10, 1, 1, rot_title + 5, c_white, 1);
+	draw_sprite_ext(sGear1, 0, _x - 50, _y - 25, 1, 1, rot_title + 5, c_white, 1);
 	//gear 2
 	draw_sprite_ext(sGear2, 0, _x + 100, _y - 45, 1, 1, rot_title + 25, c_white, 1);
-	//gear 3
-	draw_sprite_ext(sGear3, 0, _x, _y + 10, 1, 1, rot_title + 10, c_white, 1);
-	//gear 4
-	draw_sprite_ext(sGear3, 0, _x + 50, _y + 10, 1, 1, rot_title + 5, c_white, 1);
-	*/
+	
 	
 	//title text
 	draw_sprite(spr_title_text, 0, _x, _y);

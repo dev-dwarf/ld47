@@ -239,7 +239,7 @@ switch cardSel_state
 						flipped_the_thang = true;
 						xS = _target;
 					}
-				} else xS = lerp(xS, 1, 0.15);
+				} else xS = lerp(xS, 1, 0.35);
 				
 				if !card_flipped or (card_flipped && xS != 1)
 					_move_on = false;
@@ -299,12 +299,12 @@ switch cardSel_state
 			if y >= (room_height * 1.15)
 				instance_destroy();
 		}
-		
-		
 
-		if !instance_exists(obj_card) {
+		if !instance_exists(obj_card) 
+		{
 			cardSel_state = "cards_wrapup";
-			con_gameState.gameState = "game_init";
+			part_particles_clear(sys);
+			part_system_destroy(sys);
 		}
 	}
 	break;
@@ -318,6 +318,10 @@ switch cardSel_state
 			instance_destroy();
 
 			oCamera.set_shake(0.5);
+			
+			if !instance_exists(con_tutorial)
+				with con_gameState
+					gameState = "game_init";
 		}
 			
 	}
