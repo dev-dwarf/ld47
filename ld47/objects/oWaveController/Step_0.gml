@@ -44,6 +44,9 @@ switch state {
 		instance_destroy(oLaserTurret);
 		instance_destroy();
 		instance_destroy(oPlayer);
+		instance_destroy(oTurretShot);
+		instance_destroy(oTurretLaser);
+
 	} 
 	break; #endregion
 }

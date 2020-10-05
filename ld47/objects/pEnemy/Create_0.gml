@@ -11,7 +11,7 @@ i_frames = 0;
 knockback = 0;
 knockback_dir = 0;
 
-hit_damage = 0.5 + 0.8 * oCardHolder.counts[card.bad ][bad_cards.enemy_damage  ];
+hit_damage = 0.75 + 0.3 * oCardHolder.counts[card.bad ][bad_cards.enemy_damage  ];
 
 enum enemy_states {
 	idle, attack, recover, hit, dead
@@ -35,7 +35,7 @@ hit_player = function() {
 		oPlayer.knockback_dir = point_direction(x,y,oPlayer.x, oPlayer.y);
 	
 		if (oPlayer.thorns) {
-			hp -= hit_damage * oPlayer.thorns;	
+			hp -= hit_damage * power(1 + 0.3 * oPlayer.thorns, 2);	
 		}
 		
 		if (oCardHolder.counts[card.bad ][bad_cards.enemy_leech	 ] > 0) {

@@ -49,8 +49,8 @@ max_hp = 5 + 2.0 * oCardHolder.counts[card.good][good_cards.more_health  ];
 dash_is_teleport = oCardHolder.counts[card.good][good_cards.teleport_dash];
 
 leach = 0.1*power(oCardHolder.counts[card.good][good_cards.life_leach  ], 0.75);
-thorns = 0.3*power(oCardHolder.counts[card.good][good_cards.thorns  ], 0.6);
-heal_overtime = 0.0007*power(oCardHolder.counts[card.good][good_cards.heal_overtime  ],0.5);
+thorns = 2.5*oCardHolder.counts[card.good][good_cards.thorns  ];
+heal_overtime = 0.0014*power(oCardHolder.counts[card.good][good_cards.heal_overtime  ],0.5);
 
 shield_regen = 0;
 shield_radius = 24;
