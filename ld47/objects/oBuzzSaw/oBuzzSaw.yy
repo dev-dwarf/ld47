@@ -1,7 +1,12 @@
 {
   "spriteId": {
+<<<<<<< Updated upstream
     "name": "sBuzzSaw",
     "path": "sprites/sBuzzSaw/sBuzzSaw.yy",
+=======
+    "name": "sBzzsaw4",
+    "path": "sprites/sBzzsaw4/sBzzsaw4.yy",
+>>>>>>> Stashed changes
   },
   "solid": false,
   "visible": true,

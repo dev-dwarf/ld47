@@ -52,6 +52,13 @@
     {"id":{"name":"sHit","path":"sprites/sHit/sHit.yy",},"order":33,},
     {"id":{"name":"oClockSmallHand","path":"objects/oClockSmallHand/oClockSmallHand.yy",},"order":25,},
     {"id":{"name":"oGodRay","path":"objects/oGodRay/oGodRay.yy",},"order":28,},
+<<<<<<< Updated upstream
+=======
+    {"id":{"name":"sBzzsaw31","path":"sprites/sBzzsaw31/sBzzsaw31.yy",},"order":55,},
+    {"id":{"name":"sndCardsFlip","path":"sounds/sndCardsFlip/sndCardsFlip.yy",},"order":11,},
+    {"id":{"name":"spr_card_debuff_2","path":"sprites/spr_card_debuff_2/spr_card_debuff_2.yy",},"order":3,},
+    {"id":{"name":"spr_card_debuff_5","path":"sprites/spr_card_debuff_5/spr_card_debuff_5.yy",},"order":6,},
+>>>>>>> Stashed changes
     {"id":{"name":"sLightning","path":"sprites/sLightning/sLightning.yy",},"order":7,},
     {"id":{"name":"sProjectilePaulProjectile","path":"sprites/sProjectilePaulProjectile/sProjectilePaulProjectile.yy",},"order":19,},
     {"id":{"name":"oProjectilePaulProjectile","path":"objects/oProjectilePaulProjectile/oProjectilePaulProjectile.yy",},"order":15,},
@@ -82,16 +89,26 @@
     {"id":{"name":"sChasingChuck","path":"sprites/sChasingChuck/sChasingChuck.yy",},"order":21,},
     {"id":{"name":"Sprite14","path":"sprites/Sprite14/Sprite14.yy",},"order":13,},
     {"id":{"name":"sGear1","path":"sprites/sGear1/sGear1.yy",},"order":30,},
+    {"id":{"name":"sBzzsaw2","path":"sprites/sBzzsaw2/sBzzsaw2.yy",},"order":52,},
     {"id":{"name":"sndEyeFlap","path":"sounds/sndEyeFlap/sndEyeFlap.yy",},"order":1,},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},"order":1,},
+    {"id":{"name":"sBzzsaw3","path":"sprites/sBzzsaw3/sBzzsaw3.yy",},"order":53,},
     {"id":{"name":"sPlayerDash","path":"sprites/sPlayerDash/sPlayerDash.yy",},"order":4,},
     {"id":{"name":"spr_card_debuff_test","path":"sprites/spr_card_debuff_test/spr_card_debuff_test.yy",},"order":0,},
     {"id":{"name":"oGearBotLayer2","path":"objects/oGearBotLayer2/oGearBotLayer2.yy",},"order":35,},
     {"id":{"name":"sClockLargeHand","path":"sprites/sClockLargeHand/sClockLargeHand.yy",},"order":25,},
     {"id":{"name":"sGear5","path":"sprites/sGear5/sGear5.yy",},"order":16,},
     {"id":{"name":"stacking","path":"scripts/stacking/stacking.yy",},"order":3,},
+<<<<<<< Updated upstream
     {"id":{"name":"oGearMidLayer2","path":"objects/oGearMidLayer2/oGearMidLayer2.yy",},"order":33,},
     {"id":{"name":"sClockBackground","path":"sprites/sClockBackground/sClockBackground.yy",},"order":18,},
+=======
+    {"id":{"name":"oGearMidLayer2","path":"objects/oGearMidLayer2/oGearMidLayer2.yy",},"order":31,},
+    {"id":{"name":"oSpikes","path":"objects/oSpikes/oSpikes.yy",},"order":35,},
+    {"id":{"name":"sBzzsaw4","path":"sprites/sBzzsaw4/sBzzsaw4.yy",},"order":54,},
+    {"id":{"name":"sTurretBullet","path":"sprites/sTurretBullet/sTurretBullet.yy",},"order":51,},
+    {"id":{"name":"sClockBackground","path":"sprites/sClockBackground/sClockBackground.yy",},"order":45,},
+>>>>>>> Stashed changes
     {"id":{"name":"shFlash","path":"shaders/shFlash/shFlash.yy",},"order":0,},
     {"id":{"name":"oBurstingBrian","path":"objects/oBurstingBrian/oBurstingBrian.yy",},"order":18,},
     {"id":{"name":"sTeleport","path":"sprites/sTeleport/sTeleport.yy",},"order":8,},
