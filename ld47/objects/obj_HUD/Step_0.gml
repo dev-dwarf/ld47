@@ -24,7 +24,8 @@ if instance_exists(oPlayer)
 		laser_off = 8;
 		laser_flash = 10;
 		
-		//play laser charged up sound***
+		//play laser charged up sound
+		play_sound(sndLaser, 10, 0, 1, 0.04, global.sound_volume);
 	}
 	
 	player_hp_c = _hp;

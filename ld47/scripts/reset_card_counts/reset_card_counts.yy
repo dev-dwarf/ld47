@@ -6,7 +6,7 @@
     "path": "folders/Scripts/game state.yy",
   },
   "resourceVersion": "1.0",
-  "name": "game_state",
+  "name": "reset_card_counts",
   "tags": [],
   "resourceType": "GMScript",
 }

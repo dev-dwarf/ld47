@@ -1,7 +1,6 @@
 /// @description game state machine
 
-if gameState == "startup" or gameState == "title" or gameState == "tutorial_init"
-	rot_title = (rot_title + 1) mod 360;
+rot_title = (rot_title + 1) mod 360;
 
 switch gameState
 {
@@ -110,6 +109,7 @@ switch gameState
 		{
 			rad = room_width;
 			gameState = "game_init";
+			reset_card_counts();
 			room_restart();
 		}
 	}
@@ -118,29 +118,60 @@ switch gameState
 	//game_init: whatever needs to happen to start a round of gameplay happens here
 	case "game_init":
 	{
-		//switch gamestate to active
-		gameState = "game_active";
+		y_title = lerp(y_title, -room_height, 0.1);
+		y_title_text = lerp(y_title_text, room_height + 30, 0.15);
 		
-		//spawn wave controller
-		instance_create_layer(0,0, "Instances", oWaveController);
+		if diff(y_title, -room_height) <= 10
+		{
+			//switch gamestate to active
+			gameState = "game_active";
 		
-		//spawn player
-		//
+			//spawn wave controller
+			instance_create_layer(0,0, "Instances", oWaveController);
+		}
 	}
 	break;
 	
 	//game_active: round of normal gameplay is running
 	case "game_active":
 	{
-			
-		//***
-		
+		//lerp out gameState overlay	
 		if rad > 0
 			rad = lerp(rad, 0, 0.15);
+		
+		//check for defeat state
+		var _player_defeat = false;
+		with oPlayer
+			_player_defeat = (hp <= 0);
+		
+		//initiate defeat state
+		if _player_defeat
+			gameState_next("defeat");
 	}
 	break;
 	
-	//
+	//defeat: player has lost the game
+	case "defeat":
+	{
+		var _delay = room_speed;
+		
+		if tt < _delay
+			tt ++;
+		else
+		{
+			if tt == _delay
+			{
+			}
+		}	
+		
+		//***
+	}
+	break;
+	
+	//victory: player has beaten the boss!
+	case "victory":
+	{
+		//***
+	}
+	break;
 }
-
-log(gameState);

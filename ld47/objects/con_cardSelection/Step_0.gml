@@ -239,7 +239,7 @@ switch cardSel_state
 						flipped_the_thang = true;
 						xS = _target;
 					}
-				} else xS = lerp(xS, 1, 0.15);
+				} else xS = lerp(xS, 1, 0.35);
 				
 				if !card_flipped or (card_flipped && xS != 1)
 					_move_on = false;

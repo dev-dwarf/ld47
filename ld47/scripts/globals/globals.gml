@@ -30,6 +30,9 @@ function globals(){
 	global.font_large = font_add_sprite_ext(spr_font_large,
 	" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,!?*()-+'", 1, 2);
 	
+	global.font_large_outline = font_add_sprite_ext(spr_font_large,
+	" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,!?*()-+", 1, 2);
+	
 	global.font_small = font_add_sprite_ext(spr_font_small,
 	" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,!?*()-+'", 1, 2);
 	

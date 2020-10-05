@@ -1,4 +1,3 @@
-
 ///@desc gameState_next
 ///@param state
 function gameState_next(_state)
