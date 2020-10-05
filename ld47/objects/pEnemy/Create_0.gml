@@ -3,6 +3,7 @@ event_inherited();
 
 with instance_create_depth(x,y,-1000,oObjPari) sprite_index = sTeleport;
 
+bits_index = noone;
 can_explode = true;
 hp = 3;
 i_frames = 0;
@@ -38,7 +39,7 @@ hit_player = function() {
 		}
 		
 		if (oCardHolder.counts[card.bad ][bad_cards.enemy_leech	 ] > 0) {
-			hp += hit_damage * oCardHolder.counts[card.bad ][bad_cards.enemy_leech	 ] * 0.25;
+			hp += hit_damage * oCardHolder.counts[card.bad ][bad_cards.enemy_leech	 ] * 0.5;
 		}
 	}
 }

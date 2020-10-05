@@ -13,6 +13,8 @@ y_off = 0;
 
 attack_time = 10;
 attack_timer = attack_time;
+bits_index = sBurstingBrianBits;
+
 
 draw_x = x;
 draw_y = y;

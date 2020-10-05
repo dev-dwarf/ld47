@@ -1,5 +1,5 @@
 /// @description
-image_angle += 100/sprite_width;
+image_angle += 30/sprite_width;
 
 if (!instance_exists(oPlayer)) exit;
 

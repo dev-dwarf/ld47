@@ -15,6 +15,7 @@ switch state {
 	with pEnemy {
 		if (state != enemy_states.dead) live_enemies++;	
 	}
+	live_enemies += instance_exists(oBoss);
 	
 	if (live_enemies == 0) {
 		if (wave_number <= 0) {

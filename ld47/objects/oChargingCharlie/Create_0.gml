@@ -3,6 +3,7 @@
 // Inherit the parent event
 event_inherited();
 
+bits_index = sChargingCharlieBits;
 draw_angle = 0;
 
 idle_time = 1.5*60/(1 + 0.05 * oCardHolder.counts[card.bad ][bad_cards.enemy_attack_more]); // time between shots, rn 1 1/2 seconds

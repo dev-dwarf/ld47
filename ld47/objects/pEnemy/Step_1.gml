@@ -26,8 +26,22 @@ if (inst and ((inst.swing) or (oPlayer.state == player_states.dash or oPlayer.da
 		i_frames = 10;
 		state = enemy_states.dead;
 		
-		if (can_explode)
+		
+		
+		if (can_explode) {
 			play_sound(sndEnemyDeath, 0, false, 0.8, 0.2, 0.8);	
+			
+			oPlayer.make_dust(x,y,8,sprite_width);
+			
+			var c= 4-irandom(2);
+			for(var i = 0; i < c;i++) {
+				with instance_create_layer(x,y - sprite_height*0.5,layer,oBits) {
+					sprite_index = other.bits_index;
+					image_index = i;
+				}
+			}
+			instance_destroy();
+		}
 		
 		if (oCardHolder.counts[card.good][good_cards.bomb_slice]) and can_explode {
 			with instance_create_layer(x,y - sprite_height*0.5,layer,oExplosion) {

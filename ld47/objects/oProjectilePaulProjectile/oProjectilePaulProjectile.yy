@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sProjectilePaulProjectile",
-    "path": "sprites/sProjectilePaulProjectile/sProjectilePaulProjectile.yy",
+    "name": "sProjectilePaulShot",
+    "path": "sprites/sProjectilePaulShot/sProjectilePaulShot.yy",
   },
   "solid": false,
   "visible": true,
