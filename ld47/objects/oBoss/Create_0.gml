@@ -26,7 +26,7 @@ sub_state = boss_sub_states.target;
 spawn_delay = 60;
 i_frames = 0;
 
-hp = 50 * (1 + 0.01 * oCardHolder.counts[card.bad ][bad_cards.enemy_health]);
+hp = 90 * (1 + 0.3 * oCardHolder.counts[card.bad ][bad_cards.enemy_health]);
 hpMax = hp;
 
 charge_count = 3; // how many charges he does before going to next states
@@ -47,7 +47,7 @@ burst_shoot_time = 0.75*60/(1 + 0.05 * oCardHolder.counts[card.bad ][bad_cards.e
 projectile_number = 10;
 after_burst_recovery_time = 1.00*60/(1 + 0.05 * oCardHolder.counts[card.bad ][bad_cards.enemy_attack_more]);
 
-hit_damage = 1.5 + 0.01 * oCardHolder.counts[card.bad ][bad_cards.enemy_damage  ];
+hit_damage = 1.0 + 0.15 * oCardHolder.counts[card.bad ][bad_cards.enemy_damage  ];
 
 spawn_timer = spawn_delay;
 move_speed = 0;
@@ -75,7 +75,7 @@ hit_player = function() {
 		oPlayer.has_shield = false;
 		oPlayer.shield_radius = 32;
 	} else {
-		oPlayer.hp -= hit_damage*(1+0.5*oCardHolder.counts[card.bad][bad_cards.glass_bones]);
+		oPlayer.hp -= hit_damage*(1+0.06*oCardHolder.counts[card.bad][bad_cards.glass_bones]);
 			play_sound(sndPlayerHurt, 0, false, 1.0, 0.04, 1.0);
 
 	
@@ -91,7 +91,9 @@ hit_player = function() {
 		}
 		
 		if (oCardHolder.counts[card.bad ][bad_cards.enemy_leech	 ] > 0) {
-			hp += hit_damage * oCardHolder.counts[card.bad ][bad_cards.enemy_leech	 ] * 0.5;
+			hp += hit_damage * oCardHolder.counts[card.bad ][bad_cards.enemy_leech	 ];
+			repeat(irandom(3)+2)
+				instance_create_layer(x+random_range(-8,8),y+random_range(-8,8),layer,oEnemyThornsParticle);
 		}
 	}
 	

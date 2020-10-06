@@ -20,7 +20,8 @@ switch state {
 	if (live_enemies == 0) {
 		if (wave_number <= 0) {
 			instance_create_layer(room_width/2,room_height/2,layer,oExitPortal);
-
+			instance_destroy(oTurretShot);
+			instance_destroy(oTurretLaser);
 			state = wave_states.next;
 		} else {
 			state = wave_states.spawn;
@@ -44,8 +45,7 @@ switch state {
 		instance_destroy(oLaserTurret);
 		instance_destroy();
 		instance_destroy(oPlayer);
-		instance_destroy(oTurretShot);
-		instance_destroy(oTurretLaser);
+		
 
 	} 
 	break; #endregion

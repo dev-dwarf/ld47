@@ -270,7 +270,7 @@ switch gameState
 		if diff(y_title, -room_height) <= 10 && diff(rad, room_width) <= 5
 		{
 			room_restart();			
-			global.wave_count = 0;
+			//global.wave_count = 0;
 			
 			gameState_next("game_init");
 		}

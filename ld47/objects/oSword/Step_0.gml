@@ -5,6 +5,11 @@ if (oPlayer.state == player_states.death) {
 	exit;
 }
 
+if (oPlayer.state == player_states.freeze) {
+	sprite_index = sSwordPurple;
+	exit;
+}
+
 mask_index = sSwordOrange;
 if (swing) {
 	sprite_index = sSwordPurple;
